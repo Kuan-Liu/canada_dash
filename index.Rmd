@@ -7,6 +7,7 @@ output:
     source_code: embed
     orientation: columns
     vertical_layout: fill
+    theme: flatly
 ---
 
 ```{r setup, echo=FALSE,results='hide',message = FALSE, warning = FALSE}
@@ -357,7 +358,7 @@ Thank you for your interest in my new data visualization project. There are many
 Using the four COVID-19 Canada Open Data Working Group's spreadsheets on cases, mortality, recovery and testing at <https://github.com/ishaberry/Covid19Canada>, I created an aggregated Canada COVID-19 daily data. You can view this data on the data page of this dash.
 
 
-Last but not least, I want to give a shout-out to Marc-Olivier Hétu whom I met on [twitter](https://twitter.com/suivicovid). He has been scraping public COVID-19 Canada since March and compiled an outstanding spreadsheet with graphic analysis, which he generiously shared with me, because he said he's glad that more people get to use his data to build tools. I have adopted one of Marc's special figure on this dash and I named it the Marc-Olivier figure.
+Last but not least, I want to give a shout-out to Marc-Olivier Hétu whom I met on [twitter](https://twitter.com/suivicovid). He has been scraping public COVID-19 Canada since March and compiled an outstanding spreadsheet with graphic analysis, which he generiously shared with me, because he said he's glad that more people get to use his data to build tools. I have adopted one of Marc's special figure on this dash and I named it the Marc-Olivier figure to carry on the legacy.
 
 
 
