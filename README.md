@@ -1,56 +1,82 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-### The Covid19 Italy Dashboard
+## From the author
 
-This [Covid19 Italy
-dashboard](https://ramikrispin.github.io/italy_dash/) provides an
-overview of the 2019 Novel Coronavirus COVID-19 (2019-nCoV) epidemic in
-Italy. This dashboard is built with R using the Rmakrdown framework and
-can easily reproduce by others.
+**Thank you for your interest in my new data visualization project.**
+There are many great COVID-19 Canada dashboards available online. I have
+compiled the following list to show some of the dashboards that inspired
+me to build this one.
 
-<img src="figures/dash1.png" width="100%" />
+  - The COVID-19 Canada Open Data Working Groups
+    [dashboard](https://art-bd.shinyapps.io/covid19canada/) made by
+    [Jean-Paul R. Soucy](https://twitter.com/JPSoucy) and [Isha
+    Berry](https://twitter.com/ishaberry2), two amazing talented
+    students from my school, DLSPH, at Univerity of Toronto.
 
-<img src="figures/dash2.png" width="100%" />
+  - The Covid19 Italy
+    [dashboard](https://github.com/RamiKrispin/italy_dash) by [Rami
+    Krispin](https://twitter.com/Rami_Krispin). I used Rami’s [R
+    markdown code](https://github.com/RamiKrispin/covid19Italy) for this
+    dashboard.
 
-**Data**
+  - The Esri Canada COVID-19 Canada
+    [dashboard](https://resources-covid19canada.hub.arcgis.com/).
 
-The input data for this dashboard are the
-[covis19italy](https://github.com/RamiKrispin/covis19italy) and
-[coronavirus](https://github.com/RamiKrispin/coronavirus) R packages
-(dev version). The data and dashboard are refreshed on a daily bases.
+  - The PHAC COVID-19 Canada
+    [dashboard](https://experience.arcgis.com/experience/2f1a13ca0b29422f9b34660f0b705043/),
+    **most accurate and reliable** info on Canadian COVID-19
+    epidemiology data.
 
-**Data source**
+  - The Ontario-specific COVID-19 Analysis
+    [Website](https://howsmyflattening.ca/#/analysis) which covers
+    detailed Ontario focused analytical information on critical care
+    analysis, health region analysis and testing analysis. This website
+    I believe was also built by a group of University of Toronto
+    students.
 
-The raw data for the covid19italy package is pulled from Italy
-Department of Civil Protection, and the coronavirus package from Johns
-Hopkins University Center for Systems Science and Engineering (JHU CCSE)
+  - The Alberta provincial COVID-19
+    [dashboard](https://covid19stats.alberta.ca/).
 
-**Packages**
+Using the four COVID-19 Canada Open Data Working Group’s spreadsheets on
+cases, mortality, recovery and testing at
+<https://github.com/ishaberry/Covid19Canada>, I created an aggregated
+Canada COVID-19 daily data. You can view this data on the data page of
+this dash.
 
-  - Dashboard interface - the
-    [flexdashboard](https://rmarkdown.rstudio.com/flexdashboard/)
-    package.
-  - Visualization - the [plotly](https://plot.ly/r/) package for the
-    plots and [mapview](https://r-spatial.github.io/mapview/) package
-    for the map
-  - Data manipulation - [dplyr](https://dplyr.tidyverse.org/), and
-    [tidyr](https://tidyr.tidyverse.org/)
-  - Tables - the [DT](https://rstudio.github.io/DT/) package
+Last but not least, I have to give a shout-out to Marc-Olivier Hétu whom
+I met on [twitter](https://twitter.com/suivicovid). He has been scraping
+public COVID-19 Canada since March and compiled an outstanding
+spreadsheet with graphic analysis, which he generiously shared with me,
+because he said he’s glad that more people get to use his data to build
+tools. I have adopted one of Marc’s special figure on this dash and I
+named it the Marc-Olivier figure.
 
-**Deployment and reproducibly**
+**Acknowledgement**
 
-The dashboard was deployed to Github docs. If you wish to deploy and/or
-modify the dashboard on your Github account, you can apply the following
-steps:
+  - **Data**
+      - Canada data used in this dashboard are extracted from the data
+        speardsheet posted by the COVID-19 Canada Open Data Working
+        Group (<https://github.com/ishaberry/Covid19Canada>) lead by
+        Jean-Paul R. Soucy and Isha Berry.
+      - US data used in this dashboard are from the R package
+        coronavirus developed by [Rami
+        Krispin](https://github.com/RamiKrispin/coronavirus) which is
+        generated from the Johns Hopkins University Center for Systems
+        Science and Engineering (JHU CCSE) Coronavirus
+        [website](https://systems.jhu.edu/research/public-health/ncov/).
+  - **Dashboard R code**
+      - I built this dashboard using Rami Krispin’s Covid19 Italy
+        [dashboard](https://github.com/RamiKrispin/italy_dash)’s code as
+        template. Rami’s code can be found on this [github
+        page](https://github.com/RamiKrispin/covid19Italy).
 
-  - Fork the dashboard
-    [repository](https://github.com/RamiKrispin/italy_dash), or
-  - Clone it and push it to your Github package
-  - Here some general guidance about deployment of flexdashboard on
-    Github page -
-    [link](https://github.com/pbatey/flexdashboard-example)
+I would not have made this bashboard if not for the work of the above
+team and individuals. You can find the code of this dashboard at
+<https://github.com/Kuan-Liu/italy_dash>. I kept Rami’s orignal
+repository name to acknowledge the source.
 
-For any question or feedback, you can either open an
-[issue](https://github.com/RamiKrispin/italy_dash/issues) or contact me
-on [Twitter](https://twitter.com/Rami_Krispin).
+**Feedbacks**
+
+Please feel free to reach me at <kuan.liu@mail.utoronto.ca>. You can
+also find me on [Twitter](https://twitter.com/KuanLiu2).

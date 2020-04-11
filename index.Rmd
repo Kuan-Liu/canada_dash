@@ -1,5 +1,5 @@
 ---
-title: "Covid19 Italy"
+title: "COVID-19 Canada"
 output: 
   flexdashboard::flex_dashboard:
     css: style.css
@@ -9,75 +9,94 @@ output:
     vertical_layout: fill
 ---
 
-```{r setup, include=FALSE}
+```{r setup, echo=FALSE,results='hide',message = FALSE, warning = FALSE}
 #------------------ Packages ------------------
-library(flexdashboard)
+library(flexdashboard) #dashboard;
+library(shiny) #shiny app;
+library(dplyr) #data tool;
+library(tidyverse) #data tool; some clash with dplyr;
+library(reshape2) #data tool;
+library(chron) #data tool;
+library(ggplot2) #visual tool;
+library(plotly) #visual tool;
+library(covid19italy) #italy data;
+library(remotes) #package to load github ;
+library(RCurl) #read data url;
+library(magrittr) #coding tool;
+library(qpcR) #data tool;
+# install_github("ishaberry/Covid19Canada") #COVID-19; Canada Open Data ishaberry/Covid19Canada
+# can't read the working group data from repo directly;
 
-### Required the dev version from Github until the next release to CRAN
-library(covid19italy)
+#------------------ Read Canada data ------------------
+#read raw github data;
+x1 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/cases.csv")
+x2 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/mortality.csv")
+x3 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/recovered_cumulative.csv")
+x4 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/testing_cumulative.csv")
+
+can_c <- read.csv(text=x1, header = TRUE, sep = ",", encoding = 'UTF-8')
+can_d <- read.csv(text=x2, header = TRUE, sep = ",", encoding = 'UTF-8')
+can_r <- read.csv(text=x3, header = TRUE, sep = ",", encoding = 'UTF-8')
+can_t <- read.csv(text=x4, header = TRUE, sep = ",", encoding = 'UTF-8')
+
 `%>%` <- magrittr::`%>%`
-#------------------ Parameters ------------------
-# Set colors
-# https://www.w3.org/TR/css-color-3/#svg-color
-tested_color <- "purple"
-positive_color <- RColorBrewer::brewer.pal(9, "PuRd")[7]
-active_color <- "#1f77b4"
-recovered_color <- "forestgreen"
-death_color <- "#E41317"
-intensive_care_color <- "#9E0003"
-h_symptoms_color <- "#E41317"
-home_conf_color <- "#FDBBBC"
+#------------------ canada data formating ------------------
+#format dates;
+can_c$date_report<-as.Date(can_c$date_report,format="%d-%m-%y")
+can_d$date_death_report<-as.Date(can_d$date_death_report,format="%d-%m-%y")
+can_r$date_recovered<-as.Date(can_r$date_recovered,format="%d-%m-%y")
+can_t$date_testing<-as.Date(can_t$date_testing,format="%d-%m-%y")
+
+#format province labels;
+province_labelc<-c("Alberta","British Columbia","Manitoba","New Brunswick", "Newfoundland and Labrador", "Nova Scotia",
+                  "NorthWest", "Ontario","Prince Edward Island","Quebec",
+                  "Repatriated","Saskatchewan","Yukon")
+province_labeld<-c("Alberta","British Columbia","Manitoba","Newfoundland and Labrador", "Nova Scotia", "Ontario","Quebec","Saskatchewan")
+province_labelr<-c("Alberta","British Columbia","Manitoba","New Brunswick", "Newfoundland and Labrador", "Nova Scotia",
+                  "Nunavut","NorthWest", "Ontario","Prince Edward Island","Quebec","Saskatchewan","Yukon")
+
+# province_labela1<-c("AB","BC","MB","NB","NL", "NS","NW", "ON","PE","QC","SK","YT")
+# province_labela2<-c("AB","BC","MB","NB","NL", "NS","NW","NU", "ON","PE","QC","SK","YT")
+
+levels(can_c$province)<-province_labelc
+levels(can_d$province)<-province_labeld
+levels(can_r$province)<-province_labelr
+levels(can_t$province)<-province_labelr
+
+#set colour for each provinces and territories;
+teamcolour<-c("#000000","#E69F00","#800000","#CC79A7","#56B4E9","#808000","#625D5D","#1589FF","#009E73","#0000A0","#0072B2","#800080","#E56717")
+teamcolour_territory<-c("#625D5D","#1589FF","#E56717")
+teamcolour_province<-c("#000000","#E69F00","#800000","#CC79A7","#56B4E9","#808000","#009E73","#0000A0","#0072B2","#800080")
+
+#aggregate counts by date;
+can_c_daily <- can_c  %>% group_by(date_report) %>% summarise(c_daily=n()) #individual level;
+can_c_daily <- can_c_daily %>% mutate(c_cum = cumsum(c_daily)) #cumulative level;
+can_d_daily <- can_d  %>% group_by(date_death_report) %>% summarise(d_daily=n()) #individual level;
+can_d_daily <- can_d_daily %>% mutate(d_cum = cumsum(d_daily)) #cumulative level;
+can_r_daily <- can_r  %>% group_by(date_recovered) %>% summarise(r_cum=sum(cumulative_recovered, na.rm = T)) #cumulative level;
+can_t_daily <- can_t  %>% group_by(can_t$date_testing) %>% summarise(t_cum=sum(cumulative_testing, na.rm=T)) #cumulative level;
+
+#merge all data by dates in a canada dataset;
+#this data can be shared on the dashboard;
+can<-merge(can_c_daily, can_d_daily, by.x = "date_report",by.y="date_death_report",all = T)
+can<-merge(can, can_r_daily, by.x = "date_report",by.y="date_recovered",all.x = T)
+can<-merge(can, can_t_daily, by.x = "date_report", by.y="can_t$date_testing",all.x = T)
+can[is.na(can)]<-0  #give value zero for missing;
+can$a_cum<-can$c_cum - can$r_cum - can$d_cum
+
+#first date when reached 100 cases; use this to plot for trajectories;
+# can_date_100<-min(can$date_report[can$c_cum>=100],na.rm = T)
+
 
 
 `%>%` <- magrittr::`%>%`
-italy_map_region <- rnaturalearth::ne_states(country = "Italy", returnclass = "sf") %>%
-  dplyr::select(province = name, region, geometry) %>%
-  dplyr::group_by(region) %>%
-  dplyr::summarise(n = dplyr::n()) %>%
-  dplyr::left_join(italy_region %>% 
-              dplyr::filter(date == max(date)) %>%
-                dplyr::group_by(region_spatial) %>%
-                dplyr::summarise(cumulative_cases = sum(cumulative_cases)), # subseting for the most recent day
-            by = c("region" = "region_spatial"))
+#------------World data this is for the trajectory plot------------
 
+x5<-getURL("https://raw.githubusercontent.com/RamiKrispin/coronavirus-csv/master/coronavirus_dataset.csv")
 
+world <- read.csv(text=x5, header = TRUE, sep = ",", encoding = 'UTF-8')
 
-
-italy_total_last <- italy_total %>% dplyr::filter(date == max(date))
-
-
-italy_total <- italy_total %>% 
-  dplyr::arrange(date) %>%
-  dplyr::mutate(tested_daily = total_tests - dplyr::lag(total_tests, n = 1)) %>%
-  dplyr::mutate(new_cases_smooth = (daily_positive_cases +
-                                    dplyr::lag(daily_positive_cases, n = 1) +
-                                    dplyr::lag(daily_positive_cases, n = 2) +
-                                    dplyr::lag(daily_positive_cases, n = 3) +
-                                    dplyr::lag(daily_positive_cases, n = 4)) / 5)
-
-italy_total$tested_daily[1] <- italy_total$total_tests[1]
-
-
-
-
-#------------trajectory plot data prep------------
-library(coronavirus)
-data(coronavirus)
-
-df_china <- coronavirus %>% dplyr::filter(type == "confirmed", Country.Region == "China") %>%
-  dplyr::group_by(date) %>%
-  dplyr::summarise(cases = sum(cases)) %>%
-  dplyr::ungroup() %>%
-  dplyr::arrange(date) %>%
-  dplyr::mutate(china = cumsum(cases)) %>%
-  dplyr::filter(china > 100)  %>%
-  dplyr::select(-cases, -date)
-
-df_china$index <- 1:nrow(df_china)
-head(df_china)
-
-
-df_us <- coronavirus %>% dplyr::filter(type == "confirmed", Country.Region == "US") %>%
+df_us <- world %>% dplyr::filter(type == "confirmed", Country.Region == "US") %>%
   dplyr::group_by(date) %>%
   dplyr::summarise(cases = sum(cases)) %>%
   dplyr::ungroup() %>%
@@ -88,65 +107,96 @@ df_us <- coronavirus %>% dplyr::filter(type == "confirmed", Country.Region == "U
 
 
 df_us$index <- 1:nrow(df_us)
-head(df_us)
+# head(df_us)
 
-df_iran <- coronavirus %>% dplyr::filter(type == "confirmed", Country.Region == "Iran") %>%
+df_uk <- world %>% dplyr::filter(type == "confirmed", Country.Region == "United Kingdom") %>%
   dplyr::group_by(date) %>%
   dplyr::summarise(cases = sum(cases)) %>%
   dplyr::ungroup() %>%
   dplyr::arrange(date) %>%
-  dplyr::mutate(iran = cumsum(cases)) %>%
-  dplyr::filter(iran > 100)  %>%
+  dplyr::mutate(uk = cumsum(cases)) %>%
+  dplyr::filter(uk > 100)  %>%
   dplyr::select(-cases, -date)
 
-df_iran$index <- 1:nrow(df_iran)
-head(df_iran)
+df_uk$index <- 1:nrow(df_uk)
+# head(df_uk)
 
 
-df_sk <- coronavirus %>% dplyr::filter(type == "confirmed", Country.Region == "Korea, South") %>%
+df_sk <- world %>% dplyr::filter(type == "confirmed", Country.Region == "Korea, South") %>%
   dplyr::group_by(date) %>%
   dplyr::summarise(cases = sum(cases)) %>%
   dplyr::ungroup() %>%
   dplyr::arrange(date) %>%
-  dplyr::mutate(sk = cumsum(cases)) %>%
-  dplyr::filter(sk > 100)  %>%
+  dplyr::mutate(sko = cumsum(cases)) %>%
+  dplyr::filter(sko > 100)  %>%
   dplyr::select(-cases, -date)
 
 df_sk$index <- 1:nrow(df_sk)
-head(df_sk)
+# head(df_sk)
 
 
-df_spain <- coronavirus %>% dplyr::filter(type == "confirmed", Country.Region == "Spain") %>%
-  dplyr::group_by(date) %>%
-  dplyr::summarise(cases = sum(cases)) %>%
-  dplyr::ungroup() %>%
-  dplyr::arrange(date) %>%
-  dplyr::mutate(spain = cumsum(cases)) %>%
-  dplyr::filter(spain > 100)  %>%
-  dplyr::select(-cases, -date)
+`%>%` <- magrittr::`%>%`
+#------------Canada data this is for the trajectory plot------------
+c_cum<- can$c_cum[can$c_cum>100]
+df_can<-data.frame(c_cum[complete.cases(c_cum)], 1:length(c_cum[complete.cases(c_cum)]))
+names(df_can)<-c("can","index")
 
-df_spain$index <- 1:nrow(df_spain)
-head(df_spain)
+#now getting data for provinces, only those with more than 100 cases;
+#aggregate counts by date;
+can_p_c_daily <- can_c  %>% group_by(date_report,province) %>% summarise(c_daily=n()) #individual level;
+can_p_c_daily <- can_p_c_daily %>% group_by(province) %>% mutate(c_cum = cumsum(c_daily)) #cumulative level;
 
+ab_cum<- dplyr::filter(can_p_c_daily, c_cum > 100 & province=="Alberta")  %>% dplyr::select(c_cum)
+ab_cum$index <- 1:nrow(ab_cum)  
 
-df_italy <- italy_total %>% dplyr::select(date, italy = cumulative_cases) %>%
-  dplyr::filter(italy > 100) %>%
-  dplyr::select(-date)
-df_italy$index <- 1:nrow(df_italy)
-head(df_italy)
+bc_cum<- dplyr::filter(can_p_c_daily, c_cum > 100 & province=="British Columbia")  %>% dplyr::select(c_cum)
+bc_cum$index <- 1:nrow(bc_cum)  
 
-df_trajectory <- df_china %>% 
-  dplyr::left_join(df_italy, by = "index") %>%
-  dplyr::left_join(df_iran, by = "index") %>%
-  dplyr::left_join(df_sk, by = "index") %>%
+mb_cum<- dplyr::filter(can_p_c_daily, c_cum > 100 & province=="Manitoba")  %>% dplyr::select(c_cum)
+mb_cum$index <- 1:nrow(mb_cum)  
+
+nb_cum<- dplyr::filter(can_p_c_daily, c_cum > 100 & province=="New Brunswick")  %>% dplyr::select(c_cum)
+nb_cum$index <- 1:nrow(nb_cum)  
+
+nl_cum<- dplyr::filter(can_p_c_daily, c_cum > 100 & province=="Newfoundland and Labrador")  %>% dplyr::select(c_cum)
+nl_cum$index <- 1:nrow(nl_cum)  
+
+ns_cum<- dplyr::filter(can_p_c_daily, c_cum > 100 & province=="Nova Scotia")  %>% dplyr::select(c_cum)
+ns_cum$index <- 1:nrow(ns_cum)  
+
+on_cum<- dplyr::filter(can_p_c_daily, c_cum > 100 & province=="Ontario")  %>% dplyr::select(c_cum)
+on_cum$index <- 1:nrow(on_cum)  
+
+qc_cum<- dplyr::filter(can_p_c_daily, c_cum > 100 & province=="Quebec")  %>% dplyr::select(c_cum)
+qc_cum$index <- 1:nrow(qc_cum)  
+
+sk_cum<- dplyr::filter(can_p_c_daily, c_cum > 100 & province=="Saskatchewan")  %>% dplyr::select(c_cum)
+sk_cum$index <- 1:nrow(sk_cum)  
+
+df_trajectory <- df_sk %>% 
   dplyr::left_join(df_us, by = "index") %>%
-  dplyr::left_join(df_spain, by = "index")
+  dplyr::left_join(df_uk, by = "index") %>%
+  dplyr::left_join(df_can, by = "index") %>%
+  dplyr::left_join(on_cum[,2:3], by = "index") %>%
+  dplyr::left_join(qc_cum[,2:3], by = "index") %>%
+  dplyr::left_join(ab_cum[,2:3], by = "index") %>%
+  dplyr::left_join(bc_cum[,2:3], by = "index") %>%
+  dplyr::left_join(sk_cum[,2:3], by = "index") %>%
+  dplyr::left_join(nl_cum[,2:3], by = "index") %>%
+  dplyr::left_join(ns_cum[,2:3], by = "index") %>%
+  dplyr::left_join(mb_cum[,2:3], by = "index") %>%
+  dplyr::left_join(nb_cum[,2:3], by = "index")
 
+names(df_trajectory)[6:ncol(df_trajectory)]<-c("on","qc","ab","bc","sk","nl","ns","mb","nb")
 
-
-
-
-
+#------------------ Parameters ------------------
+# Set colors
+# https://www.w3.org/TR/css-color-3/#svg-color
+tested_color <- "#00008B"
+positive_color <- "#DC143C"
+active_color <- "#1E90FF"
+recovered_color <- "forestgreen"
+death_color <- "#FF0000"
 
 ```
 
@@ -158,7 +208,7 @@ Column { data-width=150 }
 -----------------------------------------------------------------------
 ### tested {.value-box}
 ```{r}
-valueBox(value = paste(format(italy_total_last$total_tests, big.mark = ","), "", sep = " "), 
+valueBox(value = paste(format(max(can$t_cum, na.rm = T), big.mark = ","), "", sep = " "), 
          caption = "Total Tested Cases", 
          icon = "fas fa-user-md", 
          color = tested_color)
@@ -169,7 +219,7 @@ valueBox(value = paste(format(italy_total_last$total_tests, big.mark = ","), "",
 ### Positive Cases {.value-box}
 
 ```{r}
-valueBox(value = paste(format(italy_total_last$cumulative_cases, big.mark = ","), "", sep = " "), 
+valueBox(value = paste(format(max(can$c_cum, na.rm = T), big.mark = ","), "", sep = " "), 
          caption = "Total Positive Cases", 
          icon = "far fa-plus-square", 
          color = positive_color)
@@ -178,7 +228,7 @@ valueBox(value = paste(format(italy_total_last$cumulative_cases, big.mark = ",")
 
 ### Active {.value-box}
 ```{r}
-valueBox(value = paste(format(italy_total_last$cumulative_positive_cases, big.mark = ","), sep = ""),
+valueBox(value = paste(format(max(can$a_cum, na.rm = T), big.mark = ","), sep = ""),
          caption = "Active Cases", 
          icon = "fas fa-ambulance",
          color = active_color)
@@ -186,35 +236,15 @@ valueBox(value = paste(format(italy_total_last$cumulative_positive_cases, big.ma
 
 ### recovered {.value-box}
 ```{r}
-valueBox(value = paste(format(italy_total_last$recovered, big.mark = ","), sep = ""),
+valueBox(value = paste(format(max(can$r_cum, na.rm = T), big.mark = ","), sep = ""),
          caption = "Recovered Cases", 
          icon = "fas fa-heartbeat", 
          color = recovered_color)
 ```
 
-### Hospitalized with Symptoms {.value-box}
-```{r}
-valueBox(value = paste(format(italy_total_last$hospitalized_with_symptoms, big.mark = ","), sep = ""),
-         caption = "Hospitalized with Symptoms", 
-         icon = "fas fa-hospital", 
-         color = h_symptoms_color)
-```
-
-### Intensive Care {.value-box}
-```{r}
-valueBox(value = paste(format(italy_total_last$intensive_care, big.mark = ","), sep = ""),
-         caption = "Intensive Care", 
-         icon = "fas fa-procedures", 
-         color = intensive_care_color)
-```
-
-
-
-
-
 ### death {.value-box}
 ```{r}
-valueBox(value = paste(format(italy_total_last$death, big.mark = ","), sep = ""),
+valueBox(value = paste(format(max(can$d_cum, na.rm = T), big.mark = ","), sep = ""),
          caption = "Death Cases", 
          icon = "", 
          color = death_color)
@@ -223,225 +253,130 @@ valueBox(value = paste(format(italy_total_last$death, big.mark = ","), sep = "")
 Column { data-width=425 }
 -----------------------------------------------------------------------
 
-### Distribution of Active Cases
-
-```{r}
-plotly::plot_ly(data = italy_total,
-        x = ~ date,
-        y = ~home_confinement, 
-        name = 'Home Confinement', 
-        fillcolor = '#FDBBBC',
-        type = 'scatter',
-        mode = 'none', 
-        stackgroup = 'one') %>%
-  plotly::add_trace( y = ~ hospitalized_with_symptoms, 
-             name = "Hospitalized with Symptoms",
-             fillcolor = '#E41317') %>%
-  plotly::add_trace(y = ~intensive_care, 
-                name = 'Intensive Care', 
-                fillcolor = '#9E0003') %>%
-  plotly::layout(title = "",
-         legend = list(x = 0.1, y = 0.9),
-         yaxis = list(title = "Number of Cases"),
-         xaxis = list(title = "Source: Italy Department of Civil Protection"),
-         hovermode = "compared")
-```
-
-
-
-### Daily New Cases
-
-```{r}
-plotly::plot_ly(data = italy_total,
-                x = ~ date,
-                y = ~ daily_positive_cases,
-                type = "scatter",
-                mode = "markers",
-                name = "Positive Cases") %>%
-  plotly::add_lines(x = ~ date, 
-                    y = ~ new_cases_smooth,
-                    line = list(color = "red", width = 3),
-                    name = "Trend Line") %>%
-  plotly::layout(title = "",
-                 legend = list(x = 0.1, y = 0.9),
-                 yaxis = list(title = "Number of Cases"),
-                 xaxis = list(title = "Using 5 days trailing moving average to calculate the trend line"),
-                 hovermode = "compare")
-  
-```
-
-
-
-
-Column { data-width=425 }
------------------------------------------------------------------------
-
 ### Overall Distribution of Cases
 
 ```{r}
-plotly::plot_ly(data = italy_total,
-        x = ~ date,
-        y = ~cumulative_positive_cases, 
+can2<-filter(can, date_report > as.Date("2020-02-29"))
+plotly::plot_ly(data = can2,
+        x = ~ date_report,
+        y = ~ a_cum, 
         name = 'Active', 
         fillcolor = '#1f77b4',
         type = 'scatter',
         mode = 'none', 
         stackgroup = 'one') %>%
-  plotly::add_trace( y = ~ death, 
+  plotly::add_trace( y = ~ d_cum, 
              name = "Death",
              fillcolor = '#E41317') %>%
-  plotly::add_trace(y = ~recovered, 
+  plotly::add_trace(y = ~ r_cum, 
             name = 'Recovered', 
             fillcolor = 'forestgreen') %>%
   plotly::layout(title = "",
          legend = list(x = 0.1, y = 0.9),
          yaxis = list(title = "Number of Cases"),
-         xaxis = list(title = "Source: Italy Department of Civil Protection"),
          hovermode = "compared")
 ```
 
+Column { data-width=425 }
+-----------------------------------------------------------------------
 
-### Trajectory Plot - Italy vs. major countries (with respect of confirmed cases)
+### Trajectory Plot on confirmed cases of Canada by provinces with more than 1000 cases
 
 ```{r}
+# `%>%` <- magrittr::`%>%`
 plotly::plot_ly(data = df_trajectory) %>%
   plotly::add_lines(x = ~ index,
-                    y = ~ china,
-                    name = "China",  line = list(width = 1)) %>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ italy,
-                    line = list(color = "red", width = 4),
-                    name = "Italy") %>%
-  plotly::add_lines(x = ~ index,
                     y = ~ us,
-                    name = "United States",  line = list(width = 1)) %>%
+                    name = "United States",  line = list(width = 1,color = "black")) %>%
   plotly::add_lines(x = ~ index,
-                    y = ~ iran,
-                    name = "Iran",  line = list(color = "orange", width = 1)) %>%
+                    y = ~ can,
+                    line = list(color = "red", width = 3),
+                    name = "Canada") %>%
   plotly::add_lines(x = ~ index,
-                    y = ~ sk,
-                    name = "South Korea",  line = list(width = 1)) %>%
+                    y = ~ uk,
+                    name = "United Kingdom",  line = list(width = 1,color = "brwnyl")) %>%
   plotly::add_lines(x = ~ index,
-                    y = ~ spain,
-                    name = "Spain") %>%
+                    y = ~ sko,
+                    name = "South Korea",  line = list(color = "orange", width = 1)) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ qc,
+                    name = "Quebec",  line = list(width = 2, color="navy")) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ on,
+                    name = "Ontario", line = list(width = 2, color="emrld")) %>%
+   plotly::add_lines(x = ~ index,
+                    y = ~ ab,
+                    name = "Alberta",  line = list(width = 2, color="pinkyl")) %>%   
+  plotly::add_lines(x = ~ index,
+                    y = ~ bc,
+                    name = "British Columbia",  line = list(width = 2, color="purple")) %>%
   plotly::layout(yaxis = list(title = "Cumulative Positive Cases",type = "log"),
                  xaxis = list(title = "Days since the total positive cases surpass 100"),
-                 legend = list(x = 0.7, y = 0.3))
+                 legend = list(x = 0.7, y = 0.1))
 
 
 ```
 
 
-Regional Level
+Ontario
 =======================================================================
 
-Column { data-width=500 }
------------------------------------------------------------------------
 
-### Total Number of Cases by Region (as of `r max(italy_region$date)`)
-
-```{r}
-italy_map_region %>% 
-  mapview::mapview(zcol = "cumulative_cases") #%>%
-  # leaflet::setView(lng =  12.49, lat = 41.9, zoom = 14)
-```
-
-Column { data-width=500 }
------------------------------------------------------------------------
-
-### Cases Distribution by Region
-
-```{r}
-italy_region %>% 
-  dplyr::filter(date == max(date)) %>% 
-  dplyr::select(region_spatial, cumulative_positive_cases, recovered, death, cumulative_cases) %>%
-  dplyr::group_by(region_spatial) %>%
-  dplyr::summarise(cumulative_positive_cases = sum(cumulative_positive_cases),
-                   recovered = sum(recovered),
-                   death = sum(death),
-                   cumulative_cases = sum(cumulative_cases)) %>%
-  dplyr::ungroup() %>%
-  dplyr::arrange(-cumulative_cases) %>%
-  dplyr::mutate(region = factor(region_spatial , levels = region_spatial)) %>%
-  plotly::plot_ly(y = ~ region, 
-          x = ~ cumulative_positive_cases, 
-          orientation = 'h',
-          text =  ~ cumulative_positive_cases,
-          textposition = 'auto',
-          type = "bar", 
-          name = "Active",
-          marker = list(color = "#1f77b4")) %>%
-  plotly::add_trace(x = ~ recovered,
-            text =  ~ recovered,
-            textposition = 'auto',
-            name = "Recovered",
-            marker = list(color = "forestgreen")) %>%
-  plotly::add_trace(x = ~ death, 
-            text =  ~ death,
-            textposition = 'auto',
-            name = "Death",
-            marker = list(color = "red")) %>%
-  plotly::layout(title = "",
-         barmode = 'stack',
-         yaxis = list(title = "Region"),
-         xaxis = list(title = "Number of Cases"),
-         hovermode = "compare",
-         legend = list(x = 0.65, y = 0.9),
-         margin =  list(
-           l = 20,
-           r = 10,
-           b = 10,
-           t = 30,
-           pad = 2
-         ))
-```
-
-Data
+Canada Data
 =======================================================================
 
 ```{r}
-italy_total %>% 
-  dplyr::select(-tested_daily, - new_cases_smooth) %>%
+`%>%` <- magrittr::`%>%`
+can[,c(1,3,5,6,7)] %>% 
   DT::datatable(rownames = FALSE,
-                colnames = c("Date", "Hospitalized with Symptoms", "Intensive Care", "Total Hospitalized", "Home Confinement", "Total Currently Positive", "New Currently Positive",
-                             "Recovered", "Death",  "Total Positive Cases", "Total Tests"),
+                colnames = c("Date","Cumulative Cases", "Cumulative Death", "Cumulative Recovered", "Cumulative Testing"),
             options = list(searchHighlight = TRUE, 
-                           pageLength = nrow(italy_total)), filter = 'top')
+                           pageLength = nrow(can)), filter = 'top')
 ```
 
 
 
 About
 =======================================================================
+**From the author**
 
-**The Coronavirus Dashboard**
+Thank you for your interest in my new data visualization project. There are many great COVID-19 Canada dashboards available online. I have compiled the following list to show some of the dashboards that inspired me to build this one. 
 
-This Covid19 Italy dashboard provides an overview of the 2019 Novel Coronavirus COVID-19 (2019-nCoV) outbreak at Italy. This dashboard is built with R using the Rmakrdown framework and can easily reproduce by others. The code behind the dashboard available [here](https://github.com/RamiKrispin/italy_dash)
+- The COVID-19 Canada Open Data Working Groups [dashboard](https://art-bd.shinyapps.io/covid19canada/) made by [Jean-Paul R. Soucy](https://twitter.com/JPSoucy) and [Isha Berry](https://twitter.com/ishaberry2), two amazing talented students from my school, DLSPH, at Univerity of Toronto.
 
-**Data**
+- The Covid19 Italy [dashboard](https://github.com/RamiKrispin/italy_dash) by [Rami Krispin](https://twitter.com/Rami_Krispin). I used Rami's [R markdown code](https://github.com/RamiKrispin/covid19Italy) for this dashboard.
 
-The input data for this dashboard are the [covis19italy](https://github.com/RamiKrispin/covid19italy) and [coronavirus](https://github.com/RamiKrispin/coronavirus) R packages (dev version). The data and dashboard are refreshed on a daily bases. 
+- The Esri Canada COVID-19 Canada [dashboard](https://resources-covid19canada.hub.arcgis.com/).
 
-**Data source**
+- The PHAC COVID-19 Canada [dashboard](https://experience.arcgis.com/experience/2f1a13ca0b29422f9b34660f0b705043/), **most accurate and reliable** info on Canadian COVID-19 epidemiology data.
 
-The raw data for the covid19italy package is pulled from Italy Department of Civil Protection, and the coronavirus package from Johns Hopkins University Center for Systems Science and Engineering (JHU CCSE)
+- The Ontario-specific COVID-19 Analysis [Website](https://howsmyflattening.ca/#/analysis) which covers detailed Ontario focused analytical information on critical care analysis, health region analysis and testing analysis. This website I believe was also built by a group of University of Toronto students.
 
-**Packages**
+- The Alberta provincial COVID-19 [dashboard](https://covid19stats.alberta.ca/).
+ 
+Using the four COVID-19 Canada Open Data Working Group's spreadsheets on cases, mortality, recovery and testing at <https://github.com/ishaberry/Covid19Canada>, I created an aggregated Canada COVID-19 daily data. You can view this data on the data page of this dash.
 
-* Dashboard interface - the [flexdashboard](https://rmarkdown.rstudio.com/flexdashboard/) package. 
-* Visualization - the [plotly](https://plot.ly/r/) package for the plots and [mapview](https://r-spatial.github.io/mapview/) package for the map 
-* Data manipulation - [dplyr](https://dplyr.tidyverse.org/), and [tidyr](https://tidyr.tidyverse.org/)
-* Tables - the [DT](https://rstudio.github.io/DT/) package
 
-**Deployment and reproducibly**
+Last but not least, I want to give a shout-out to Marc-Olivier Hétu whom I met on [twitter](https://twitter.com/suivicovid). He has been scraping public COVID-19 Canada since March and compiled an outstanding spreadsheet with graphic analysis, which he generiously shared with me, because he said he's glad that more people get to use his data to build tools. I have adopted one of Marc's special figure on this dash and I named it the Marc-Olivier figure.
 
-The dashboard was deployed to Github docs. If you wish to deploy and/or modify the dashboard on your Github account, you can apply the following steps:
 
-* Fork the dashboard [repository](https://github.com/RamiKrispin/italy_dash), or
-* Clone it and push it to your Github package
-* Here some general guidance about deployment of flexdashboard on Github page - [link](https://github.com/pbatey/flexdashboard-example)
 
-For any question or feedback, you can either open an [issue](https://github.com/RamiKrispin/italy_dash/issues) or contact me on [Twitter](https://twitter.com/Rami_Krispin).
+**Acknowledgement**
+
+ - **Data** 
+    - Canada data used in this dashboard are extracted from the data speardsheet posted by the COVID-19 Canada Open Data Working Group (https://github.com/ishaberry/Covid19Canada) lead by Jean-Paul R. Soucy and Isha Berry.
+    - US data used in this dashboard are from the R package coronavirus developed by [Rami Krispin](https://github.com/RamiKrispin/coronavirus) which is generated from the Johns Hopkins University Center for Systems Science and Engineering (JHU CCSE) Coronavirus [website](https://systems.jhu.edu/research/public-health/ncov/).
+ - **Dashboard R code**
+    - I built this dashboard using Rami Krispin's Covid19 Italy [dashboard](https://github.com/RamiKrispin/italy_dash)'s code as template. Rami's code can be found on this [github page](https://github.com/RamiKrispin/covid19Italy).
+ 
+I would not have made this bashboard if not for the work of the above team and individuals. You can find the code of this dashboard at <https://github.com/Kuan-Liu/italy_dash>. I kept Rami's orignal repository name to acknowledge the source.
+
+
+
+**Feedbacks**
+
+Please feel free to reach me at kuan.liu@mail.utoronto.ca. You can also find me on [Twitter](https://twitter.com/KuanLiu2).
+
 
 
 
