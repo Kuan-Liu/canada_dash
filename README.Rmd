@@ -40,7 +40,7 @@ Last but not least, I want to give a shout-out to Marc-Olivier Hétu whom I met 
     - I built this dashboard using Rami Krispin's Covid19 Italy [dashboard](https://github.com/RamiKrispin/italy_dash)'s code as template. Rami's code can be found on this [github page](https://github.com/RamiKrispin/covid19Italy).
     
     
-I would not have made this bashboard if not for the work of the above team and individuals. You can find the code of this dashboard at <https://github.com/Kuan-Liu/italy_dash>. I kept Rami's orignal repository name to acknowledge the source.
+I would not have made this bashboard if not for the work of the above team and individuals. You can find the code of this dashboard at <https://github.com/Kuan-Liu/canada_dash>. 
 
 
 
