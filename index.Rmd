@@ -709,7 +709,7 @@ valueBox(value = paste(format(max(on$d_cum, na.rm = T), big.mark = ","), sep = "
 ```
 
 
-Column {data-width=450} 
+Column {data-width=500} 
 -------------------------------------
 
     
@@ -752,7 +752,6 @@ fig <- plot_ly(on[on$date_report>as.Date("2020-03-01"),], x = ~ date_report, y =
 
 
 fig %>% plotly::layout(title = "",
-         legend = list(x = 0.05, y = 1),
          xaxis = list(title = "Using 5 days trailing moving average to calculate the trend lines"),
          yaxis = list(title = "Number of New Daily Cases"))
 
@@ -768,7 +767,6 @@ fig <- plot_ly(on[on$date_report>as.Date("2020-03-01"),], x = ~ date_report, y =
 
 fig %>% plotly::layout(title = "",
          xaxis = list(title = ""),
-         legend = list(x = 0.7, y = 1),
          yaxis = list(title = "Percentage change in Cases"))
 
 ```
@@ -854,7 +852,7 @@ valueBox(value = paste(format(max(qc$d_cum, na.rm = T), big.mark = ","), sep = "
 ```
 
 
-Column {data-width=450} 
+Column {data-width=500} 
 -------------------------------------
     
 ### Overall Distribution of Cases
@@ -898,7 +896,6 @@ fig <- plot_ly(qc[qc$date_report>as.Date("2020-03-01"),], x = ~ date_report, y =
 
 
 fig %>% plotly::layout(title = "",
-         legend = list(x = 0.05, y = 1),
          xaxis = list(title = "Using 5 days trailing moving average to calculate the trend lines"),
          yaxis = list(title = "Number of New Daily Cases"))
 
@@ -913,7 +910,6 @@ fig <- plot_ly(qc[qc$date_report>as.Date("2020-03-01"),], x = ~ date_report, y =
 
 fig %>% plotly::layout(title = "",
          xaxis = list(title = ""),
-         legend = list(x = 0.7, y = 1),
          yaxis = list(title = "Percentage change in Cases"))
 
 ```
@@ -924,8 +920,8 @@ Column {.tabset}
 ### Heatmaps on Cumulative Cases by Regions
 
 ```{r }
-plot_ly(qc_case_tt[qc_case_tt$date_report>as.Date("2020-02-29"),] , 
-               x=~as.factor(date_report), y=~Region, z = ~ Cases, type = "heatmap",
+qc_case_tt2<-filter(qc_case_tt, date_report>as.Date("2020-02-29") & qc_case_tt$Region !="Not Reported")
+plot_ly(qc_case_tt, x=~date_report, y=~Region, z = ~ Cases, type = "heatmap",
                colors = "YlGnBu",zmin=0, zmax=350,
                xgap=1, ygap=1) %>% layout(showlegend=FALSE,title = "",
          xaxis = list(title = "", side="top"),
@@ -937,7 +933,7 @@ plot_ly(qc_case_tt[qc_case_tt$date_report>as.Date("2020-02-29"),] ,
 
 ```{r}
 plot_ly(qc_death_tt[qc_death_tt$date_death_report>as.Date("2020-02-29"),] , 
-               x=~as.factor(date_death_report), y=~Region, z = ~ Death, type = "heatmap",
+               x=~date_death_report, y=~Region, z = ~ Death, type = "heatmap",
                colors = colorRamp(c("white","red")),zmin=0,zmax=50, xgap=1, ygap=1) %>% layout(showlegend=FALSE,title = "",
          xaxis = list(title = "", side="top"),
          yaxis = list(title = ""))
