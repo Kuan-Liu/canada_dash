@@ -44,13 +44,14 @@ cases, mortality, recovery and testing at
 Canada COVID-19 daily data. You can view this data on the data page of
 this dash.
 
-Last but not least, I want to give a shout-out to Marc-Olivier Hétu whom
-I met on [twitter](https://twitter.com/suivicovid). He has been scraping
-public COVID-19 Canada since March and compiled an outstanding
-spreadsheet with graphic analysis, which he generiously shared with me,
-because he said he’s glad that more people get to use his data to build
-tools. I have adopted one of Marc’s special figure on this dash and I
-named it the Marc-Olivier figure to carry on the legacy.
+Last but not least, I want to give a shout-out to [Marc-Olivier
+Hétu](https://twitter.com/suivicovid) whom I met on
+[twitter](https://twitter.com/suivicovid). He has been scraping public
+COVID-19 Canada since March and compiled an outstanding spreadsheet with
+graphic analysis, which he generiously shared with me, because he said
+he’s glad that more people get to use his data to build tools. I have
+adopted one of Marc’s special figure on this dash and I named it the
+Marc-Olivier figure to carry on the legacy.
 
 **Acknowledgement**
 
