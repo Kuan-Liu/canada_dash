@@ -35,6 +35,9 @@ me to build this one.
     I believe was also built by a group of University of Toronto
     students.
 
+  - [The Québec provincial COVID-19
+    dashboard](https://www.inspq.qc.ca/covid-19/donnees).
+
   - [The Alberta provincial COVID-19
     dashboard](https://covid19stats.alberta.ca/).
 
