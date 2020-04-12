@@ -8,35 +8,35 @@ There are many great COVID-19 Canada dashboards available online. I have
 compiled the following list to show some of the dashboards that inspired
 me to build this one.
 
-  - The COVID-19 Canada Open Data Working Groups
-    [dashboard](https://art-bd.shinyapps.io/covid19canada/) made by
+  - [The COVID-19 Canada Open Data Working Groups
+    dashboard](https://art-bd.shinyapps.io/covid19canada/) made by
     [Jean-Paul R. Soucy](https://twitter.com/JPSoucy) and [Isha
     Berry](https://twitter.com/ishaberry2), two amazing talented
     students from my school, DLSPH, at Univerity of Toronto.
 
-  - The Covid19 Italy
-    [dashboard](https://github.com/RamiKrispin/italy_dash) by [Rami
+  - [The Covid19 Italy
+    dashboard](https://github.com/RamiKrispin/italy_dash) by [Rami
     Krispin](https://twitter.com/Rami_Krispin). I used Rami’s [R
     markdown code](https://github.com/RamiKrispin/covid19Italy) for this
     dashboard.
 
-  - The Esri Canada COVID-19 Canada
-    [dashboard](https://resources-covid19canada.hub.arcgis.com/).
+  - [The Esri Canada COVID-19 Canada
+    dashboard](https://resources-covid19canada.hub.arcgis.com/).
 
-  - The PHAC COVID-19 Canada
-    [dashboard](https://experience.arcgis.com/experience/2f1a13ca0b29422f9b34660f0b705043/),
+  - [The PHAC COVID-19 Canada
+    dashboard](https://experience.arcgis.com/experience/2f1a13ca0b29422f9b34660f0b705043/),
     **most accurate and reliable** info on Canadian COVID-19
     epidemiology data.
 
-  - The Ontario-specific COVID-19 Analysis
-    [Website](https://howsmyflattening.ca/#/analysis) which covers
+  - [The Ontario-specific COVID-19 Analysis
+    Website](https://howsmyflattening.ca/#/analysis) which covers
     detailed Ontario focused analytical information on critical care
     analysis, health region analysis and testing analysis. This website
     I believe was also built by a group of University of Toronto
     students.
 
-  - The Alberta provincial COVID-19
-    [dashboard](https://covid19stats.alberta.ca/).
+  - [The Alberta provincial COVID-19
+    dashboard](https://covid19stats.alberta.ca/).
 
 Using the four COVID-19 Canada Open Data Working Group’s spreadsheets on
 cases, mortality, recovery and testing at
@@ -71,10 +71,9 @@ named it the Marc-Olivier figure to carry on the legacy.
         template. Rami’s code can be found on this [github
         page](https://github.com/RamiKrispin/covid19Italy).
 
-I would not have made this bashboard if not for the work of the above
-team and individuals. You can find the code of this dashboard at
-<https://github.com/Kuan-Liu/italy_dash>. I kept Rami’s orignal
-repository name to acknowledge the source.
+**I would not have made this bashboard if not for the work of the above
+team and individuals.** You can find the code of this dashboard at
+<https://github.com/Kuan-Liu/canada_dash>.
 
 **Feedbacks**
 
