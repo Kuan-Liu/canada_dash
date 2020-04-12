@@ -389,6 +389,10 @@ na.locf <- function(x) {
 qc_case_t[,2:(dim(qc_case_t)[2])]<-apply(qc_case_t[,2:(dim(qc_case_t)[2])],2,na.locf)
 
 qc_case_tt<- qc_case_t %>% pivot_longer(-date_report, names_to="Region", values_to = "Cases")
+
+qc_case_tt$Region<-factor(qc_case_tt$Region, levels = region_order[1:dim(qc_case_region)[1]])
+
+
 qc_death <- filter(can_d, province == "Quebec")  %>% group_by(date_death_report,health_region) %>% summarise(d_daily=n())
 # calculate cumulative value;
 qc_death <- qc_death %>% group_by(health_region) %>% mutate(d_cum = cumsum(d_daily)) %>% dplyr::select(-d_daily)  #cumulative level;
@@ -407,7 +411,6 @@ qc_death_tt<- qc_death_t %>% pivot_longer(-date_death_report, names_to="Region",
 
 qc_death_tt$Region<-factor(qc_death_tt$Region, levels = region_order[1:dim(qc_death_region)[1]])
 
-qc_case_tt$Region<-factor(qc_case_tt$Region, levels = region_order[1:dim(qc_case_region)[1]])
 
 ```
 
@@ -780,7 +783,7 @@ Column {.tabset}
 ```{r }
 
 plot_ly(on_case_tt[on_case_tt$date_report>as.Date("2020-02-29"),] , 
-               x=~ date_report, y=~Region, z = ~ Cases, type = "heatmap",
+               x=~date_report, y=~Region, z = ~ Cases, type = "heatmap",
                colors = "YlGnBu",zmin=0, zmax=350,
                xgap=1, ygap=1) %>% plotly::layout(showlegend=FALSE,title = "",
          xaxis = list(title = "", side="top"),
@@ -920,9 +923,7 @@ Column {.tabset}
 ### Heatmaps on Cumulative Cases by Regions
 
 ```{r }
-qc_case_tt2<-filter(qc_case_tt, date_report>as.Date("2020-02-29") & qc_case_tt$Region !="Not Reported")
-plot_ly(qc_case_tt, x=~date_report, y=~Region, z = ~ Cases, type = "heatmap",
-               colors = "YlGnBu",zmin=0, zmax=350,
+plot_ly(qc_case_tt[qc_case_tt$date_report>as.Date("2020-02-29"),], x=~date_report, y=~Region, z = ~ Cases, type = "heatmap", colors = "YlGnBu",zmin=0, zmax=350,
                xgap=1, ygap=1) %>% layout(showlegend=FALSE,title = "",
          xaxis = list(title = "", side="top"),
          yaxis = list(title = ""))
