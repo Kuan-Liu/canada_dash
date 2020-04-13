@@ -3,10 +3,10 @@
 
 ## Preview of the Dashboard (Server to be confirmed)
 
-![Summary](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/CanadaDash_Summary_pg1.JPG)
-![Toronto](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/CanadaDash_Toronto_pg2.JPG)
-![Ontario](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/CanadaDash_Ontario_pg3.JPG)
-![Quebect](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/CanadaDash_Quebec_pg4.JPG)
+![Summary](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg1.png)
+![Toronto](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg2.png)
+![Ontario](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg3.png)
+![Quebec](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg4.png)
 
 ## From the author
 
