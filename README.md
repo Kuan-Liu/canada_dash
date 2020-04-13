@@ -1,12 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-## Preview of the Dashboard (Server to be confirmed)
+## Dashboard live
 
-![Summary](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg1.png)
-![Toronto](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg2.png)
-![Ontario](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg3.png)
-![Quebec](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg4.png)
+You can view the dashboard online at
+<https://kuan-liu.shinyapps.io/canada_dash/>.
 
 ## From the author
 
@@ -94,3 +92,10 @@ team and individuals.** You can find the code of this dashboard at
 
 Please feel free to reach me at <kuan.liu@mail.utoronto.ca>. You can
 also find me on [Twitter](https://twitter.com/KuanLiu2).
+
+## Preview of the Dashboard
+
+![Summary](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg1.png)
+![Toronto](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg2.png)
+![Ontario](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg3.png)
+![Quebec](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg4.png)
