@@ -26,8 +26,7 @@ library(covid19italy) #italy data;
 library(remotes) #package to load github ;
 library(RCurl) #read data url;
 library(magrittr) #coding tool;
-library(qpcR) #data tool;
-
+# library(qpcR) #data tool;
 
 options(scipen = 999)
 # install_github("ishaberry/Covid19Canada") #COVID-19; Canada Open Data ishaberry/Covid19Canada
@@ -298,19 +297,18 @@ on_case <- on_case %>% group_by(health_region) %>% mutate(c_cum = cumsum(c_daily
 on_case_region<- filter(can_c, province == "Ontario" )  %>% group_by(health_region) %>% summarise(Freq=n())
 region_order <- unlist(on_case_region[order(on_case_region$Freq),][,1]) #save new region order by total case
 
-on_case$health_region<- factor(on_case$health_region, levels=region_order[1:dim(on_case_region)[1]])
+on_case$health_region<- factor(on_case$health_region, levels=region_order[1:nrow(on_case_region)])
 on_case_t<- on_case %>% spread(health_region,c_cum)
-f<-function(x){ifelse(is.na(x)==T,0,x)}
-on_case_t[1,2:(dim(on_case_t)[2])]<-apply(on_case_t[1,2:(dim(on_case_t)[2])], 1, f)
-na.locf <- function(x) {
-  v <- !is.na(x)
-  c(NA, x[v])[cumsum(v)+1]
-}
-on_case_t[,2:(dim(on_case_t)[2])]<-apply(on_case_t[,2:(dim(on_case_t)[2])],2,na.locf)
 
-on_case_tt<- on_case_t %>% pivot_longer(-date_report, names_to="Region", values_to = "Cases")
+for (i in 2:(ncol(on_case_t))){ if (is.na(on_case_t[1,i])==TRUE) {on_case_t[1,i]<-0}}
 
-on_case_tt$Region<-factor(on_case_tt$Region, levels = region_order[1:dim(on_case_region)[1]])
+for (j in 2:ncol(on_case_t)){on_case_t[,j]<- zoo::na.locf(on_case_t[,j])}
+on_case_tt<-on_case_t %>% gather("Region", value, -c(date_report))
+names(on_case_tt)[3]<-"Cases"
+# on_case_tt<- melt(on_case_t, id.vars=c("date_report"), variable.name = "Region",row.names())
+# on_case_tt %>% pivot_longer(-date_report, names_to="Region", values_to = "Cases")
+
+on_case_tt$Region<-factor(on_case_tt$Region, levels = region_order[1:nrow(on_case_region)])
 
 on_death <- filter(can_d, province == "Ontario")  %>% group_by(date_death_report,health_region) %>% summarise(d_daily=n())
 # calculate cumulative value;
@@ -319,16 +317,17 @@ on_death <- on_death %>% group_by(health_region) %>% mutate(d_cum = cumsum(d_dai
 on_death_region<- filter(can_d, province == "Ontario" )  %>% group_by(health_region) %>% summarise(Freq=n())
 region_order <- unlist(on_death_region[order(on_death_region$Freq),][,1]) #save new region order by total case
 
-on_death$health_region<- factor(on_death$health_region, levels=region_order[1:dim(on_death_region)[1]])
+on_death$health_region<- factor(on_death$health_region, levels=region_order[1:nrow(on_death_region)])
 on_death_t<- on_death %>% spread(health_region,d_cum)
 
-on_death_t[1,2:(dim(on_death_t)[2])]<-apply(on_death_t[1,2:(dim(on_death_t)[2])], 1, f)
+for (i in 2:(ncol(on_death_t))){ if (is.na(on_death_t[1,i])==TRUE) {on_death_t[1,i]<-0}}
 
-on_death_t[,2:(dim(on_death_t)[2])]<-apply(on_death_t[,2:(dim(on_death_t)[2])],2,na.locf)
+for (j in 2:ncol(on_death_t)){on_death_t[,j]<- zoo::na.locf(on_death_t[,j])}
 
-on_death_tt<- on_death_t %>% pivot_longer(-date_death_report, names_to="Region", values_to = "Death")
+on_death_tt<-on_death_t %>% gather("Region", value, -c(date_death_report))
+names(on_death_tt)[3]<-"Death"
 
-on_death_tt$Region<-factor(on_death_tt$Region, levels = region_order[1:dim(on_death_region)[1]])
+on_death_tt$Region<-factor(on_death_tt$Region, levels = region_order[1:nrow(on_death_region)])
 
 #------------------ creating Toronto data;  ------------------
 
@@ -399,19 +398,17 @@ qc_case <- qc_case %>% group_by(health_region) %>% mutate(c_cum = cumsum(c_daily
 qc_case_region<- filter(can_c, province == "Quebec" )  %>% group_by(health_region) %>% summarise(Freq=n())
 region_order <- unlist(qc_case_region[order(qc_case_region$Freq),][,1]) #save new region order by total case
 
-qc_case$health_region<- factor(qc_case$health_region, levels=region_order[1:dim(qc_case_region)[1]])
+qc_case$health_region<- factor(qc_case$health_region, levels=region_order[1:nrow(qc_case_region)])
 qc_case_t<- qc_case %>% spread(health_region,c_cum)
-f<-function(x){ifelse(is.na(x)==T,0,x)}
-qc_case_t[1,2:(dim(qc_case_t)[2])]<-apply(qc_case_t[1,2:(dim(qc_case_t)[2])], 1, f)
-na.locf <- function(x) {
-  v <- !is.na(x)
-  c(NA, x[v])[cumsum(v)+1]
-}
-qc_case_t[,2:(dim(qc_case_t)[2])]<-apply(qc_case_t[,2:(dim(qc_case_t)[2])],2,na.locf)
 
-qc_case_tt<- qc_case_t %>% pivot_longer(-date_report, names_to="Region", values_to = "Cases")
+for (i in 2:(ncol(qc_case_t))){ if (is.na(qc_case_t[1,i])==TRUE) {qc_case_t[1,i]<-0}}
 
-qc_case_tt$Region<-factor(qc_case_tt$Region, levels = region_order[1:dim(qc_case_region)[1]])
+for (j in 2:ncol(qc_case_t)){qc_case_t[,j]<- zoo::na.locf(qc_case_t[,j])}
+
+qc_case_tt<-qc_case_t %>% gather("Region", value, -c(date_report))
+names(qc_case_tt)[3]<-"Cases"
+
+qc_case_tt$Region<-factor(qc_case_tt$Region, levels = region_order[1:nrow(qc_case_region)])
 
 
 qc_death <- filter(can_d, province == "Quebec")  %>% group_by(date_death_report,health_region) %>% summarise(d_daily=n())
@@ -421,16 +418,17 @@ qc_death <- qc_death %>% group_by(health_region) %>% mutate(d_cum = cumsum(d_dai
 qc_death_region<- filter(can_d, province == "Quebec" )  %>% group_by(health_region) %>% summarise(Freq=n())
 region_order <- unlist(qc_death_region[order(qc_death_region$Freq),][,1]) #save new region order by total case
 
-qc_death$health_region<- factor(qc_death$health_region, levels=region_order[1:dim(qc_death_region)[1]])
+qc_death$health_region<- factor(qc_death$health_region, levels=region_order[1:nrow(qc_death_region)])
 qc_death_t<- qc_death %>% spread(health_region,d_cum)
 
-qc_death_t[1,2:(dim(qc_death_t)[2])]<-apply(qc_death_t[1,2:(dim(qc_death_t)[2])], 1, f)
+for (i in 2:(ncol(qc_death_t))){ if (is.na(qc_death_t[1,i])==TRUE) {qc_death_t[1,i]<-0}}
 
-qc_death_t[,2:(dim(qc_death_t)[2])]<-apply(qc_death_t[,2:(dim(qc_death_t)[2])],2,na.locf)
+for (j in 2:ncol(qc_death_t)){qc_death_t[,j]<- zoo::na.locf(qc_death_t[,j])}
 
-qc_death_tt<- qc_death_t %>% pivot_longer(-date_death_report, names_to="Region", values_to = "Death")
+qc_death_tt<-qc_death_t %>% gather("Region", value, -c(date_death_report))
+names(qc_death_tt)[3]<-"Death"
 
-qc_death_tt$Region<-factor(qc_death_tt$Region, levels = region_order[1:dim(qc_death_region)[1]])
+qc_death_tt$Region<-factor(qc_death_tt$Region, levels = region_order[1:nrow(qc_death_region)])
 
 
 ```
@@ -1166,7 +1164,7 @@ Thank you for your interest in my new data visualization project. There are many
 Using the four COVID-19 Canada Open Data Working Group's spreadsheets on cases, mortality, recovery and testing at <https://github.com/ishaberry/Covid19Canada>, I created an aggregated Canada COVID-19 daily data. You can view this data on the data page of this dash.
 
 
-Last but not least, I want to give a shout-out to [Marc-Olivier Hétu](https://twitter.com/suivicovid) whom I met on [twitter](https://twitter.com/suivicovid). He has been scraping public COVID-19 Canada since March and compiled an outstanding spreadsheet with graphic analysis, which he generiously shared with me, because he said he's glad that more people get to use his data to build tools. I have adopted one of Marc's special figure on this dash and I named it the Marc-Olivier figure to carry on the legacy.
+Last but not least, I want to give a shout-out to [Marc-Olivier Hétu](https://twitter.com/suivicovid) whom I met on [twitter](https://twitter.com/suivicovid). He has been scraping public COVID-19 Canada data since March and compiled an outstanding spreadsheet with graphic analysis, which he generiously shared with me, because he said he's glad that more people get to use his data to build tools. I have adopted one of Marc's special figure on this dash and I named it the Marc-Olivier figure to carry on the legacy.
 
 
 
@@ -1177,6 +1175,7 @@ Last but not least, I want to give a shout-out to [Marc-Olivier Hétu](https://t
     - US data used in this dashboard are from the R package coronavirus developed by [Rami Krispin](https://github.com/RamiKrispin/coronavirus) which is generated from the Johns Hopkins University Center for Systems Science and Engineering (JHU CCSE) Coronavirus [website](https://systems.jhu.edu/research/public-health/ncov/).
  - **Dashboard R code**
     - I built this dashboard using Rami Krispin's Covid19 Italy [dashboard](https://github.com/RamiKrispin/italy_dash)'s code as template. Rami's code can be found on this [github page](https://github.com/RamiKrispin/covid19Italy).
+ - **Special thanks** to my supervisor Dr. [Eleanor Pullenayegum](https://twitter.com/EMPullenayegum) at [Sickkids](http://www.sickkids.ca/AboutSickKids/Directory/People/P/Eleanor-Pullenayegum-staff-profile.html) for her support on all my COVID-19 projects!
  
 **I would not have made this bashboard if not for the work of the above team and individuals.** You can find the code of this dashboard at <https://github.com/Kuan-Liu/canada_dash>.
 

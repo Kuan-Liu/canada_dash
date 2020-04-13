@@ -57,11 +57,11 @@ this dash.
 Last but not least, I want to give a shout-out to [Marc-Olivier
 Hétu](https://twitter.com/suivicovid) whom I met on
 [twitter](https://twitter.com/suivicovid). He has been scraping public
-COVID-19 Canada since March and compiled an outstanding spreadsheet with
-graphic analysis, which he generiously shared with me, because he said
-he’s glad that more people get to use his data to build tools. I have
-adopted one of Marc’s special figure on this dash and I named it the
-Marc-Olivier figure to carry on the legacy.
+COVID-19 Canada data since March and compiled an outstanding spreadsheet
+with graphic analysis, which he generiously shared with me, because he
+said he’s glad that more people get to use his data to build tools. I
+have adopted one of Marc’s special figure on this dash and I named it
+the Marc-Olivier figure to carry on the legacy.
 
 **Acknowledgement**
 
@@ -81,6 +81,10 @@ Marc-Olivier figure to carry on the legacy.
         [dashboard](https://github.com/RamiKrispin/italy_dash)’s code as
         template. Rami’s code can be found on this [github
         page](https://github.com/RamiKrispin/covid19Italy).
+  - **Special thanks** to my supervisor Dr. [Eleanor
+    Pullenayegum](https://twitter.com/EMPullenayegum) at
+    [Sickkids](http://www.sickkids.ca/AboutSickKids/Directory/People/P/Eleanor-Pullenayegum-staff-profile.html)
+    for her support on all my COVID-19 projects\!
 
 **I would not have made this bashboard if not for the work of the above
 team and individuals.** You can find the code of this dashboard at
