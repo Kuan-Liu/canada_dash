@@ -6,7 +6,7 @@ output:
     social: menu
     # source_code: embed
     # orientation: rows
-    vertical_layout: fill
+    # vertical_layout: fill
     theme: flatly
     includes:
       after_body: footer.html
