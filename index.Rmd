@@ -6,7 +6,7 @@ output:
     social: menu
     # source_code: embed
     # orientation: rows
-    # vertical_layout: fill
+    vertical_layout: scroll
     theme: flatly
     includes:
       after_body: footer.html
@@ -479,7 +479,7 @@ valueBox(value = paste(format(max(can$r_cum, na.rm = T), big.mark = ","), sep = 
 ### death {.value-box}
 ```{r}
 valueBox(value = paste(format(max(can$d_cum, na.rm = T), big.mark = ","), sep = ""),
-         caption = "Death Cases", 
+         caption = "Deaths", 
          icon = "", 
          color = death_color)
 ```
@@ -710,7 +710,7 @@ valueBox(value = paste(format(max(trt$a_cum, na.rm = T), big.mark = ","), sep = 
 ### death {.value-box}
 ```{r}
 valueBox(value = paste(format(max(trt$d_cum, na.rm = T), big.mark = ","), sep = ""),
-         caption = "Death Cases", 
+         caption = "Deaths", 
          icon = "", 
          color = death_color)
 ```
@@ -893,13 +893,13 @@ valueBox(value = paste(format(max(on$r_cum, na.rm = T), big.mark = ","), sep = "
 ### death {.value-box}
 ```{r}
 valueBox(value = paste(format(max(on$d_cum, na.rm = T), big.mark = ","), sep = ""),
-         caption = "Death Cases", 
+         caption = "Deaths", 
          icon = "", 
          color = death_color)
 ```
 
 
-Column {data-width=480} 
+Column {data-width=440} 
 -------------------------------------
 
     
@@ -942,6 +942,7 @@ fig <- plot_ly(on[on$date_report>as.Date("2020-03-01"),], x = ~ date_report, y =
 
 
 fig %>% plotly::layout(title = "",
+         legend = list(x = 0.05, y = 0.95),
          xaxis = list(title = "Using 5 days trailing moving average to calculate the trend lines"),
          yaxis = list(title = "Number of New Daily Cases"))
 
@@ -956,13 +957,14 @@ fig <- plot_ly(on[on$date_report>as.Date("2020-03-01"),], x = ~ date_report, y =
 # %>%  add_trace(y = ~r_percentchange, name = '% Change Recovered', marker = list(color = 'forestgreen'), mode = 'lines+markers')
 
 fig %>% plotly::layout(title = "",
+         legend = list(x = 0.7, y = 0.95),
          xaxis = list(title = ""),
          yaxis = list(title = "Percentage change in Cases"))
 
 ```
 
 
-Column {data-width=450 .tabset} 
+Column {data-width=480} 
 -------------------------------------
 
 ### Heatmaps on Cumulative Cases by Regions
@@ -1036,13 +1038,13 @@ valueBox(value = paste(format(max(qc$r_cum, na.rm = T), big.mark = ","), sep = "
 ### death {.value-box}
 ```{r}
 valueBox(value = paste(format(max(qc$d_cum, na.rm = T), big.mark = ","), sep = ""),
-         caption = "Death Cases", 
+         caption = "Deaths", 
          icon = "", 
          color = death_color)
 ```
 
 
-Column {data-width=480} 
+Column {data-width=440} 
 -------------------------------------
     
 ### Overall Distribution of Cases
@@ -1086,6 +1088,7 @@ fig <- plot_ly(qc[qc$date_report>as.Date("2020-03-01"),], x = ~ date_report, y =
 
 
 fig %>% plotly::layout(title = "",
+         legend = list(x = 0.05, y = 0.95),
          xaxis = list(title = "Using 5 days trailing moving average to calculate the trend lines"),
          yaxis = list(title = "Number of New Daily Cases"))
 
@@ -1099,12 +1102,13 @@ fig <- plot_ly(qc[qc$date_report>as.Date("2020-03-01"),], x = ~ date_report, y =
 # %>%  add_trace(y = ~r_percentchange, name = '% Change Recovered', marker = list(color = 'forestgreen'), mode = 'lines+markers')
 
 fig %>% plotly::layout(title = "",
+         legend = list(x = 0.7, y = 0.95),
          xaxis = list(title = ""),
          yaxis = list(title = "Percentage change in Cases"))
 
 ```
 
-Column {data-width=450 .tabset} 
+Column {data-width=480} 
 -------------------------------------
 
 ### Heatmaps on Cumulative Cases by Regions
@@ -1142,6 +1146,7 @@ can_p[,c(1,2,5,6,7)] %>%
 
 About
 =======================================================================
+**Last Updated:** `r format(Sys.time(), "%b %d, %Y %X EDT")`
 
 **From the author**
 
