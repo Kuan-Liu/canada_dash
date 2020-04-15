@@ -235,7 +235,7 @@ on$c_lag[is.na(on$c_lag)]<-0
 on$d_lag[is.na(on$d_lag)]<-0
 
 on$c_percentchange<-round(on$c_daily/on$c_lag*100,1)
-on$d_percentchange<-round(on$d_daily/on$d_lag*100, 1)
+on$d_percentchange<-round(on$d_daily/on$d_lag*100,1)
 on$r_percentchange<-round(on$r_daily/on$r_lag*100,1)
 
 on <- on %>% 
@@ -1119,9 +1119,9 @@ Canada Data
 =======================================================================
 
 ```{r}
-can_p[,c(1,2,4,6,7)] %>% 
+can[,c(1,2,3,10,6,7,4)] %>% 
   DT::datatable(rownames = FALSE,
-                colnames = c("Date","Province","Cumulative Cases", "Cumulative Death", "Cumulative Recovered"), options = list(searchHighlight = TRUE, 
+                colnames = c("Date","Daily New Cases","Daily New Death","Daily New Recovered","Cumulative Cases", "Cumulative Death", "Cumulative Recovered"), options = list(searchHighlight = TRUE, 
                            pageLength = nrow(can)), filter = 'top')
 ```
 
