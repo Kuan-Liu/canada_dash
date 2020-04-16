@@ -10,6 +10,7 @@ output:
     theme: flatly
     includes:
       after_body: footer.html
+    runtime: shiny
 ---
 
 ```{r setup, echo=FALSE,results='hide',message = FALSE, warning = FALSE}
@@ -17,8 +18,8 @@ output:
 library(flexdashboard) #dashboard;
 library(shiny) #shiny app;
 library(dplyr) #data tool;
-library(plotly) #visual tool;
 library(RCurl) #read data url;
+library(plotly) #visual tool;
 
 options(scipen = 999)
 # install_github("ishaberry/Covid19Canada") #COVID-19; Canada Open Data ishaberry/Covid19Canada
@@ -1128,6 +1129,7 @@ can[,c(1,2,3,10,6,7,4)] %>%
 
 About
 =======================================================================
+**Time of last update** `r pb.date <- as.POSIXct(Sys.time()); format(pb.date, tz="America/Toronto",usetz=TRUE)`
 
 **From the author**
 
