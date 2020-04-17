@@ -75,22 +75,46 @@ the Marc-Olivier figure to carry on the legacy.
 
   - **Data**
       - Canada data used in this dashboard are extracted from the data
-        speardsheet posted by the COVID-19 Canada Open Data Working
-        Group (<https://github.com/ishaberry/Covid19Canada>) lead by
-        Jean-Paul R. Soucy and Isha Berry.
-      - US data used in this dashboard are from the R package
-        coronavirus developed by [Rami
-        Krispin](https://github.com/RamiKrispin/coronavirus) which is
+        posted by the COVID-19 Canada Open Data Working Group
+        (<https://github.com/ishaberry/Covid19Canada>) lead by
+        [Jean-Paul R. Soucy](https://twitter.com/JPSoucy) and [Isha
+        Berry](https://twitter.com/ishaberry2). Since April 1st, the
+        working group collected and reported case and mortality data
+        directly from Public Health Units. Thus, the case and mortality
+        numbers reported may be higher than those from other sources,
+        incuding the Ontario Ministry of Health. We direct readers to
+        their dashboard website, [About the data
+        section](https://art-bd.shinyapps.io/covid19canada/) for
+        details.
+          - **We want to express our sincere appreciation to all
+            contributors of the COVID-19 Canada Open Data Working
+            Group.** **Here is a list of contributors we want to pay
+            special tribute to [Isha
+            Berry](https://twitter.com/ishaberry2), [Jean-Paul R.
+            Soucy](https://twitter.com/JPSoucy), [Kamal
+            Acharya](https://twitter.com/Kamalraj_ach), [Gabrielle
+            Brankston](https://twitter.com/GBrankston), [Vinyas
+            Harish](https://twitter.com/VinyasHarish), Kathy Kornas,
+            Thivya Naganathan, Lindsay Obress, [Meghan
+            O’Neill](https://twitter.com/_MeghanONeill), [Tanya
+            Rossi](https://twitter.com/DrTanyaRossi), [Alison
+            Simmons](https://twitter.com/alisonesimmons), [Shelby
+            Sturrock](https://twitter.com/shelbysturrock), Matthew Van
+            Camp, [James E.Wright](https://twitter.com/JWright159) and
+            Wendy Xie.**
+      - World data used in this dashboard are from the R package
+        coronavirus developed by **[Rami
+        Krispin](https://github.com/RamiKrispin/coronavirus)** which is
         generated from the Johns Hopkins University Center for Systems
         Science and Engineering (JHU CCSE) Coronavirus
         [website](https://systems.jhu.edu/research/public-health/ncov/).
   - **Dashboard R code**
-      - I built this dashboard using Rami Krispin’s Covid19 Italy
-        [dashboard](https://github.com/RamiKrispin/italy_dash)’s code as
-        template. Rami’s code can be found on this [github
+      - I built this dashboard using **Rami Krispin’s Covid19 Italy
+        [dashboard](https://github.com/RamiKrispin/italy_dash)’s code**
+        as template. Rami’s code can be found on his [github
         page](https://github.com/RamiKrispin/covid19Italy).
-  - **Special thanks** to my supervisor Dr. [Eleanor
-    Pullenayegum](https://twitter.com/EMPullenayegum) at
+  - **Special thanks** to my supervisor **[Dr. Eleanor
+    Pullenayegum](https://twitter.com/EMPullenayegum)** at
     [Sickkids](http://www.sickkids.ca/AboutSickKids/Directory/People/P/Eleanor-Pullenayegum-staff-profile.html)
     for her support on all my COVID-19 projects\!
 
