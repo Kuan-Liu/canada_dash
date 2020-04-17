@@ -6,6 +6,16 @@
 You can view the dashboard online at
 <https://kuan-liu.shinyapps.io/canada_dash/>.
 
+## News
+
+I am excited to share with everyone, [Rose
+Garrett](https://twitter.com/rose_carrot), my academic sister will be
+joining me to improve this dashboard. Rose is a second year PhD student
+in Biostatistics at DLSPH, University of Toronto, also under the
+supervision of [Dr. Eleanor
+Pullenayegum](https://twitter.com/EMPullenayegum) at Sickkids. Rose will
+create new visualization figures for us. Stay tuned\!
+
 ## From the author
 
 **Thank you for your interest in my new data visualization project.**
