@@ -5,11 +5,11 @@ output:
     css: style.css
     social: menu
     # source_code: embed
-    orientation: columns
+    # orientation: columns
     vertical_layout: scroll
     theme: flatly
-includes:
-  after_body: footer.html
+    includes:
+      after_body: footer.html
 runtime: shiny
 ---
 
@@ -21,8 +21,6 @@ library(dplyr) #data tool;
 library(RCurl) #read data url;
 library(plotly) #visual tool;
 library(tibble) #scrap variable characters;
-# library(rnaturalearth) #geodata;
-# library(leaflet) #mapping;
 
 options(scipen = 999)
 
@@ -79,10 +77,6 @@ can$a_cum<-can$c_cum - can$r_cum - can$d_cum
 can$r_lag<-lag(can$r_cum)
 can$r_lag[is.na(can$r_lag)]<-0
 can$r_daily<-can$r_cum-can$r_lag
-
-#first date when reached 100 cases; use this to plot for trajectories;
-# can_date_100<-min(can$date_report[can$c_cum>=100],na.rm = T)
-
 
 
 `%>%` <- magrittr::`%>%`
@@ -298,8 +292,8 @@ recovered_color <- "forestgreen"
 death_color <- "#FF0000"
 ab_color<-"#000000"
 bc_color<-"#E69F00"
-mb_color<- "#800000"
-nb_color<- "#CC79A7"
+mb_color<-"#800000"
+nb_color<-"#CC79A7"
 nl_color<-"#56B4E9"
 ns_color<-"#808000"
 nt_color<-"#625D5D"
@@ -307,7 +301,7 @@ nu_color<-"#1589FF"
 on_color<-"#009E73"
 pe_color<-"#0000A0"
 qc_color<-"#0072B2"
-sk_color<- "#800080"
+sk_color<-"#800080"
 yt_color<-"#E56717"
 
 #canada we will use Red;
@@ -465,20 +459,21 @@ qc_death$health_region<-factor(qc_death$health_region, levels = region_order[1:n
 
 #------------------ creating map data;  ------------------
 
-# devtools::install_github("ropenscilabs/rnaturalearthdata")
-# devtools::install_github("ropensci/rnaturalearthhires")
+library(rgdal)
+library(leaflet) #mapping;
 
-# canada_region<- can_p[can_p$date_report==max(can_p$date_report),]
-# canada_region$a_cum<-canada_region$c_cum - canada_region$d_cum - canada_region$r_cum
-# names(canada_region)[4]<-"Cumulative Cases"
-# names(canada_region)[6]<-"Cumulative Deaths"
-# 
-# levels(canada_region$province)<-c("Alberta","British Columbia","Manitoba","New Brunswick", "Newfoundland and Labrador", "Nova Scotia","Nunavut","Northwest Territories", "Ontario","Prince Edward Island","Québec", "Repatriated","Saskatchewan","Yukon")
-# 
-# `%>%` <- magrittr::`%>%`
-# canada_map_region <- rnaturalearth::ne_states(country = "Canada", returnclass = "sf") %>%
-#   dplyr::select(province = name) %>%
-#   dplyr::left_join(canada_region[,c("province","Cumulative Cases","Cumulative Deaths")], by = c("province" = "province"))
+canada_prov <- rgdal::readOGR(dsn = "docs/shape/canada.geojson")
+
+canada_region<- can_p[can_p$date_report==max(can_p$date_report)&can_p$province != "Repatriated",]
+canada_region$a_cum<-canada_region$c_cum - canada_region$d_cum - canada_region$r_cum
+names(canada_region)[4]<-"Cumulative Cases"
+names(canada_region)[6]<-"Cumulative Deaths"
+
+canada_region$province<-factor(canada_region$province)
+
+levels(canada_region$province)<-c("Alberta","British Columbia","Manitoba","New Brunswick", "Newfoundland and Labrador", "Nova Scotia","Nunavut","Northwest Territories", "Ontario","Prince Edward Island","Quebec", "Saskatchewan","Yukon Territory")
+
+canada_map_region<-merge(canada_prov, canada_region[,c("province","Cumulative Cases")], by.x="name", by.y="province")
 
 #------------------ data update time;  ------------------
 
@@ -747,44 +742,40 @@ fig
 
 ```
 
+Map
+=======================================================================
 
+Column {data-width = 600}
+-----------------------------------------------------------------------
+
+### Geographic Mapping on Cumulative Cases in Canada
 
 ```{r}
 
-# Map 
-# =======================================================================
-# 
-# Column {data-width = 600}
-# -----------------------------------------------------------------------
-
-#### Geographic Mapping on Cumulative Cases in Canada
-  
 #I have trouble deploying maps, it shows on my Rstudio document but failed everytime I try deploying it to shinyapps. Will try latter midnight, when no one is access the app.
 
-# pal <- colorNumeric("viridis", NULL)
-# 
-# map<-renderLeaflet({leaflet(canada_map_region) %>%
-#   addTiles() %>%
-#   addPolygons(stroke = T, smoothFactor = 0.5, opacity = 1.0,fillOpacity = 0.6,
-#     fillColor = ~ pal(`Cumulative Cases`),weight = 1,
-#     label = ~paste0(province, ": ", formatC(`Cumulative Cases`, big.mark = ",")))%>%
-#   addLegend(pal = pal, values = ~`Cumulative Cases`, opacity = 0.6)})
-# 
-# map
+pal <- colorNumeric("viridis", NULL)
 
-# Column {data-width = 400}
-# -----------------------------------------------------------------------
-# 
-# ### Canada COVID-19 Data by Province and Territory as of `r data_date$value`
-# 
-# ```{r}
-# canada_region[canada_region$province != "Repatriated",c(2,4,9,6,7,8)] %>%
-#   DT::datatable(rownames = FALSE,
-#                 colnames = c("Region","Cumulative Cases", "Cumulative Active Cases","Cumulative Deaths", "Cumulative Recovered", "Total tests completed"), options = list(order = list(2, 'desc'), searching = FALSE), filter = 'none')
-# ```
+renderLeaflet({leaflet(canada_map_region) %>%
+  addTiles() %>%
+  addPolygons(stroke = T, smoothFactor = 0.5, opacity = 1.0,fillOpacity = 0.6,
+    fillColor = ~ pal(`Cumulative Cases`),weight = 1,
+    label = ~paste0(name, ": ", formatC(`Cumulative Cases`, big.mark = ",")))%>%
+  addLegend(pal = pal, values = ~`Cumulative Cases`, opacity = 0.6)})
+
+
 ```
 
+Column {data-width = 400}
+-----------------------------------------------------------------------
 
+### Canada COVID-19 Data by Province and Territory as of `r data_date$value`
+
+```{r}
+canada_region[,c(2,4,9,6,7,8)] %>%
+  DT::datatable(rownames = FALSE,
+                colnames = c("Region","Cumulative Cases", "Cumulative Active Cases","Cumulative Deaths", "Cumulative Recovered", "Total tests completed"), options = list(order = list(2, 'desc'), searching = FALSE), filter = 'none')
+```
 
 
 Toronto {data-orientation=rows}
@@ -844,6 +835,55 @@ plotly::plot_ly(data = trt[trt$date_report>as.Date("2020-02-29"),],
          hovermode = "compared")
 ```
 
+### Trajectory of Confirmed Cases in Toronto 
+
+```{r}
+plotly::plot_ly(data = df_trajectory_can) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ trt,
+                    name = "Toronto",  line = list(width = 4,color = "darkblue")) %>%
+  # plotly::add_lines(x = ~ index,
+  #                   y = ~ can,
+  #                   line = list(color = "red", width = 4),
+  #                   name = "Canada") %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ qc,
+                    name = "Quebec",  line = list(width = 2, color=qc_color)) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ on,
+                    name = "Ontario", line = list(width = 2, color=on_color)) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ ab,
+                    name = "Alberta",  line = list(width = 2, color=ab_color)) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ bc,
+                    name = "British Columbia",  line = list(width = 2, color=bc_color))%>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ ns,
+                    name = "Nova Scotia",  line = list(width = 2,color = ns_color)) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ sk,
+                    name = "Saskatchewan",  line = list(width = 2,color = sk_color)) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ nl,
+                    name = "Newfoundland and Labrador",  line = list(color = nl_color, width = 2))%>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ mb,
+                    name = "Manitoba",  line = list(color = mb_color, width = 2))%>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ nb,
+                    name = "New Brunswick",  line = list(color = nb_color, width = 2))%>%
+  plotly::layout(yaxis = list(title = "Cumulative Positive Cases (log-scale)",type = "log"),
+                 xaxis = list(title = "Days since the total positive cases surpass 50"))
+
+```
+
+
+
+
+Row
+-----------------------------------------------------------------------
+
 
 ### Distribution of Daily New Confirmed, Fatal and Recovered Cases
 
@@ -897,62 +937,15 @@ fig %>% plotly::layout(title = "",
 ```
 
 
-Row
------------------------------------------------------------------------
 
-### Trajectory of Confirmed Cases in Toronto 
+<!-- ### Toronto Data -->
 
-```{r}
-plotly::plot_ly(data = df_trajectory_can) %>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ trt,
-                    name = "Toronto",  line = list(width = 4,color = "darkblue")) %>%
-  # plotly::add_lines(x = ~ index,
-  #                   y = ~ can,
-  #                   line = list(color = "red", width = 4),
-  #                   name = "Canada") %>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ qc,
-                    name = "Quebec",  line = list(width = 2, color=qc_color)) %>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ on,
-                    name = "Ontario", line = list(width = 2, color=on_color)) %>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ ab,
-                    name = "Alberta",  line = list(width = 2, color=ab_color)) %>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ bc,
-                    name = "British Columbia",  line = list(width = 2, color=bc_color))%>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ ns,
-                    name = "Nova Scotia",  line = list(width = 2,color = ns_color)) %>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ sk,
-                    name = "Saskatchewan",  line = list(width = 2,color = sk_color)) %>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ nl,
-                    name = "Newfoundland and Labrador",  line = list(color = nl_color, width = 2))%>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ mb,
-                    name = "Manitoba",  line = list(color = mb_color, width = 2))%>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ nb,
-                    name = "New Brunswick",  line = list(color = nb_color, width = 2))%>%
-  plotly::layout(yaxis = list(title = "Cumulative Positive Cases (log-scale)",type = "log"),
-                 xaxis = list(title = "Days since the total positive cases surpass 50"))
+<!-- ```{r} -->
+<!-- trt[,c(1,3:6)] %>%  -->
+<!--   DT::datatable(rownames = FALSE, -->
+<!--                 colnames = c("Date","Daily Cases","Daily Deaths", "Cumulative Cases", "Cumulative Deaths"), options = list(searching = FALSE), filter = 'none') -->
 
-```
-
-
-
-### Toronto Data
-
-```{r}
-trt[,c(1,3:6)] %>% 
-  DT::datatable(rownames = FALSE,
-                colnames = c("Date","Daily Cases","Daily Deaths", "Cumulative Cases", "Cumulative Deaths"), options = list(searching = FALSE), filter = 'none')
-
-```
+<!-- ``` -->
 
 
 
@@ -1295,8 +1288,6 @@ plot_ly(qc_death[qc_death$date_death_report>as.Date("2020-02-29"),] ,
 
 Canada Data
 =======================================================================
-
-### Canada COVID-19 Data as of `r data_date$value`
 
 ```{r}
 can[,c(1,2,3,10,6,7,4)] %>% 
