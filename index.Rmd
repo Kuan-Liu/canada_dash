@@ -313,8 +313,8 @@ on <- on %>%
                                     dplyr::lag(r_daily, n = 4)) / 5)
 
 # 0. Health region data - all of this is for the heatmaps;
-hr_c <- read.csv("https://raw.githubusercontent.com/Kuan-Liu/coronavirus-csv/master/hr_c_clean.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
-hr_d <- read.csv("https://raw.githubusercontent.com/Kuan-Liu/coronavirus-csv/master/hr_d_clean.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
+hr_c <- read.csv("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_hr/cases_timeseries_hr.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
+hr_d <- read.csv("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_hr/mortality_timeseries_hr.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
 
 hr_c$date_report<-as.Date(hr_c$date_report,format="%d-%m-%y")
 hr_d$date_death_report<-as.Date(hr_d$date_death_report,format="%d-%m-%y")
@@ -412,24 +412,29 @@ region_order <- unlist(qc_death_region[order(qc_death_region$Freq),][,1]) #save 
 qc_death$health_region<-factor(qc_death$health_region, levels = region_order[1:nrow(qc_case_region)])
 
 
+#------------------ creating New bubble map data;  ------------------
 
-#------------------ creating map data;  ------------------
+# instead of using polygon maps, we will display bubble map it reads faster;
+# only information needed are the bubble centre lat and lng for each province and territory;
 
-library(rgdal)
 library(leaflet) #mapping;
-
-canada_prov <- rgdal::readOGR(dsn = "docs/shape/canada.geojson")
 
 canada_region<- can_p[can_p$date_report==max(can_p$date_report)&can_p$province != "Repatriated",]
 canada_region$a_cum<-canada_region$c_cum - canada_region$d_cum - canada_region$r_cum
-names(canada_region)[4]<-"Cumulative Cases"
-
 
 canada_region$province<-factor(canada_region$province)
 
-levels(canada_region$province)<-c("Alberta","British Columbia","Manitoba","New Brunswick", "Newfoundland and Labrador", "Nova Scotia","Nunavut","Northwest Territories", "Ontario","Prince Edward Island","Quebec", "Saskatchewan","Yukon Territory")
+canada_region$lat<-c(53.9333, 49.2827, 53.7609, 46.5653, 53.1355, 44.6820, 70.2998, 64.8255, 51.2538, 46.5107, 52.9399, 52.9399, 64.2823)
+canada_region$lng<-c(-116.5765, -123.1207,  -98.8139,  -66.4619,  -57.6604, -63.7443, -83.1076 ,-124.8457, -85.3232  ,-63.4168,  -73.5491, -106.4509, -135.0000)
 
-canada_prov<-merge(canada_prov, canada_region[,c("province","Cumulative Cases")], by.x="name", by.y="province")
+# Prepare the text for the tooltip:
+mytext <- paste(
+   canada_region$province, "<br/>",
+   "Confirmed Cases: ", canada_region$c_cum, "<br/>", 
+   "Deaths: ", canada_region$d_cum, "<br/>", 
+   "Recovered: ", canada_region$r_cum, sep="") %>%
+  lapply(htmltools::HTML)
+
 
 #------------------ data update time;  ------------------
 
@@ -684,16 +689,14 @@ Column {data-width=550}
 
 ```{r}
 
-#I have trouble deploying maps, it shows on my Rstudio document but failed everytime I try deploying it to shinyapps. Will try latter midnight, when no one is access the app.
+# Create a color palette with handmade bins.
+mybins <- c(0,100,500,1000,2000,5000,10000,20000)
+pal <- colorBin( palette="viridis", domain=canada_region$c_cum, na.color="transparent", bins=mybins)
 
-pal <- colorNumeric("viridis", NULL)
-
-renderLeaflet({leaflet(canada_prov) %>%
+renderLeaflet({leaflet(canada_region) %>%
   addTiles() %>%
-  addPolygons(stroke = T, smoothFactor = 0.5, opacity = 1.0,fillOpacity = 0.6,
-    fillColor = ~ pal(`Cumulative Cases`),weight = 1,
-    label = ~paste0(name, ": ", formatC(`Cumulative Cases`, big.mark = ",")))%>%
-  addLegend(pal = pal, values = ~`Cumulative Cases`, opacity = 0.6)})
+  setView(lat=55, lng=-100, zoom = 3) %>%
+    addCircleMarkers(~lng, ~lat, fillColor = ~pal(c_cum), fillOpacity = 0.7, color = "red",radius = ~log(c_cum)*2.5, stroke = T, weight=2,label = mytext, labelOptions = labelOptions( style = list("font-weight" = "normal", padding = "3px 8px"), textsize = "12px", direction = "auto")) %>% addLegend( pal=pal, values=~c_cum, opacity=0.9, title = "Cumulative Cases", position = "topright")})
 
 
 ```
