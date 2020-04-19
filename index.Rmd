@@ -5,7 +5,7 @@ output:
     css: style.css
     social: menu
     # source_code: embed
-    orientation: rows
+    # orientation: columns
     vertical_layout: scroll
     theme: flatly
     includes:
@@ -21,10 +21,10 @@ library(dplyr) #data tool;
 library(RCurl) #read data url;
 library(plotly) #visual tool;
 library(tibble) #scrap variable characters;
+# library(rnaturalearth) #geodata;
+# library(leaflet) #mapping;
 
 options(scipen = 999)
-# install_github("ishaberry/Covid19Canada") #COVID-19; Canada Open Data ishaberry/Covid19Canada
-# can't read the working group data from repo directly;
 
 #------------------ Read Canada data ------------------
 #read raw github data;
@@ -115,7 +115,7 @@ df_uk <- world %>% dplyr::filter(type == "confirmed", Country.Region == "United 
 df_uk$index <- 1:nrow(df_uk)
 
 
-df_sk <- world %>% dplyr::filter(type == "confirmed", Country.Region == "Korea, South") %>%
+df_sko <- world %>% dplyr::filter(type == "confirmed", Country.Region == "Korea, South") %>%
   dplyr::group_by(date) %>%
   dplyr::summarise(cases = sum(cases)) %>%
   dplyr::ungroup() %>%
@@ -124,51 +124,146 @@ df_sk <- world %>% dplyr::filter(type == "confirmed", Country.Region == "Korea, 
   dplyr::filter(sko > 100)  %>%
   dplyr::select(-cases, -date)
 
-df_sk$index <- 1:nrow(df_sk)
+df_sko$index <- 1:nrow(df_sko)
+
+df_au <- world %>% dplyr::filter(type == "confirmed", Country.Region == "Australia") %>%
+  dplyr::group_by(date) %>%
+  dplyr::summarise(cases = sum(cases)) %>%
+  dplyr::ungroup() %>%
+  dplyr::arrange(date) %>%
+  dplyr::mutate(au = cumsum(cases)) %>%
+  dplyr::filter(au > 100)  %>%
+  dplyr::select(-cases, -date)
+
+df_au$index <- 1:nrow(df_au)
+
+df_ge <- world %>% dplyr::filter(type == "confirmed", Country.Region == "Germany") %>%
+  dplyr::group_by(date) %>%
+  dplyr::summarise(cases = sum(cases)) %>%
+  dplyr::ungroup() %>%
+  dplyr::arrange(date) %>%
+  dplyr::mutate(ge = cumsum(cases)) %>%
+  dplyr::filter(ge > 100)  %>%
+  dplyr::select(-cases, -date)
+
+df_ge$index <- 1:nrow(df_ge)
+
+df_sp <- world %>% dplyr::filter(type == "confirmed", Country.Region == "Spain") %>%
+  dplyr::group_by(date) %>%
+  dplyr::summarise(cases = sum(cases)) %>%
+  dplyr::ungroup() %>%
+  dplyr::arrange(date) %>%
+  dplyr::mutate(sp = cumsum(cases)) %>%
+  dplyr::filter(sp > 100)  %>%
+  dplyr::select(-cases, -date)
+
+df_sp$index <- 1:nrow(df_sp)
 
 
-`%>%` <- magrittr::`%>%`
+df_fr <- world %>% dplyr::filter(type == "confirmed", Country.Region == "France") %>%
+  dplyr::group_by(date) %>%
+  dplyr::summarise(cases = sum(cases)) %>%
+  dplyr::ungroup() %>%
+  dplyr::arrange(date) %>%
+  dplyr::mutate(fr = cumsum(cases)) %>%
+  dplyr::filter(fr > 100)  %>%
+  dplyr::select(-cases, -date)
+
+df_fr$index <- 1:nrow(df_fr)
+
+
+df_it <- world %>% dplyr::filter(type == "confirmed", Country.Region == "Italy") %>%
+  dplyr::group_by(date) %>%
+  dplyr::summarise(cases = sum(cases)) %>%
+  dplyr::ungroup() %>%
+  dplyr::arrange(date) %>%
+  dplyr::mutate(it = cumsum(cases)) %>%
+  dplyr::filter(it > 100)  %>%
+  dplyr::select(-cases, -date)
+
+df_it$index <- 1:nrow(df_it)
+
+df_sw <- world %>% dplyr::filter(type == "confirmed", Country.Region == "Switzerland") %>%
+  dplyr::group_by(date) %>%
+  dplyr::summarise(cases = sum(cases)) %>%
+  dplyr::ungroup() %>%
+  dplyr::arrange(date) %>%
+  dplyr::mutate(sw = cumsum(cases)) %>%
+  dplyr::filter(sw > 100)  %>%
+  dplyr::select(-cases, -date)
+
+df_sw$index <- 1:nrow(df_sw)
+
+
 #------------Canada data this is for the trajectory plot------------
 c_cum<- can$c_cum[can$c_cum>100]
 df_can<-data.frame(c_cum[complete.cases(c_cum)], 1:length(c_cum[complete.cases(c_cum)]))
 names(df_can)<-c("can","index")
 
-#------------provincial data this is for the trajectory plot------------
-#now getting data for provinces, only those with more than 100 cases;
-
-ab_cum<- dplyr::filter(can_c, cumulative_cases > 100 & province=="Alberta")  %>% dplyr::select(cumulative_cases)
-ab_cum$index <- 1:nrow(ab_cum)  
-names(ab_cum)[1]<-"ab"
-
-bc_cum<- dplyr::filter(can_c, cumulative_cases > 100 & province=="British Columbia")  %>% dplyr::select(cumulative_cases)
-bc_cum$index <- 1:nrow(bc_cum)  
-names(bc_cum)[1]<-"bc"
-
-on_cum<- dplyr::filter(can_c, cumulative_cases > 100 & province=="Ontario")  %>% dplyr::select(cumulative_cases)
-on_cum$index <- 1:nrow(on_cum)  
-names(on_cum)[1]<-"on"
-
-qc_cum<- dplyr::filter(can_c, cumulative_cases > 100 & province=="Quebec")  %>% dplyr::select(cumulative_cases)
-qc_cum$index <- 1:nrow(qc_cum)  
-names(qc_cum)[1]<-"qc"
-
-
-df_trajectory <- df_sk %>% 
+df_trajectory <- df_sko %>% 
   dplyr::left_join(df_us, by = "index") %>%
   dplyr::left_join(df_uk, by = "index") %>%
   dplyr::left_join(df_can, by = "index") %>%
+  dplyr::left_join(df_ge, by = "index") %>%
+  dplyr::left_join(df_sw, by = "index") %>%
+  dplyr::left_join(df_sp, by = "index") %>%
+  dplyr::left_join(df_it, by = "index") %>%
+  dplyr::left_join(df_fr, by = "index") %>%
+  dplyr::left_join(df_au, by = "index") 
+
+#------------provincial data this is for province the trajectory plot------------
+#now getting data for provinces, only those with more than 50 cases;
+
+ab_cum<- dplyr::filter(can_c, cumulative_cases > 50 & province=="Alberta")  %>% dplyr::select(cumulative_cases)
+ab_cum$index <- 1:nrow(ab_cum)  
+names(ab_cum)[1]<-"ab"
+
+bc_cum<- dplyr::filter(can_c, cumulative_cases > 50 & province=="British Columbia")  %>% dplyr::select(cumulative_cases)
+bc_cum$index <- 1:nrow(bc_cum)  
+names(bc_cum)[1]<-"bc"
+
+on_cum<- dplyr::filter(can_c, cumulative_cases > 50 & province=="Ontario")  %>% dplyr::select(cumulative_cases)
+on_cum$index <- 1:nrow(on_cum)  
+names(on_cum)[1]<-"on"
+
+qc_cum<- dplyr::filter(can_c, cumulative_cases > 50 & province=="Quebec")  %>% dplyr::select(cumulative_cases)
+qc_cum$index <- 1:nrow(qc_cum)  
+names(qc_cum)[1]<-"qc"
+
+mb_cum<- dplyr::filter(can_c, cumulative_cases > 50 & province=="Manitoba")  %>% dplyr::select(cumulative_cases)
+mb_cum$index <- 1:nrow(mb_cum)  
+names(mb_cum)[1]<-"mb"
+
+nb_cum<- dplyr::filter(can_c, cumulative_cases > 50 & province=="New Brunswick")  %>% dplyr::select(cumulative_cases)
+nb_cum$index <- 1:nrow(nb_cum)  
+names(nb_cum)[1]<-"nb"
+
+nl_cum<- dplyr::filter(can_c, cumulative_cases > 50 & province=="Newfoundland and Labrador")  %>% dplyr::select(cumulative_cases)
+nl_cum$index <- 1:nrow(nl_cum)  
+names(nl_cum)[1]<-"nl"
+
+ns_cum<- dplyr::filter(can_c, cumulative_cases > 50 & province=="Nova Scotia")  %>% dplyr::select(cumulative_cases)
+ns_cum$index <- 1:nrow(ns_cum)  
+names(ns_cum)[1]<-"ns"
+
+sk_cum<- dplyr::filter(can_c, cumulative_cases > 50 & province=="Saskatchewan")  %>% dplyr::select(cumulative_cases)
+sk_cum$index <- 1:nrow(sk_cum)  
+names(sk_cum)[1]<-"sk"
+
+df_trajectory_can <- df_can %>% 
   dplyr::left_join(on_cum, by = "index") %>%
   dplyr::left_join(qc_cum, by = "index") %>%
   dplyr::left_join(ab_cum, by = "index") %>%
-  dplyr::left_join(bc_cum, by = "index") 
+  dplyr::left_join(bc_cum, by = "index") %>%
+  dplyr::left_join(ns_cum, by = "index") %>%
+  dplyr::left_join(sk_cum, by = "index") %>%
+  dplyr::left_join(nl_cum, by = "index") %>%
+  dplyr::left_join(mb_cum, by = "index") %>%
+  dplyr::left_join(nb_cum, by = "index") 
 
 
 `%>%` <- magrittr::`%>%`
 #------------Marc Olivier plots data prep ------------
-#aggregate counts by date, nolonger need to do my own thing thanks to the new time series data! JP life saving!;
-# can_p_daily <- can_c  %>% group_by(date_report, province) %>% summarise(c_daily=n()) #individual level;
-# can_dp_daily <- can_d  %>% group_by(date_death_report, province) %>% summarise(d_daily=n()) #individual level;
-
 can_p<-merge(can_c, can_d[,c("province","date_death_report","deaths")], 
              by.x = c("date_report","province"),
              by.y=c("date_death_report","province"), all.x = T)
@@ -179,14 +274,14 @@ can_p <- can_p  %>% group_by(province) %>% mutate(d_cum = cumsum(deaths)) #cumul
 
 can_p<-merge(can_p, can_r, 
              by.x = c("date_report","province"),
-             by.y=c("date_recovered","province"), all.x = T)
+             by.y=c("date_recovered","province"), all = T)
+can_p[is.na(can_p)]<-0 
 
 can_p<-merge(can_p, can_t[,c("date_testing","province","cumulative_testing")], 
              by.x = c("date_report","province"),
-             by.y=c("date_testing","province"), all.x = T)
+             by.y=c("date_testing","province"), all = T)
 
-for (i in 7:8){ if (is.na(can_p[1,i])==TRUE) {can_p[1,i]<-0}}
-for (j in 7:8){can_p[,j]<- zoo::na.locf(can_p[,j])}
+can_p[is.na(can_p)]<-0
 
 names(can_p)[3:8]<-c("c_daily","c_cum","d_daily","d_cum","r_cum","t_cum")
 
@@ -212,13 +307,19 @@ nu_color<-"#1589FF"
 on_color<-"#009E73"
 pe_color<-"#0000A0"
 qc_color<-"#0072B2"
-sk_color<- #800080"
+sk_color<- "#800080"
 yt_color<-"#E56717"
 
 #canada we will use Red;
-us_color<-"deepskyblue" 
-uk_color<-"springgreen" 
-sko_color<-"violet" 
+us_color<-"black" 
+sp_color<-"#ff8c00"
+it_color<-"#ec008c"
+fr_color<-"#00188f"
+ge_color<-"#bad80a"
+# uk_color<-"#9db847" 
+sw_color<-"#00bcf2"
+# au_color<-"brown"
+sko_color<-"#68217a" 
 
 
 #------------------ creating Ontario data;  ------------------
@@ -300,10 +401,10 @@ trt <- trt %>% mutate(c_cum = cumsum(c_daily)) #cumulative level;
 trt <- trt %>% mutate(d_cum = cumsum(d_daily)) #cumulative level;
 trt$a_cum <- trt$c_cum - trt$d_cum
 
-df_trt<-data.frame(trt$c_cum[trt$c_cum>100], c(1:length(trt$c_cum[trt$c_cum>100])))
+df_trt<-data.frame(trt$c_cum[trt$c_cum>50], c(1:length(trt$c_cum[trt$c_cum>50])))
 names(df_trt)<-c("trt","index")
 
-df_trajectory <- df_trajectory %>% 
+df_trajectory_can <- df_trajectory_can %>% 
   dplyr::left_join(df_trt, by = "index")
  
 #------------------ creating quebec data;  ------------------
@@ -360,6 +461,25 @@ region_order <- unlist(qc_death_region[order(qc_death_region$Freq),][,1]) #save 
 
 qc_death$health_region<-factor(qc_death$health_region, levels = region_order[1:nrow(qc_case_region)])
 
+
+
+#------------------ creating map data;  ------------------
+
+# devtools::install_github("ropenscilabs/rnaturalearthdata")
+# devtools::install_github("ropensci/rnaturalearthhires")
+# library(leafem)
+# library(mapview)
+#
+# canada_region<- can_p[can_p$date_report==max(can_p$date_report),]
+# canada_region$a_cum<-canada_region$c_cum - canada_region$d_cum - canada_region$r_cum
+# names(canada_region)[4]<-"Cumulative Cases"
+# names(canada_region)[6]<-"Cumulative Deaths"
+# 
+# levels(canada_region$province)<-c("Alberta","British Columbia","Manitoba","New Brunswick", "Newfoundland and Labrador", "Nova Scotia","Nunavut","Northwest Territories", "Ontario","Prince Edward Island","Québec", "Repatriated","Saskatchewan","Yukon")
+# 
+# canada_map_region <- rnaturalearth::ne_states(country = "Canada", returnclass = "sf") %>%
+#   dplyr::select(province = name) %>%
+#   dplyr::left_join(canada_region[,c("province","Cumulative Cases","Cumulative Deaths")], by = c("province" = "province"))
 
 ```
 
@@ -441,40 +561,50 @@ plotly::plot_ly(data = can[can$date_report > as.Date("2020-02-29"),],
          hovermode = "compared")
 ```
 
-### Trajectory of Confirmed Cases in Canada by Province (with more than 1000 cases)
+### Trajectory of Confirmed Cases in Canada Comparing to Other Countries
 
 ```{r}
-# `%>%` <- magrittr::`%>%`
+
 plotly::plot_ly(data = df_trajectory) %>%
   plotly::add_lines(x = ~ index,
-                    y = ~ us,
-                    name = "United States",  line = list(width = 2,color = us_color)) %>%
-  plotly::add_lines(x = ~ index,
                     y = ~ can,
-                    line = list(color = "red", width = 4),
-                    name = "Canada") %>%
+                    name = "Canada",  line = list(width = 4,color = "red")) %>%
   plotly::add_lines(x = ~ index,
+                    y = ~ us,
+                    line = list(color = us_color, width = 2),
+                    name = "United States") %>%
+   plotly::add_lines(x = ~ index,
+                    y = ~ sp,
+                    line = list(color = sp_color, width = 2),
+                    name = "Spain") %>%
+   plotly::add_lines(x = ~ index,
+                    y = ~ it,
+                    line = list(color = it_color, width = 2),
+                    name = "Italy") %>%
+   plotly::add_lines(x = ~ index,
+                    y = ~ fr,
+                    line = list(color = fr_color, width = 2),
+                    name = "France") %>%
+   plotly::add_lines(x = ~ index,
+                    y = ~ ge,
+                    line = list(color = "darkgreen", width = 2),
+                    name = "Germany") %>%
+   plotly::add_lines(x = ~ index,
                     y = ~ uk,
-                    name = "United Kingdom",  line = list(width = 2,color = uk_color)) %>%
-  plotly::add_lines(x = ~ index,
+                    name = "United Kingdom",  line = list(width = 2,color = "#9db847")) %>%
+   plotly::add_lines(x = ~ index,
+                    y = ~ sw,
+                    line = list(color = sw_color, width = 2),
+                    name = "Switzerlands") %>%
+   plotly::add_lines(x = ~ index,
+                    y = ~ au,
+                    line = list(color = "brown", width = 2),
+                    name = "Australia") %>%
+   plotly::add_lines(x = ~ index,
                     y = ~ sko,
                     name = "South Korea",  line = list(color = sko_color, width = 2)) %>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ qc,
-                    name = "Quebec",  line = list(width = 2, color=qc_color)) %>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ on,
-                    name = "Ontario", line = list(width = 2, color=on_color)) %>%
-   plotly::add_lines(x = ~ index,
-                    y = ~ ab,
-                    name = "Alberta",  line = list(width = 2, color=ab_color)) %>%   
-  plotly::add_lines(x = ~ index,
-                    y = ~ bc,
-                    name = "British Columbia",  line = list(width = 2, color=bc_color)) %>%
-  plotly::layout(yaxis = list(title = "Cumulative Positive Cases (log-scale)",type = "log"),
+   plotly::layout(yaxis = list(title = "Cumulative Positive Cases (log-scale)",type = "log"),
                  xaxis = list(title = "Days since the total positive cases surpass 100"))
-
-                 # legend = list(x = 0.7, y = 0.1)
 
 ```
 
@@ -575,7 +705,7 @@ fig <- fig %>% layout(
                       showgrid = FALSE),
          yaxis = list(title = "Proportion from the Total",
                       showgrid = FALSE,
-                      ticksuffix = '%'))
+                      ticksuffix = '%'),hovermode = "compared")
 fig
 
 ```
@@ -608,10 +738,33 @@ fig <- fig %>% layout(
                       showgrid = FALSE),
          yaxis = list(title = "Proportion from the Total",
                       showgrid = FALSE,
-                      ticksuffix = '%'))
+                      ticksuffix = '%'),hovermode = "compared")
 fig
 
 ```
+
+
+
+
+```{r}
+# Map #I have trouble deploying maps, it shows on my Rstudio document but failed everytime I try deploying it to shinyapps. Will try latter midnight, when no one is access the app.
+# =======================================================================
+# 
+# Column { data-width=700 }
+# -----------------------------------------------------------------------
+# 
+# ### Geographic Mapping on Cumulative Cases in Canada
+# pal <- colorNumeric("viridis", NULL)
+# 
+# renderLeaflet({leaflet(canada_map_region) %>% 
+#   addTiles() %>% 
+#   addPolygons(stroke = T, smoothFactor = 0.5, opacity = 1.0,fillOpacity = 0.6,
+#     fillColor = ~ pal(`Cumulative Cases`),weight = 1,
+#     label = ~paste0(province, ": ", formatC(`Cumulative Cases`, big.mark = ",")))%>%
+#   addLegend(pal = pal, values = ~`Cumulative Cases`, opacity = 0.6)})
+
+```
+
 
 
 Toronto {data-orientation=rows}
@@ -730,40 +883,43 @@ Row
 ### Trajectory of Confirmed Cases in Toronto 
 
 ```{r}
-# `%>%` <- magrittr::`%>%`
-plotly::plot_ly(data = df_trajectory) %>%
+plotly::plot_ly(data = df_trajectory_can) %>%
   plotly::add_lines(x = ~ index,
                     y = ~ trt,
                     name = "Toronto",  line = list(width = 4,color = "darkblue")) %>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ can,
-                    line = list(color = "red", width = 4),
-                    name = "Canada") %>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ us,
-                    name = "United States",  line = list(width = 2,color = us_color)) %>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ uk,
-                    name = "United Kingdom",  line = list(width = 2,color = uk_color)) %>%
-  plotly::add_lines(x = ~ index,
-                    y = ~ sko,
-                    name = "South Korea",  line = list(color = sko_color, width = 2)) %>%
+  # plotly::add_lines(x = ~ index,
+  #                   y = ~ can,
+  #                   line = list(color = "red", width = 4),
+  #                   name = "Canada") %>%
   plotly::add_lines(x = ~ index,
                     y = ~ qc,
                     name = "Quebec",  line = list(width = 2, color=qc_color)) %>%
   plotly::add_lines(x = ~ index,
                     y = ~ on,
                     name = "Ontario", line = list(width = 2, color=on_color)) %>%
-   plotly::add_lines(x = ~ index,
+  plotly::add_lines(x = ~ index,
                     y = ~ ab,
-                    name = "Alberta",  line = list(width = 2, color=ab_color)) %>%   
+                    name = "Alberta",  line = list(width = 2, color=ab_color)) %>%
   plotly::add_lines(x = ~ index,
                     y = ~ bc,
-                    name = "British Columbia",  line = list(width = 2, color=bc_color)) %>%
+                    name = "British Columbia",  line = list(width = 2, color=bc_color))%>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ ns,
+                    name = "Nova Scotia",  line = list(width = 2,color = ns_color)) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ sk,
+                    name = "Saskatchewan",  line = list(width = 2,color = sk_color)) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ nl,
+                    name = "Newfoundland and Labrador",  line = list(color = nl_color, width = 2))%>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ mb,
+                    name = "Manitoba",  line = list(color = mb_color, width = 2))%>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ nb,
+                    name = "New Brunswick",  line = list(color = nb_color, width = 2))%>%
   plotly::layout(yaxis = list(title = "Cumulative Positive Cases (log-scale)",type = "log"),
-                 xaxis = list(title = "Days since the total positive cases surpass 100"))
-
-                 # legend = list(x = 0.7, y = 0.1)
+                 xaxis = list(title = "Days since the total positive cases surpass 50"))
 
 ```
 
@@ -954,7 +1110,7 @@ plot_ly(on_death[on_death$date_death_report>as.Date("2020-02-29"),] ,
 ```
 
 
-Quebec
+Quebec {data-orientation=rows}
 =======================================================================
 
 Column {.sidebar data-width=620 data-padding=10}
