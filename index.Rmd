@@ -772,7 +772,7 @@ plotly::plot_ly(data = trt[trt$date_report>as.Date("2020-02-29"),],
 plotly::plot_ly(data = df_trajectory_can) %>%
   plotly::add_lines(x = ~ index,
                     y = ~ trt,
-                    name = "Toronto",  line = list(width = 4,color = "darkblue")) %>%
+                    name = "Toronto",  line = list(width = 4,color = "red")) %>%
   plotly::add_lines(x = ~ index,
                     y = ~ qc,
                     name = "Quebec",  line = list(width = 2, color=qc_color)) %>%
