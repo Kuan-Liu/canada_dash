@@ -1296,6 +1296,8 @@ plot_ly(qc_death[qc_death$date_death_report>as.Date("2020-02-29"),] ,
 Canada Data
 =======================================================================
 
+### Canada COVID-19 Data as of `r data_date$value`
+
 ```{r}
 can[,c(1,2,3,10,6,7,4)] %>% 
   DT::datatable(rownames = FALSE,
