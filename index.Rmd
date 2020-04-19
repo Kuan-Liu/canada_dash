@@ -5,12 +5,12 @@ output:
     css: style.css
     social: menu
     # source_code: embed
-    # orientation: columns
+    orientation: columns
     vertical_layout: scroll
     theme: flatly
-    includes:
-      after_body: footer.html
-    runtime: shiny
+includes:
+  after_body: footer.html
+runtime: shiny
 ---
 
 ```{r setup, echo=FALSE,results='hide',message = FALSE, warning = FALSE}
@@ -467,9 +467,7 @@ qc_death$health_region<-factor(qc_death$health_region, levels = region_order[1:n
 
 # devtools::install_github("ropenscilabs/rnaturalearthdata")
 # devtools::install_github("ropensci/rnaturalearthhires")
-# library(leafem)
-# library(mapview)
-#
+
 # canada_region<- can_p[can_p$date_report==max(can_p$date_report),]
 # canada_region$a_cum<-canada_region$c_cum - canada_region$d_cum - canada_region$r_cum
 # names(canada_region)[4]<-"Cumulative Cases"
@@ -477,12 +475,18 @@ qc_death$health_region<-factor(qc_death$health_region, levels = region_order[1:n
 # 
 # levels(canada_region$province)<-c("Alberta","British Columbia","Manitoba","New Brunswick", "Newfoundland and Labrador", "Nova Scotia","Nunavut","Northwest Territories", "Ontario","Prince Edward Island","Québec", "Repatriated","Saskatchewan","Yukon")
 # 
+# `%>%` <- magrittr::`%>%`
 # canada_map_region <- rnaturalearth::ne_states(country = "Canada", returnclass = "sf") %>%
 #   dplyr::select(province = name) %>%
 #   dplyr::left_join(canada_region[,c("province","Cumulative Cases","Cumulative Deaths")], by = c("province" = "province"))
 
-```
+#------------------ data update time;  ------------------
 
+date_update_date<-read.table("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/update_time.txt")
+data_date<-as_tibble(paste(date_update_date$V1, date_update_date$V2, date_update_date$V3))
+
+
+```
 
 
 Summary {data-orientation=rows}
@@ -745,25 +749,41 @@ fig
 
 
 
-
 ```{r}
-# Map #I have trouble deploying maps, it shows on my Rstudio document but failed everytime I try deploying it to shinyapps. Will try latter midnight, when no one is access the app.
+
+# Map 
 # =======================================================================
 # 
-# Column { data-width=700 }
+# Column {data-width = 600}
 # -----------------------------------------------------------------------
-# 
-# ### Geographic Mapping on Cumulative Cases in Canada
+
+#### Geographic Mapping on Cumulative Cases in Canada
+  
+#I have trouble deploying maps, it shows on my Rstudio document but failed everytime I try deploying it to shinyapps. Will try latter midnight, when no one is access the app.
+
 # pal <- colorNumeric("viridis", NULL)
 # 
-# renderLeaflet({leaflet(canada_map_region) %>% 
-#   addTiles() %>% 
+# map<-renderLeaflet({leaflet(canada_map_region) %>%
+#   addTiles() %>%
 #   addPolygons(stroke = T, smoothFactor = 0.5, opacity = 1.0,fillOpacity = 0.6,
 #     fillColor = ~ pal(`Cumulative Cases`),weight = 1,
 #     label = ~paste0(province, ": ", formatC(`Cumulative Cases`, big.mark = ",")))%>%
 #   addLegend(pal = pal, values = ~`Cumulative Cases`, opacity = 0.6)})
+# 
+# map
 
+# Column {data-width = 400}
+# -----------------------------------------------------------------------
+# 
+# ### Canada COVID-19 Data by Province and Territory as of `r data_date$value`
+# 
+# ```{r}
+# canada_region[canada_region$province != "Repatriated",c(2,4,9,6,7,8)] %>%
+#   DT::datatable(rownames = FALSE,
+#                 colnames = c("Region","Cumulative Cases", "Cumulative Active Cases","Cumulative Deaths", "Cumulative Recovered", "Total tests completed"), options = list(order = list(2, 'desc'), searching = FALSE), filter = 'none')
+# ```
 ```
+
 
 
 
@@ -1287,11 +1307,6 @@ can[,c(1,2,3,10,6,7,4)] %>%
 About
 =======================================================================
 
-```{r}
-date_update_date<-read.table("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/update_time.txt")
-data_date<-as_tibble(paste(date_update_date$V1, date_update_date$V2, date_update_date$V3))
-
-```
 
 **Time of last data update:** `r data_date$value`
 
