@@ -130,6 +130,7 @@ also find me on [Twitter](https://twitter.com/KuanLiu2).
 ## Preview of the Dashboard
 
 ![Summary](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg1.png)
-![Toronto](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg2.png)
-![Ontario](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg3.png)
-![Quebec](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg4.png)
+![Map](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg2.png)
+![Toronto](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg3.png)
+![Ontario](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg4.png)
+![Quebec](https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/figures/pg5.png)
