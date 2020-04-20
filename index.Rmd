@@ -10,6 +10,7 @@ output:
     theme: flatly
     includes:
       after_body: footer.html
+      in_header: google-analytics.html
 runtime: shiny
 ---
 
