@@ -26,11 +26,17 @@ library(DT) #Datatable;
 
 
 #------------------ Read Canada data ------------------
-#read raw github data;
-x1 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_prov/cases_timeseries_prov.csv") #new time series data, apr13;
-x2 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_prov/mortality_timeseries_prov.csv") #new time series data, apr13;
-x3 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/recovered_cumulative.csv")
-x4 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/testing_cumulative.csv")
+#read raw github data from the working group github;
+# x1 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_prov/cases_timeseries_prov.csv") #new time series data, apr13;
+# x2 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_prov/mortality_timeseries_prov.csv") #new time series data, apr13;
+# x3 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/recovered_cumulative.csv")
+# x4 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/testing_cumulative.csv")
+
+#read raw github data from my own github;
+x1 <- getURL("https://raw.githubusercontent.com/Kuan-Liu/coronavirus-csv/master/cases_timeseries_prov.csv") #new time series data, apr13;
+x2 <- getURL("https://raw.githubusercontent.com/Kuan-Liu/coronavirus-csv/master/mortality_timeseries_prov.csv") #new time series data, apr13;
+x3 <- getURL("https://raw.githubusercontent.com/Kuan-Liu/coronavirus-csv/master/recovered_cumulative.csv")
+x4 <- getURL("https://raw.githubusercontent.com/Kuan-Liu/coronavirus-csv/master/testing_cumulative.csv")
 
 can_c <- read.csv(text=x1, header = TRUE, sep = ",", encoding = 'UTF-8')
 can_d <- read.csv(text=x2, header = TRUE, sep = ",", encoding = 'UTF-8')
@@ -314,8 +320,11 @@ on <- on %>%
                                     dplyr::lag(r_daily, n = 4)) / 5)
 
 # 0. Health region data - all of this is for the heatmaps;
-hr_c <- read.csv("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_hr/cases_timeseries_hr.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
-hr_d <- read.csv("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_hr/mortality_timeseries_hr.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
+# hr_c <- read.csv("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_hr/cases_timeseries_hr.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
+# hr_d <- read.csv("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_hr/mortality_timeseries_hr.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
+
+hr_c <- read.csv("https://raw.githubusercontent.com/Kuan-Liu/coronavirus-csv/master/cases_timeseries_hr.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
+hr_d <- read.csv("https://raw.githubusercontent.com/Kuan-Liu/coronavirus-csv/master/mortality_timeseries_hr.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
 
 hr_c$date_report<-as.Date(hr_c$date_report,format="%d-%m-%y")
 hr_d$date_death_report<-as.Date(hr_d$date_death_report,format="%d-%m-%y")
@@ -439,7 +448,8 @@ mytext <- paste(
 
 #------------------ data update time;  ------------------
 
-date_update_date<-read.table("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/update_time.txt")
+# date_update_date<-read.table("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/update_time.txt")
+date_update_date<-read.table("https://raw.githubusercontent.com/Kuan-Liu/coronavirus-csv/master/update_time.txt")
 data_date<-as_tibble(paste(date_update_date$V1, date_update_date$V2, date_update_date$V3))
 
 
