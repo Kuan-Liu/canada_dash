@@ -1,0 +1,2209 @@
+"Country.Region","date","cases"
+"Germany","2020-01-22",0
+"Germany","2020-01-23",0
+"Germany","2020-01-24",0
+"Germany","2020-01-25",0
+"Germany","2020-01-26",0
+"Germany","2020-01-27",1
+"Germany","2020-01-28",3
+"Germany","2020-01-29",0
+"Germany","2020-01-30",0
+"Germany","2020-01-31",1
+"Germany","2020-02-01",3
+"Germany","2020-02-02",2
+"Germany","2020-02-03",2
+"Germany","2020-02-04",0
+"Germany","2020-02-05",0
+"Germany","2020-02-06",0
+"Germany","2020-02-07",1
+"Germany","2020-02-08",0
+"Germany","2020-02-09",1
+"Germany","2020-02-10",0
+"Germany","2020-02-11",2
+"Germany","2020-02-12",0
+"Germany","2020-02-13",0
+"Germany","2020-02-14",0
+"Germany","2020-02-15",0
+"Germany","2020-02-16",0
+"Germany","2020-02-17",0
+"Germany","2020-02-18",0
+"Germany","2020-02-19",0
+"Germany","2020-02-20",0
+"Germany","2020-02-21",0
+"Germany","2020-02-22",0
+"Germany","2020-02-23",0
+"Germany","2020-02-24",0
+"Germany","2020-02-25",1
+"Germany","2020-02-26",10
+"Germany","2020-02-27",19
+"Germany","2020-02-28",2
+"Germany","2020-02-29",31
+"Germany","2020-03-01",51
+"Germany","2020-03-02",29
+"Germany","2020-03-03",37
+"Germany","2020-03-04",66
+"Germany","2020-03-05",220
+"Germany","2020-03-06",188
+"Germany","2020-03-07",129
+"Germany","2020-03-08",241
+"Germany","2020-03-09",136
+"Germany","2020-03-10",281
+"Germany","2020-03-11",451
+"Germany","2020-03-12",170
+"Germany","2020-03-13",1597
+"Germany","2020-03-14",910
+"Germany","2020-03-15",1210
+"Germany","2020-03-16",1477
+"Germany","2020-03-17",1985
+"Germany","2020-03-18",3070
+"Germany","2020-03-19",2993
+"Germany","2020-03-20",4528
+"Germany","2020-03-21",2365
+"Germany","2020-03-22",2660
+"Germany","2020-03-23",4183
+"Germany","2020-03-24",3930
+"Germany","2020-03-25",4337
+"Germany","2020-03-26",6615
+"Germany","2020-03-27",6933
+"Germany","2020-03-28",6824
+"Germany","2020-03-29",4400
+"Germany","2020-03-30",4790
+"Germany","2020-03-31",4923
+"Germany","2020-04-01",6064
+"Germany","2020-04-02",6922
+"Germany","2020-04-03",6365
+"Germany","2020-04-04",4933
+"Germany","2020-04-05",4031
+"Germany","2020-04-06",3251
+"Germany","2020-04-07",4289
+"Germany","2020-04-08",5633
+"Germany","2020-04-09",4885
+"Germany","2020-04-10",3990
+"Germany","2020-04-11",2737
+"Germany","2020-04-12",2946
+"Germany","2020-04-13",2218
+"Germany","2020-04-14",1287
+"Germany","2020-04-15",3394
+"Germany","2020-04-16",2945
+"Germany","2020-04-17",3699
+"Germany","2020-04-18",1945
+"Germany","2020-04-19",1842
+"Germany","2020-04-20",1881
+"Germany","2020-04-21",1226
+"Germany","2020-04-22",2357
+"Italy","2020-01-22",0
+"Italy","2020-01-23",0
+"Italy","2020-01-24",0
+"Italy","2020-01-25",0
+"Italy","2020-01-26",0
+"Italy","2020-01-27",0
+"Italy","2020-01-28",0
+"Italy","2020-01-29",0
+"Italy","2020-01-30",0
+"Italy","2020-01-31",2
+"Italy","2020-02-01",0
+"Italy","2020-02-02",0
+"Italy","2020-02-03",0
+"Italy","2020-02-04",0
+"Italy","2020-02-05",0
+"Italy","2020-02-06",0
+"Italy","2020-02-07",1
+"Italy","2020-02-08",0
+"Italy","2020-02-09",0
+"Italy","2020-02-10",0
+"Italy","2020-02-11",0
+"Italy","2020-02-12",0
+"Italy","2020-02-13",0
+"Italy","2020-02-14",0
+"Italy","2020-02-15",0
+"Italy","2020-02-16",0
+"Italy","2020-02-17",0
+"Italy","2020-02-18",0
+"Italy","2020-02-19",0
+"Italy","2020-02-20",0
+"Italy","2020-02-21",17
+"Italy","2020-02-22",42
+"Italy","2020-02-23",93
+"Italy","2020-02-24",74
+"Italy","2020-02-25",93
+"Italy","2020-02-26",131
+"Italy","2020-02-27",202
+"Italy","2020-02-28",233
+"Italy","2020-02-29",240
+"Italy","2020-03-01",566
+"Italy","2020-03-02",342
+"Italy","2020-03-03",466
+"Italy","2020-03-04",587
+"Italy","2020-03-05",769
+"Italy","2020-03-06",778
+"Italy","2020-03-07",1247
+"Italy","2020-03-08",1492
+"Italy","2020-03-09",1797
+"Italy","2020-03-10",977
+"Italy","2020-03-11",2313
+"Italy","2020-03-12",0
+"Italy","2020-03-13",5198
+"Italy","2020-03-14",3497
+"Italy","2020-03-15",3590
+"Italy","2020-03-16",3233
+"Italy","2020-03-17",3526
+"Italy","2020-03-18",4207
+"Italy","2020-03-19",5322
+"Italy","2020-03-20",5986
+"Italy","2020-03-21",6557
+"Italy","2020-03-22",5560
+"Italy","2020-03-23",4789
+"Italy","2020-03-24",5249
+"Italy","2020-03-25",5210
+"Italy","2020-03-26",6203
+"Italy","2020-03-27",5909
+"Italy","2020-03-28",5974
+"Italy","2020-03-29",5217
+"Italy","2020-03-30",4050
+"Italy","2020-03-31",4053
+"Italy","2020-04-01",4782
+"Italy","2020-04-02",4668
+"Italy","2020-04-03",4585
+"Italy","2020-04-04",4805
+"Italy","2020-04-05",4316
+"Italy","2020-04-06",3599
+"Italy","2020-04-07",3039
+"Italy","2020-04-08",3836
+"Italy","2020-04-09",4204
+"Italy","2020-04-10",3951
+"Italy","2020-04-11",4694
+"Italy","2020-04-12",4092
+"Italy","2020-04-13",3153
+"Italy","2020-04-14",2972
+"Italy","2020-04-15",2667
+"Italy","2020-04-16",3786
+"Italy","2020-04-17",3493
+"Italy","2020-04-18",3491
+"Italy","2020-04-19",3047
+"Italy","2020-04-20",2256
+"Italy","2020-04-21",2729
+"Italy","2020-04-22",3370
+"Spain","2020-01-22",0
+"Spain","2020-01-23",0
+"Spain","2020-01-24",0
+"Spain","2020-01-25",0
+"Spain","2020-01-26",0
+"Spain","2020-01-27",0
+"Spain","2020-01-28",0
+"Spain","2020-01-29",0
+"Spain","2020-01-30",0
+"Spain","2020-01-31",0
+"Spain","2020-02-01",1
+"Spain","2020-02-02",0
+"Spain","2020-02-03",0
+"Spain","2020-02-04",0
+"Spain","2020-02-05",0
+"Spain","2020-02-06",0
+"Spain","2020-02-07",0
+"Spain","2020-02-08",0
+"Spain","2020-02-09",1
+"Spain","2020-02-10",0
+"Spain","2020-02-11",0
+"Spain","2020-02-12",0
+"Spain","2020-02-13",0
+"Spain","2020-02-14",0
+"Spain","2020-02-15",0
+"Spain","2020-02-16",0
+"Spain","2020-02-17",0
+"Spain","2020-02-18",0
+"Spain","2020-02-19",0
+"Spain","2020-02-20",0
+"Spain","2020-02-21",0
+"Spain","2020-02-22",0
+"Spain","2020-02-23",0
+"Spain","2020-02-24",0
+"Spain","2020-02-25",4
+"Spain","2020-02-26",7
+"Spain","2020-02-27",2
+"Spain","2020-02-28",17
+"Spain","2020-02-29",13
+"Spain","2020-03-01",39
+"Spain","2020-03-02",36
+"Spain","2020-03-03",45
+"Spain","2020-03-04",57
+"Spain","2020-03-05",37
+"Spain","2020-03-06",141
+"Spain","2020-03-07",100
+"Spain","2020-03-08",173
+"Spain","2020-03-09",400
+"Spain","2020-03-10",622
+"Spain","2020-03-11",582
+"Spain","2020-03-12",0
+"Spain","2020-03-13",2955
+"Spain","2020-03-14",1159
+"Spain","2020-03-15",1407
+"Spain","2020-03-16",2144
+"Spain","2020-03-17",1806
+"Spain","2020-03-18",2162
+"Spain","2020-03-19",4053
+"Spain","2020-03-20",2447
+"Spain","2020-03-21",4964
+"Spain","2020-03-22",3394
+"Spain","2020-03-23",6368
+"Spain","2020-03-24",4749
+"Spain","2020-03-25",9630
+"Spain","2020-03-26",8271
+"Spain","2020-03-27",7933
+"Spain","2020-03-28",7516
+"Spain","2020-03-29",6875
+"Spain","2020-03-30",7846
+"Spain","2020-03-31",7967
+"Spain","2020-04-01",8195
+"Spain","2020-04-02",7947
+"Spain","2020-04-03",7134
+"Spain","2020-04-04",6969
+"Spain","2020-04-05",5478
+"Spain","2020-04-06",5029
+"Spain","2020-04-07",5267
+"Spain","2020-04-08",6278
+"Spain","2020-04-09",5002
+"Spain","2020-04-10",5051
+"Spain","2020-04-11",4754
+"Spain","2020-04-12",3804
+"Spain","2020-04-13",3268
+"Spain","2020-04-14",2442
+"Spain","2020-04-15",5103
+"Spain","2020-04-16",7304
+"Spain","2020-04-17",5891
+"Spain","2020-04-18",887
+"Spain","2020-04-19",6948
+"Spain","2020-04-20",1536
+"Spain","2020-04-21",3968
+"Spain","2020-04-22",4211
+"Switzerland","2020-01-22",0
+"Switzerland","2020-01-23",0
+"Switzerland","2020-01-24",0
+"Switzerland","2020-01-25",0
+"Switzerland","2020-01-26",0
+"Switzerland","2020-01-27",0
+"Switzerland","2020-01-28",0
+"Switzerland","2020-01-29",0
+"Switzerland","2020-01-30",0
+"Switzerland","2020-01-31",0
+"Switzerland","2020-02-01",0
+"Switzerland","2020-02-02",0
+"Switzerland","2020-02-03",0
+"Switzerland","2020-02-04",0
+"Switzerland","2020-02-05",0
+"Switzerland","2020-02-06",0
+"Switzerland","2020-02-07",0
+"Switzerland","2020-02-08",0
+"Switzerland","2020-02-09",0
+"Switzerland","2020-02-10",0
+"Switzerland","2020-02-11",0
+"Switzerland","2020-02-12",0
+"Switzerland","2020-02-13",0
+"Switzerland","2020-02-14",0
+"Switzerland","2020-02-15",0
+"Switzerland","2020-02-16",0
+"Switzerland","2020-02-17",0
+"Switzerland","2020-02-18",0
+"Switzerland","2020-02-19",0
+"Switzerland","2020-02-20",0
+"Switzerland","2020-02-21",0
+"Switzerland","2020-02-22",0
+"Switzerland","2020-02-23",0
+"Switzerland","2020-02-24",0
+"Switzerland","2020-02-25",1
+"Switzerland","2020-02-26",0
+"Switzerland","2020-02-27",7
+"Switzerland","2020-02-28",0
+"Switzerland","2020-02-29",10
+"Switzerland","2020-03-01",9
+"Switzerland","2020-03-02",15
+"Switzerland","2020-03-03",14
+"Switzerland","2020-03-04",34
+"Switzerland","2020-03-05",24
+"Switzerland","2020-03-06",100
+"Switzerland","2020-03-07",54
+"Switzerland","2020-03-08",69
+"Switzerland","2020-03-09",37
+"Switzerland","2020-03-10",117
+"Switzerland","2020-03-11",161
+"Switzerland","2020-03-12",0
+"Switzerland","2020-03-13",487
+"Switzerland","2020-03-14",220
+"Switzerland","2020-03-15",841
+"Switzerland","2020-03-16",0
+"Switzerland","2020-03-17",500
+"Switzerland","2020-03-18",328
+"Switzerland","2020-03-19",1047
+"Switzerland","2020-03-20",1219
+"Switzerland","2020-03-21",1281
+"Switzerland","2020-03-22",899
+"Switzerland","2020-03-23",1321
+"Switzerland","2020-03-24",1082
+"Switzerland","2020-03-25",1020
+"Switzerland","2020-03-26",914
+"Switzerland","2020-03-27",1117
+"Switzerland","2020-03-28",1148
+"Switzerland","2020-03-29",753
+"Switzerland","2020-03-30",1093
+"Switzerland","2020-03-31",683
+"Switzerland","2020-04-01",1163
+"Switzerland","2020-04-02",1059
+"Switzerland","2020-04-03",779
+"Switzerland","2020-04-04",899
+"Switzerland","2020-04-05",595
+"Switzerland","2020-04-06",557
+"Switzerland","2020-04-07",596
+"Switzerland","2020-04-08",1027
+"Switzerland","2020-04-09",771
+"Switzerland","2020-04-10",500
+"Switzerland","2020-04-11",556
+"Switzerland","2020-04-12",308
+"Switzerland","2020-04-13",273
+"Switzerland","2020-04-14",248
+"Switzerland","2020-04-15",400
+"Switzerland","2020-04-16",396
+"Switzerland","2020-04-17",346
+"Switzerland","2020-04-18",326
+"Switzerland","2020-04-19",336
+"Switzerland","2020-04-20",204
+"Switzerland","2020-04-21",119
+"Switzerland","2020-04-22",205
+"United Kingdom","2020-01-22",0
+"United Kingdom","2020-01-23",0
+"United Kingdom","2020-01-24",0
+"United Kingdom","2020-01-25",0
+"United Kingdom","2020-01-26",0
+"United Kingdom","2020-01-27",0
+"United Kingdom","2020-01-28",0
+"United Kingdom","2020-01-29",0
+"United Kingdom","2020-01-30",0
+"United Kingdom","2020-01-31",2
+"United Kingdom","2020-02-01",0
+"United Kingdom","2020-02-02",0
+"United Kingdom","2020-02-03",0
+"United Kingdom","2020-02-04",0
+"United Kingdom","2020-02-05",0
+"United Kingdom","2020-02-06",0
+"United Kingdom","2020-02-07",1
+"United Kingdom","2020-02-08",0
+"United Kingdom","2020-02-09",0
+"United Kingdom","2020-02-10",5
+"United Kingdom","2020-02-11",0
+"United Kingdom","2020-02-12",1
+"United Kingdom","2020-02-13",0
+"United Kingdom","2020-02-14",0
+"United Kingdom","2020-02-15",0
+"United Kingdom","2020-02-16",0
+"United Kingdom","2020-02-17",0
+"United Kingdom","2020-02-18",0
+"United Kingdom","2020-02-19",0
+"United Kingdom","2020-02-20",0
+"United Kingdom","2020-02-21",0
+"United Kingdom","2020-02-22",0
+"United Kingdom","2020-02-23",0
+"United Kingdom","2020-02-24",4
+"United Kingdom","2020-02-25",0
+"United Kingdom","2020-02-26",0
+"United Kingdom","2020-02-27",2
+"United Kingdom","2020-02-28",5
+"United Kingdom","2020-02-29",3
+"United Kingdom","2020-03-01",13
+"United Kingdom","2020-03-02",4
+"United Kingdom","2020-03-03",11
+"United Kingdom","2020-03-04",34
+"United Kingdom","2020-03-05",30
+"United Kingdom","2020-03-06",48
+"United Kingdom","2020-03-07",43
+"United Kingdom","2020-03-08",67
+"United Kingdom","2020-03-09",48
+"United Kingdom","2020-03-10",61
+"United Kingdom","2020-03-11",74
+"United Kingdom","2020-03-12",0
+"United Kingdom","2020-03-13",342
+"United Kingdom","2020-03-14",342
+"United Kingdom","2020-03-15",0
+"United Kingdom","2020-03-16",403
+"United Kingdom","2020-03-17",407
+"United Kingdom","2020-03-18",676
+"United Kingdom","2020-03-19",63
+"United Kingdom","2020-03-20",1294
+"United Kingdom","2020-03-21",1035
+"United Kingdom","2020-03-22",665
+"United Kingdom","2020-03-23",967
+"United Kingdom","2020-03-24",1427
+"United Kingdom","2020-03-25",1452
+"United Kingdom","2020-03-26",2129
+"United Kingdom","2020-03-27",2885
+"United Kingdom","2020-03-28",2546
+"United Kingdom","2020-03-29",2433
+"United Kingdom","2020-03-30",2619
+"United Kingdom","2020-03-31",3009
+"United Kingdom","2020-04-01",4324
+"United Kingdom","2020-04-02",4244
+"United Kingdom","2020-04-03",4450
+"United Kingdom","2020-04-04",3735
+"United Kingdom","2020-04-05",5903
+"United Kingdom","2020-04-06",3802
+"United Kingdom","2020-04-07",3634
+"United Kingdom","2020-04-08",5491
+"United Kingdom","2020-04-09",4344
+"United Kingdom","2020-04-10",8681
+"United Kingdom","2020-04-11",5233
+"United Kingdom","2020-04-12",5288
+"United Kingdom","2020-04-13",4342
+"United Kingdom","2020-04-14",5252
+"United Kingdom","2020-04-15",4603
+"United Kingdom","2020-04-16",4617
+"United Kingdom","2020-04-17",5599
+"United Kingdom","2020-04-18",5525
+"United Kingdom","2020-04-19",5850
+"United Kingdom","2020-04-20",4676
+"United Kingdom","2020-04-21",4301
+"United Kingdom","2020-04-22",4451
+"US","2020-01-22",1
+"US","2020-01-23",0
+"US","2020-01-24",1
+"US","2020-01-25",0
+"US","2020-01-26",3
+"US","2020-01-27",0
+"US","2020-01-28",0
+"US","2020-01-29",0
+"US","2020-01-30",0
+"US","2020-01-31",2
+"US","2020-02-01",1
+"US","2020-02-02",0
+"US","2020-02-03",3
+"US","2020-02-04",0
+"US","2020-02-05",0
+"US","2020-02-06",0
+"US","2020-02-07",0
+"US","2020-02-08",0
+"US","2020-02-09",0
+"US","2020-02-10",0
+"US","2020-02-11",1
+"US","2020-02-12",0
+"US","2020-02-13",1
+"US","2020-02-14",0
+"US","2020-02-15",0
+"US","2020-02-16",0
+"US","2020-02-17",0
+"US","2020-02-18",0
+"US","2020-02-19",0
+"US","2020-02-20",0
+"US","2020-02-21",2
+"US","2020-02-22",0
+"US","2020-02-23",0
+"US","2020-02-24",36
+"US","2020-02-25",0
+"US","2020-02-26",6
+"US","2020-02-27",1
+"US","2020-02-28",2
+"US","2020-02-29",8
+"US","2020-03-01",6
+"US","2020-03-02",24
+"US","2020-03-03",20
+"US","2020-03-04",31
+"US","2020-03-05",68
+"US","2020-03-06",45
+"US","2020-03-07",140
+"US","2020-03-08",116
+"US","2020-03-09",65
+"US","2020-03-10",376
+"US","2020-03-11",322
+"US","2020-03-12",382
+"US","2020-03-13",516
+"US","2020-03-14",548
+"US","2020-03-15",772
+"US","2020-03-16",1133
+"US","2020-03-17",1789
+"US","2020-03-18",1362
+"US","2020-03-19",5964
+"US","2020-03-20",5526
+"US","2020-03-21",6327
+"US","2020-03-22",7676
+"US","2020-03-23",10567
+"US","2020-03-24",9893
+"US","2020-03-25",12042
+"US","2020-03-26",18058
+"US","2020-03-27",17821
+"US","2020-03-28",19808
+"US","2020-03-29",19444
+"US","2020-03-30",20922
+"US","2020-03-31",26341
+"US","2020-04-01",25070
+"US","2020-04-02",30380
+"US","2020-04-03",31745
+"US","2020-04-04",33283
+"US","2020-04-05",28152
+"US","2020-04-06",29515
+"US","2020-04-07",30804
+"US","2020-04-08",31533
+"US","2020-04-09",34126
+"US","2020-04-10",33755
+"US","2020-04-11",29861
+"US","2020-04-12",28917
+"US","2020-04-13",25306
+"US","2020-04-14",27051
+"US","2020-04-15",28680
+"US","2020-04-16",31242
+"US","2020-04-17",32114
+"US","2020-04-18",32491
+"US","2020-04-19",26612
+"US","2020-04-20",25517
+"US","2020-04-21",27710
+"US","2020-04-22",27639
+"United Kingdom","2020-01-22",0
+"United Kingdom","2020-01-23",0
+"United Kingdom","2020-01-24",0
+"United Kingdom","2020-01-25",0
+"United Kingdom","2020-01-26",0
+"United Kingdom","2020-01-27",0
+"United Kingdom","2020-01-28",0
+"United Kingdom","2020-01-29",0
+"United Kingdom","2020-01-30",0
+"United Kingdom","2020-01-31",0
+"United Kingdom","2020-02-01",0
+"United Kingdom","2020-02-02",0
+"United Kingdom","2020-02-03",0
+"United Kingdom","2020-02-04",0
+"United Kingdom","2020-02-05",0
+"United Kingdom","2020-02-06",0
+"United Kingdom","2020-02-07",0
+"United Kingdom","2020-02-08",0
+"United Kingdom","2020-02-09",0
+"United Kingdom","2020-02-10",0
+"United Kingdom","2020-02-11",0
+"United Kingdom","2020-02-12",0
+"United Kingdom","2020-02-13",0
+"United Kingdom","2020-02-14",0
+"United Kingdom","2020-02-15",0
+"United Kingdom","2020-02-16",0
+"United Kingdom","2020-02-17",0
+"United Kingdom","2020-02-18",0
+"United Kingdom","2020-02-19",0
+"United Kingdom","2020-02-20",0
+"United Kingdom","2020-02-21",0
+"United Kingdom","2020-02-22",0
+"United Kingdom","2020-02-23",0
+"United Kingdom","2020-02-24",0
+"United Kingdom","2020-02-25",0
+"United Kingdom","2020-02-26",0
+"United Kingdom","2020-02-27",0
+"United Kingdom","2020-02-28",0
+"United Kingdom","2020-02-29",0
+"United Kingdom","2020-03-01",0
+"United Kingdom","2020-03-02",0
+"United Kingdom","2020-03-03",0
+"United Kingdom","2020-03-04",0
+"United Kingdom","2020-03-05",0
+"United Kingdom","2020-03-06",0
+"United Kingdom","2020-03-07",0
+"United Kingdom","2020-03-08",0
+"United Kingdom","2020-03-09",0
+"United Kingdom","2020-03-10",0
+"United Kingdom","2020-03-11",0
+"United Kingdom","2020-03-12",0
+"United Kingdom","2020-03-13",0
+"United Kingdom","2020-03-14",0
+"United Kingdom","2020-03-15",0
+"United Kingdom","2020-03-16",0
+"United Kingdom","2020-03-17",0
+"United Kingdom","2020-03-18",0
+"United Kingdom","2020-03-19",0
+"United Kingdom","2020-03-20",0
+"United Kingdom","2020-03-21",0
+"United Kingdom","2020-03-22",0
+"United Kingdom","2020-03-23",0
+"United Kingdom","2020-03-24",0
+"United Kingdom","2020-03-25",0
+"United Kingdom","2020-03-26",0
+"United Kingdom","2020-03-27",0
+"United Kingdom","2020-03-28",2
+"United Kingdom","2020-03-29",0
+"United Kingdom","2020-03-30",0
+"United Kingdom","2020-03-31",0
+"United Kingdom","2020-04-01",0
+"United Kingdom","2020-04-02",1
+"United Kingdom","2020-04-03",0
+"United Kingdom","2020-04-04",0
+"United Kingdom","2020-04-05",0
+"United Kingdom","2020-04-06",0
+"United Kingdom","2020-04-07",0
+"United Kingdom","2020-04-08",0
+"United Kingdom","2020-04-09",0
+"United Kingdom","2020-04-10",0
+"United Kingdom","2020-04-11",0
+"United Kingdom","2020-04-12",0
+"United Kingdom","2020-04-13",0
+"United Kingdom","2020-04-14",0
+"United Kingdom","2020-04-15",0
+"United Kingdom","2020-04-16",0
+"United Kingdom","2020-04-17",0
+"United Kingdom","2020-04-18",0
+"United Kingdom","2020-04-19",0
+"United Kingdom","2020-04-20",0
+"United Kingdom","2020-04-21",0
+"United Kingdom","2020-04-22",0
+"Australia","2020-01-22",0
+"Australia","2020-01-23",0
+"Australia","2020-01-24",0
+"Australia","2020-01-25",0
+"Australia","2020-01-26",0
+"Australia","2020-01-27",0
+"Australia","2020-01-28",0
+"Australia","2020-01-29",0
+"Australia","2020-01-30",0
+"Australia","2020-01-31",0
+"Australia","2020-02-01",0
+"Australia","2020-02-02",0
+"Australia","2020-02-03",0
+"Australia","2020-02-04",0
+"Australia","2020-02-05",0
+"Australia","2020-02-06",0
+"Australia","2020-02-07",0
+"Australia","2020-02-08",0
+"Australia","2020-02-09",0
+"Australia","2020-02-10",0
+"Australia","2020-02-11",0
+"Australia","2020-02-12",0
+"Australia","2020-02-13",0
+"Australia","2020-02-14",0
+"Australia","2020-02-15",0
+"Australia","2020-02-16",0
+"Australia","2020-02-17",0
+"Australia","2020-02-18",0
+"Australia","2020-02-19",0
+"Australia","2020-02-20",0
+"Australia","2020-02-21",0
+"Australia","2020-02-22",0
+"Australia","2020-02-23",0
+"Australia","2020-02-24",0
+"Australia","2020-02-25",0
+"Australia","2020-02-26",0
+"Australia","2020-02-27",0
+"Australia","2020-02-28",0
+"Australia","2020-02-29",0
+"Australia","2020-03-01",0
+"Australia","2020-03-02",0
+"Australia","2020-03-03",0
+"Australia","2020-03-04",0
+"Australia","2020-03-05",0
+"Australia","2020-03-06",0
+"Australia","2020-03-07",0
+"Australia","2020-03-08",0
+"Australia","2020-03-09",0
+"Australia","2020-03-10",0
+"Australia","2020-03-11",0
+"Australia","2020-03-12",0
+"Australia","2020-03-13",1
+"Australia","2020-03-14",0
+"Australia","2020-03-15",0
+"Australia","2020-03-16",1
+"Australia","2020-03-17",0
+"Australia","2020-03-18",1
+"Australia","2020-03-19",1
+"Australia","2020-03-20",2
+"Australia","2020-03-21",3
+"Australia","2020-03-22",10
+"Australia","2020-03-23",13
+"Australia","2020-03-24",7
+"Australia","2020-03-25",0
+"Australia","2020-03-26",14
+"Australia","2020-03-27",9
+"Australia","2020-03-28",9
+"Australia","2020-03-29",6
+"Australia","2020-03-30",1
+"Australia","2020-03-31",2
+"Australia","2020-04-01",4
+"Australia","2020-04-02",3
+"Australia","2020-04-03",4
+"Australia","2020-04-04",2
+"Australia","2020-04-05",3
+"Australia","2020-04-06",0
+"Australia","2020-04-07",0
+"Australia","2020-04-08",3
+"Australia","2020-04-09",1
+"Australia","2020-04-10",3
+"Australia","2020-04-11",0
+"Australia","2020-04-12",0
+"Australia","2020-04-13",-1
+"Australia","2020-04-14",1
+"Australia","2020-04-15",0
+"Australia","2020-04-16",0
+"Australia","2020-04-17",0
+"Australia","2020-04-18",0
+"Australia","2020-04-19",0
+"Australia","2020-04-20",0
+"Australia","2020-04-21",0
+"Australia","2020-04-22",0
+"United Kingdom","2020-01-22",0
+"United Kingdom","2020-01-23",0
+"United Kingdom","2020-01-24",0
+"United Kingdom","2020-01-25",0
+"United Kingdom","2020-01-26",0
+"United Kingdom","2020-01-27",0
+"United Kingdom","2020-01-28",0
+"United Kingdom","2020-01-29",0
+"United Kingdom","2020-01-30",0
+"United Kingdom","2020-01-31",0
+"United Kingdom","2020-02-01",0
+"United Kingdom","2020-02-02",0
+"United Kingdom","2020-02-03",0
+"United Kingdom","2020-02-04",0
+"United Kingdom","2020-02-05",0
+"United Kingdom","2020-02-06",0
+"United Kingdom","2020-02-07",0
+"United Kingdom","2020-02-08",0
+"United Kingdom","2020-02-09",0
+"United Kingdom","2020-02-10",0
+"United Kingdom","2020-02-11",0
+"United Kingdom","2020-02-12",0
+"United Kingdom","2020-02-13",0
+"United Kingdom","2020-02-14",0
+"United Kingdom","2020-02-15",0
+"United Kingdom","2020-02-16",0
+"United Kingdom","2020-02-17",0
+"United Kingdom","2020-02-18",0
+"United Kingdom","2020-02-19",0
+"United Kingdom","2020-02-20",0
+"United Kingdom","2020-02-21",0
+"United Kingdom","2020-02-22",0
+"United Kingdom","2020-02-23",0
+"United Kingdom","2020-02-24",0
+"United Kingdom","2020-02-25",0
+"United Kingdom","2020-02-26",0
+"United Kingdom","2020-02-27",0
+"United Kingdom","2020-02-28",0
+"United Kingdom","2020-02-29",0
+"United Kingdom","2020-03-01",0
+"United Kingdom","2020-03-02",0
+"United Kingdom","2020-03-03",0
+"United Kingdom","2020-03-04",0
+"United Kingdom","2020-03-05",0
+"United Kingdom","2020-03-06",0
+"United Kingdom","2020-03-07",0
+"United Kingdom","2020-03-08",0
+"United Kingdom","2020-03-09",0
+"United Kingdom","2020-03-10",0
+"United Kingdom","2020-03-11",0
+"United Kingdom","2020-03-12",0
+"United Kingdom","2020-03-13",0
+"United Kingdom","2020-03-14",0
+"United Kingdom","2020-03-15",0
+"United Kingdom","2020-03-16",0
+"United Kingdom","2020-03-17",0
+"United Kingdom","2020-03-18",0
+"United Kingdom","2020-03-19",2
+"United Kingdom","2020-03-20",0
+"United Kingdom","2020-03-21",0
+"United Kingdom","2020-03-22",4
+"United Kingdom","2020-03-23",0
+"United Kingdom","2020-03-24",0
+"United Kingdom","2020-03-25",1
+"United Kingdom","2020-03-26",8
+"United Kingdom","2020-03-27",2
+"United Kingdom","2020-03-28",0
+"United Kingdom","2020-03-29",5
+"United Kingdom","2020-03-30",5
+"United Kingdom","2020-03-31",5
+"United Kingdom","2020-04-01",0
+"United Kingdom","2020-04-02",3
+"United Kingdom","2020-04-03",0
+"United Kingdom","2020-04-04",0
+"United Kingdom","2020-04-05",2
+"United Kingdom","2020-04-06",2
+"United Kingdom","2020-04-07",0
+"United Kingdom","2020-04-08",0
+"United Kingdom","2020-04-09",9
+"United Kingdom","2020-04-10",0
+"United Kingdom","2020-04-11",0
+"United Kingdom","2020-04-12",9
+"United Kingdom","2020-04-13",0
+"United Kingdom","2020-04-14",0
+"United Kingdom","2020-04-15",24
+"United Kingdom","2020-04-16",0
+"United Kingdom","2020-04-17",2
+"United Kingdom","2020-04-18",0
+"United Kingdom","2020-04-19",3
+"United Kingdom","2020-04-20",0
+"United Kingdom","2020-04-21",0
+"United Kingdom","2020-04-22",13
+"United Kingdom","2020-01-22",0
+"United Kingdom","2020-01-23",0
+"United Kingdom","2020-01-24",0
+"United Kingdom","2020-01-25",0
+"United Kingdom","2020-01-26",0
+"United Kingdom","2020-01-27",0
+"United Kingdom","2020-01-28",0
+"United Kingdom","2020-01-29",0
+"United Kingdom","2020-01-30",0
+"United Kingdom","2020-01-31",0
+"United Kingdom","2020-02-01",0
+"United Kingdom","2020-02-02",0
+"United Kingdom","2020-02-03",0
+"United Kingdom","2020-02-04",0
+"United Kingdom","2020-02-05",0
+"United Kingdom","2020-02-06",0
+"United Kingdom","2020-02-07",0
+"United Kingdom","2020-02-08",0
+"United Kingdom","2020-02-09",0
+"United Kingdom","2020-02-10",0
+"United Kingdom","2020-02-11",0
+"United Kingdom","2020-02-12",0
+"United Kingdom","2020-02-13",0
+"United Kingdom","2020-02-14",0
+"United Kingdom","2020-02-15",0
+"United Kingdom","2020-02-16",0
+"United Kingdom","2020-02-17",0
+"United Kingdom","2020-02-18",0
+"United Kingdom","2020-02-19",0
+"United Kingdom","2020-02-20",0
+"United Kingdom","2020-02-21",0
+"United Kingdom","2020-02-22",0
+"United Kingdom","2020-02-23",0
+"United Kingdom","2020-02-24",0
+"United Kingdom","2020-02-25",0
+"United Kingdom","2020-02-26",0
+"United Kingdom","2020-02-27",0
+"United Kingdom","2020-02-28",0
+"United Kingdom","2020-02-29",0
+"United Kingdom","2020-03-01",0
+"United Kingdom","2020-03-02",0
+"United Kingdom","2020-03-03",0
+"United Kingdom","2020-03-04",0
+"United Kingdom","2020-03-05",0
+"United Kingdom","2020-03-06",0
+"United Kingdom","2020-03-07",0
+"United Kingdom","2020-03-08",0
+"United Kingdom","2020-03-09",0
+"United Kingdom","2020-03-10",0
+"United Kingdom","2020-03-11",0
+"United Kingdom","2020-03-12",0
+"United Kingdom","2020-03-13",0
+"United Kingdom","2020-03-14",0
+"United Kingdom","2020-03-15",0
+"United Kingdom","2020-03-16",0
+"United Kingdom","2020-03-17",0
+"United Kingdom","2020-03-18",0
+"United Kingdom","2020-03-19",0
+"United Kingdom","2020-03-20",0
+"United Kingdom","2020-03-21",0
+"United Kingdom","2020-03-22",0
+"United Kingdom","2020-03-23",0
+"United Kingdom","2020-03-24",0
+"United Kingdom","2020-03-25",0
+"United Kingdom","2020-03-26",0
+"United Kingdom","2020-03-27",0
+"United Kingdom","2020-03-28",2
+"United Kingdom","2020-03-29",0
+"United Kingdom","2020-03-30",0
+"United Kingdom","2020-03-31",1
+"United Kingdom","2020-04-01",0
+"United Kingdom","2020-04-02",0
+"United Kingdom","2020-04-03",0
+"United Kingdom","2020-04-04",0
+"United Kingdom","2020-04-05",0
+"United Kingdom","2020-04-06",0
+"United Kingdom","2020-04-07",0
+"United Kingdom","2020-04-08",0
+"United Kingdom","2020-04-09",0
+"United Kingdom","2020-04-10",0
+"United Kingdom","2020-04-11",0
+"United Kingdom","2020-04-12",0
+"United Kingdom","2020-04-13",0
+"United Kingdom","2020-04-14",0
+"United Kingdom","2020-04-15",0
+"United Kingdom","2020-04-16",0
+"United Kingdom","2020-04-17",1
+"United Kingdom","2020-04-18",0
+"United Kingdom","2020-04-19",0
+"United Kingdom","2020-04-20",1
+"United Kingdom","2020-04-21",0
+"United Kingdom","2020-04-22",0
+"United Kingdom","2020-01-22",0
+"United Kingdom","2020-01-23",0
+"United Kingdom","2020-01-24",0
+"United Kingdom","2020-01-25",0
+"United Kingdom","2020-01-26",0
+"United Kingdom","2020-01-27",0
+"United Kingdom","2020-01-28",0
+"United Kingdom","2020-01-29",0
+"United Kingdom","2020-01-30",0
+"United Kingdom","2020-01-31",0
+"United Kingdom","2020-02-01",0
+"United Kingdom","2020-02-02",0
+"United Kingdom","2020-02-03",0
+"United Kingdom","2020-02-04",0
+"United Kingdom","2020-02-05",0
+"United Kingdom","2020-02-06",0
+"United Kingdom","2020-02-07",0
+"United Kingdom","2020-02-08",0
+"United Kingdom","2020-02-09",0
+"United Kingdom","2020-02-10",0
+"United Kingdom","2020-02-11",0
+"United Kingdom","2020-02-12",0
+"United Kingdom","2020-02-13",0
+"United Kingdom","2020-02-14",0
+"United Kingdom","2020-02-15",0
+"United Kingdom","2020-02-16",0
+"United Kingdom","2020-02-17",0
+"United Kingdom","2020-02-18",0
+"United Kingdom","2020-02-19",0
+"United Kingdom","2020-02-20",0
+"United Kingdom","2020-02-21",0
+"United Kingdom","2020-02-22",0
+"United Kingdom","2020-02-23",0
+"United Kingdom","2020-02-24",0
+"United Kingdom","2020-02-25",0
+"United Kingdom","2020-02-26",0
+"United Kingdom","2020-02-27",0
+"United Kingdom","2020-02-28",0
+"United Kingdom","2020-02-29",0
+"United Kingdom","2020-03-01",0
+"United Kingdom","2020-03-02",0
+"United Kingdom","2020-03-03",0
+"United Kingdom","2020-03-04",0
+"United Kingdom","2020-03-05",0
+"United Kingdom","2020-03-06",0
+"United Kingdom","2020-03-07",0
+"United Kingdom","2020-03-08",0
+"United Kingdom","2020-03-09",0
+"United Kingdom","2020-03-10",0
+"United Kingdom","2020-03-11",0
+"United Kingdom","2020-03-12",0
+"United Kingdom","2020-03-13",1
+"United Kingdom","2020-03-14",0
+"United Kingdom","2020-03-15",0
+"United Kingdom","2020-03-16",0
+"United Kingdom","2020-03-17",0
+"United Kingdom","2020-03-18",0
+"United Kingdom","2020-03-19",2
+"United Kingdom","2020-03-20",0
+"United Kingdom","2020-03-21",0
+"United Kingdom","2020-03-22",0
+"United Kingdom","2020-03-23",2
+"United Kingdom","2020-03-24",1
+"United Kingdom","2020-03-25",2
+"United Kingdom","2020-03-26",0
+"United Kingdom","2020-03-27",0
+"United Kingdom","2020-03-28",0
+"United Kingdom","2020-03-29",0
+"United Kingdom","2020-03-30",4
+"United Kingdom","2020-03-31",2
+"United Kingdom","2020-04-01",8
+"United Kingdom","2020-04-02",6
+"United Kingdom","2020-04-03",0
+"United Kingdom","2020-04-04",7
+"United Kingdom","2020-04-05",0
+"United Kingdom","2020-04-06",4
+"United Kingdom","2020-04-07",6
+"United Kingdom","2020-04-08",0
+"United Kingdom","2020-04-09",0
+"United Kingdom","2020-04-10",0
+"United Kingdom","2020-04-11",0
+"United Kingdom","2020-04-12",8
+"United Kingdom","2020-04-13",0
+"United Kingdom","2020-04-14",1
+"United Kingdom","2020-04-15",0
+"United Kingdom","2020-04-16",6
+"United Kingdom","2020-04-17",1
+"United Kingdom","2020-04-18",0
+"United Kingdom","2020-04-19",0
+"United Kingdom","2020-04-20",5
+"United Kingdom","2020-04-21",0
+"United Kingdom","2020-04-22",0
+"United Kingdom","2020-01-22",0
+"United Kingdom","2020-01-23",0
+"United Kingdom","2020-01-24",0
+"United Kingdom","2020-01-25",0
+"United Kingdom","2020-01-26",0
+"United Kingdom","2020-01-27",0
+"United Kingdom","2020-01-28",0
+"United Kingdom","2020-01-29",0
+"United Kingdom","2020-01-30",0
+"United Kingdom","2020-01-31",0
+"United Kingdom","2020-02-01",0
+"United Kingdom","2020-02-02",0
+"United Kingdom","2020-02-03",0
+"United Kingdom","2020-02-04",0
+"United Kingdom","2020-02-05",0
+"United Kingdom","2020-02-06",0
+"United Kingdom","2020-02-07",0
+"United Kingdom","2020-02-08",0
+"United Kingdom","2020-02-09",0
+"United Kingdom","2020-02-10",0
+"United Kingdom","2020-02-11",0
+"United Kingdom","2020-02-12",0
+"United Kingdom","2020-02-13",0
+"United Kingdom","2020-02-14",0
+"United Kingdom","2020-02-15",0
+"United Kingdom","2020-02-16",0
+"United Kingdom","2020-02-17",0
+"United Kingdom","2020-02-18",0
+"United Kingdom","2020-02-19",0
+"United Kingdom","2020-02-20",0
+"United Kingdom","2020-02-21",0
+"United Kingdom","2020-02-22",0
+"United Kingdom","2020-02-23",0
+"United Kingdom","2020-02-24",0
+"United Kingdom","2020-02-25",0
+"United Kingdom","2020-02-26",0
+"United Kingdom","2020-02-27",0
+"United Kingdom","2020-02-28",0
+"United Kingdom","2020-02-29",0
+"United Kingdom","2020-03-01",0
+"United Kingdom","2020-03-02",0
+"United Kingdom","2020-03-03",0
+"United Kingdom","2020-03-04",0
+"United Kingdom","2020-03-05",0
+"United Kingdom","2020-03-06",0
+"United Kingdom","2020-03-07",0
+"United Kingdom","2020-03-08",0
+"United Kingdom","2020-03-09",0
+"United Kingdom","2020-03-10",1
+"United Kingdom","2020-03-11",1
+"United Kingdom","2020-03-12",0
+"United Kingdom","2020-03-13",0
+"United Kingdom","2020-03-14",0
+"United Kingdom","2020-03-15",1
+"United Kingdom","2020-03-16",3
+"United Kingdom","2020-03-17",0
+"United Kingdom","2020-03-18",0
+"United Kingdom","2020-03-19",5
+"United Kingdom","2020-03-20",3
+"United Kingdom","2020-03-21",18
+"United Kingdom","2020-03-22",0
+"United Kingdom","2020-03-23",4
+"United Kingdom","2020-03-24",0
+"United Kingdom","2020-03-25",10
+"United Kingdom","2020-03-26",20
+"United Kingdom","2020-03-27",22
+"United Kingdom","2020-03-28",9
+"United Kingdom","2020-03-29",11
+"United Kingdom","2020-03-30",33
+"United Kingdom","2020-03-31",0
+"United Kingdom","2020-04-01",31
+"United Kingdom","2020-04-02",21
+"United Kingdom","2020-04-03",39
+"United Kingdom","2020-04-04",30
+"United Kingdom","2020-04-05",47
+"United Kingdom","2020-04-06",14
+"United Kingdom","2020-04-07",12
+"United Kingdom","2020-04-08",16
+"United Kingdom","2020-04-09",10
+"United Kingdom","2020-04-10",37
+"United Kingdom","2020-04-11",9
+"United Kingdom","2020-04-12",24
+"United Kingdom","2020-04-13",5
+"United Kingdom","2020-04-14",4
+"United Kingdom","2020-04-15",7
+"United Kingdom","2020-04-16",10
+"United Kingdom","2020-04-17",13
+"United Kingdom","2020-04-18",14
+"United Kingdom","2020-04-19",4
+"United Kingdom","2020-04-20",0
+"United Kingdom","2020-04-21",8
+"United Kingdom","2020-04-22",2
+"United Kingdom","2020-01-22",0
+"United Kingdom","2020-01-23",0
+"United Kingdom","2020-01-24",0
+"United Kingdom","2020-01-25",0
+"United Kingdom","2020-01-26",0
+"United Kingdom","2020-01-27",0
+"United Kingdom","2020-01-28",0
+"United Kingdom","2020-01-29",0
+"United Kingdom","2020-01-30",0
+"United Kingdom","2020-01-31",0
+"United Kingdom","2020-02-01",0
+"United Kingdom","2020-02-02",0
+"United Kingdom","2020-02-03",0
+"United Kingdom","2020-02-04",0
+"United Kingdom","2020-02-05",0
+"United Kingdom","2020-02-06",0
+"United Kingdom","2020-02-07",0
+"United Kingdom","2020-02-08",0
+"United Kingdom","2020-02-09",0
+"United Kingdom","2020-02-10",0
+"United Kingdom","2020-02-11",0
+"United Kingdom","2020-02-12",0
+"United Kingdom","2020-02-13",0
+"United Kingdom","2020-02-14",0
+"United Kingdom","2020-02-15",0
+"United Kingdom","2020-02-16",0
+"United Kingdom","2020-02-17",0
+"United Kingdom","2020-02-18",0
+"United Kingdom","2020-02-19",0
+"United Kingdom","2020-02-20",0
+"United Kingdom","2020-02-21",0
+"United Kingdom","2020-02-22",0
+"United Kingdom","2020-02-23",0
+"United Kingdom","2020-02-24",0
+"United Kingdom","2020-02-25",0
+"United Kingdom","2020-02-26",0
+"United Kingdom","2020-02-27",0
+"United Kingdom","2020-02-28",0
+"United Kingdom","2020-02-29",0
+"United Kingdom","2020-03-01",0
+"United Kingdom","2020-03-02",0
+"United Kingdom","2020-03-03",0
+"United Kingdom","2020-03-04",0
+"United Kingdom","2020-03-05",0
+"United Kingdom","2020-03-06",0
+"United Kingdom","2020-03-07",0
+"United Kingdom","2020-03-08",0
+"United Kingdom","2020-03-09",0
+"United Kingdom","2020-03-10",0
+"United Kingdom","2020-03-11",0
+"United Kingdom","2020-03-12",0
+"United Kingdom","2020-03-13",0
+"United Kingdom","2020-03-14",0
+"United Kingdom","2020-03-15",0
+"United Kingdom","2020-03-16",0
+"United Kingdom","2020-03-17",0
+"United Kingdom","2020-03-18",0
+"United Kingdom","2020-03-19",0
+"United Kingdom","2020-03-20",0
+"United Kingdom","2020-03-21",0
+"United Kingdom","2020-03-22",0
+"United Kingdom","2020-03-23",0
+"United Kingdom","2020-03-24",0
+"United Kingdom","2020-03-25",0
+"United Kingdom","2020-03-26",0
+"United Kingdom","2020-03-27",0
+"United Kingdom","2020-03-28",0
+"United Kingdom","2020-03-29",0
+"United Kingdom","2020-03-30",0
+"United Kingdom","2020-03-31",0
+"United Kingdom","2020-04-01",0
+"United Kingdom","2020-04-02",0
+"United Kingdom","2020-04-03",0
+"United Kingdom","2020-04-04",1
+"United Kingdom","2020-04-05",1
+"United Kingdom","2020-04-06",0
+"United Kingdom","2020-04-07",0
+"United Kingdom","2020-04-08",3
+"United Kingdom","2020-04-09",0
+"United Kingdom","2020-04-10",0
+"United Kingdom","2020-04-11",0
+"United Kingdom","2020-04-12",0
+"United Kingdom","2020-04-13",0
+"United Kingdom","2020-04-14",6
+"United Kingdom","2020-04-15",0
+"United Kingdom","2020-04-16",0
+"United Kingdom","2020-04-17",0
+"United Kingdom","2020-04-18",0
+"United Kingdom","2020-04-19",0
+"United Kingdom","2020-04-20",0
+"United Kingdom","2020-04-21",0
+"United Kingdom","2020-04-22",0
+"United Kingdom","2020-01-22",0
+"United Kingdom","2020-01-23",0
+"United Kingdom","2020-01-24",0
+"United Kingdom","2020-01-25",0
+"United Kingdom","2020-01-26",0
+"United Kingdom","2020-01-27",0
+"United Kingdom","2020-01-28",0
+"United Kingdom","2020-01-29",0
+"United Kingdom","2020-01-30",0
+"United Kingdom","2020-01-31",0
+"United Kingdom","2020-02-01",0
+"United Kingdom","2020-02-02",0
+"United Kingdom","2020-02-03",0
+"United Kingdom","2020-02-04",0
+"United Kingdom","2020-02-05",0
+"United Kingdom","2020-02-06",0
+"United Kingdom","2020-02-07",0
+"United Kingdom","2020-02-08",0
+"United Kingdom","2020-02-09",0
+"United Kingdom","2020-02-10",0
+"United Kingdom","2020-02-11",0
+"United Kingdom","2020-02-12",0
+"United Kingdom","2020-02-13",0
+"United Kingdom","2020-02-14",0
+"United Kingdom","2020-02-15",0
+"United Kingdom","2020-02-16",0
+"United Kingdom","2020-02-17",0
+"United Kingdom","2020-02-18",0
+"United Kingdom","2020-02-19",0
+"United Kingdom","2020-02-20",0
+"United Kingdom","2020-02-21",0
+"United Kingdom","2020-02-22",0
+"United Kingdom","2020-02-23",0
+"United Kingdom","2020-02-24",0
+"United Kingdom","2020-02-25",0
+"United Kingdom","2020-02-26",0
+"United Kingdom","2020-02-27",0
+"United Kingdom","2020-02-28",0
+"United Kingdom","2020-02-29",0
+"United Kingdom","2020-03-01",0
+"United Kingdom","2020-03-02",0
+"United Kingdom","2020-03-03",0
+"United Kingdom","2020-03-04",1
+"United Kingdom","2020-03-05",0
+"United Kingdom","2020-03-06",0
+"United Kingdom","2020-03-07",0
+"United Kingdom","2020-03-08",0
+"United Kingdom","2020-03-09",0
+"United Kingdom","2020-03-10",0
+"United Kingdom","2020-03-11",0
+"United Kingdom","2020-03-12",0
+"United Kingdom","2020-03-13",0
+"United Kingdom","2020-03-14",0
+"United Kingdom","2020-03-15",0
+"United Kingdom","2020-03-16",0
+"United Kingdom","2020-03-17",2
+"United Kingdom","2020-03-18",5
+"United Kingdom","2020-03-19",2
+"United Kingdom","2020-03-20",0
+"United Kingdom","2020-03-21",0
+"United Kingdom","2020-03-22",5
+"United Kingdom","2020-03-23",0
+"United Kingdom","2020-03-24",0
+"United Kingdom","2020-03-25",11
+"United Kingdom","2020-03-26",9
+"United Kingdom","2020-03-27",20
+"United Kingdom","2020-03-28",1
+"United Kingdom","2020-03-29",9
+"United Kingdom","2020-03-30",4
+"United Kingdom","2020-03-31",0
+"United Kingdom","2020-04-01",12
+"United Kingdom","2020-04-02",7
+"United Kingdom","2020-04-03",7
+"United Kingdom","2020-04-04",3
+"United Kingdom","2020-04-05",5
+"United Kingdom","2020-04-06",6
+"United Kingdom","2020-04-07",4
+"United Kingdom","2020-04-08",7
+"United Kingdom","2020-04-09",3
+"United Kingdom","2020-04-10",4
+"United Kingdom","2020-04-11",2
+"United Kingdom","2020-04-12",0
+"United Kingdom","2020-04-13",0
+"United Kingdom","2020-04-14",0
+"United Kingdom","2020-04-15",2
+"United Kingdom","2020-04-16",0
+"United Kingdom","2020-04-17",1
+"United Kingdom","2020-04-18",0
+"United Kingdom","2020-04-19",0
+"United Kingdom","2020-04-20",0
+"United Kingdom","2020-04-21",0
+"United Kingdom","2020-04-22",0
+"United Kingdom","2020-01-22",0
+"United Kingdom","2020-01-23",0
+"United Kingdom","2020-01-24",0
+"United Kingdom","2020-01-25",0
+"United Kingdom","2020-01-26",0
+"United Kingdom","2020-01-27",0
+"United Kingdom","2020-01-28",0
+"United Kingdom","2020-01-29",0
+"United Kingdom","2020-01-30",0
+"United Kingdom","2020-01-31",0
+"United Kingdom","2020-02-01",0
+"United Kingdom","2020-02-02",0
+"United Kingdom","2020-02-03",0
+"United Kingdom","2020-02-04",0
+"United Kingdom","2020-02-05",0
+"United Kingdom","2020-02-06",0
+"United Kingdom","2020-02-07",0
+"United Kingdom","2020-02-08",0
+"United Kingdom","2020-02-09",0
+"United Kingdom","2020-02-10",0
+"United Kingdom","2020-02-11",0
+"United Kingdom","2020-02-12",0
+"United Kingdom","2020-02-13",0
+"United Kingdom","2020-02-14",0
+"United Kingdom","2020-02-15",0
+"United Kingdom","2020-02-16",0
+"United Kingdom","2020-02-17",0
+"United Kingdom","2020-02-18",0
+"United Kingdom","2020-02-19",0
+"United Kingdom","2020-02-20",0
+"United Kingdom","2020-02-21",0
+"United Kingdom","2020-02-22",0
+"United Kingdom","2020-02-23",0
+"United Kingdom","2020-02-24",0
+"United Kingdom","2020-02-25",0
+"United Kingdom","2020-02-26",0
+"United Kingdom","2020-02-27",0
+"United Kingdom","2020-02-28",0
+"United Kingdom","2020-02-29",0
+"United Kingdom","2020-03-01",0
+"United Kingdom","2020-03-02",0
+"United Kingdom","2020-03-03",0
+"United Kingdom","2020-03-04",0
+"United Kingdom","2020-03-05",0
+"United Kingdom","2020-03-06",0
+"United Kingdom","2020-03-07",0
+"United Kingdom","2020-03-08",0
+"United Kingdom","2020-03-09",0
+"United Kingdom","2020-03-10",0
+"United Kingdom","2020-03-11",0
+"United Kingdom","2020-03-12",0
+"United Kingdom","2020-03-13",0
+"United Kingdom","2020-03-14",0
+"United Kingdom","2020-03-15",0
+"United Kingdom","2020-03-16",0
+"United Kingdom","2020-03-17",0
+"United Kingdom","2020-03-18",0
+"United Kingdom","2020-03-19",0
+"United Kingdom","2020-03-20",1
+"United Kingdom","2020-03-21",0
+"United Kingdom","2020-03-22",4
+"United Kingdom","2020-03-23",8
+"United Kingdom","2020-03-24",10
+"United Kingdom","2020-03-25",0
+"United Kingdom","2020-03-26",2
+"United Kingdom","2020-03-27",4
+"United Kingdom","2020-03-28",3
+"United Kingdom","2020-03-29",10
+"United Kingdom","2020-03-30",7
+"United Kingdom","2020-03-31",11
+"United Kingdom","2020-04-01",8
+"United Kingdom","2020-04-02",27
+"United Kingdom","2020-04-03",19
+"United Kingdom","2020-04-04",12
+"United Kingdom","2020-04-05",1
+"United Kingdom","2020-04-06",12
+"United Kingdom","2020-04-07",11
+"United Kingdom","2020-04-08",8
+"United Kingdom","2020-04-09",32
+"United Kingdom","2020-04-10",11
+"United Kingdom","2020-04-11",25
+"United Kingdom","2020-04-12",2
+"United Kingdom","2020-04-13",14
+"United Kingdom","2020-04-14",12
+"United Kingdom","2020-04-15",2
+"United Kingdom","2020-04-16",28
+"United Kingdom","2020-04-17",7
+"United Kingdom","2020-04-18",6
+"United Kingdom","2020-04-19",1
+"United Kingdom","2020-04-20",2
+"United Kingdom","2020-04-21",7
+"United Kingdom","2020-04-22",0
+"United Kingdom","2020-01-22",0
+"United Kingdom","2020-01-23",0
+"United Kingdom","2020-01-24",0
+"United Kingdom","2020-01-25",0
+"United Kingdom","2020-01-26",0
+"United Kingdom","2020-01-27",0
+"United Kingdom","2020-01-28",0
+"United Kingdom","2020-01-29",0
+"United Kingdom","2020-01-30",0
+"United Kingdom","2020-01-31",0
+"United Kingdom","2020-02-01",0
+"United Kingdom","2020-02-02",0
+"United Kingdom","2020-02-03",0
+"United Kingdom","2020-02-04",0
+"United Kingdom","2020-02-05",0
+"United Kingdom","2020-02-06",0
+"United Kingdom","2020-02-07",0
+"United Kingdom","2020-02-08",0
+"United Kingdom","2020-02-09",0
+"United Kingdom","2020-02-10",0
+"United Kingdom","2020-02-11",0
+"United Kingdom","2020-02-12",0
+"United Kingdom","2020-02-13",0
+"United Kingdom","2020-02-14",0
+"United Kingdom","2020-02-15",0
+"United Kingdom","2020-02-16",0
+"United Kingdom","2020-02-17",0
+"United Kingdom","2020-02-18",0
+"United Kingdom","2020-02-19",0
+"United Kingdom","2020-02-20",0
+"United Kingdom","2020-02-21",0
+"United Kingdom","2020-02-22",0
+"United Kingdom","2020-02-23",0
+"United Kingdom","2020-02-24",0
+"United Kingdom","2020-02-25",0
+"United Kingdom","2020-02-26",0
+"United Kingdom","2020-02-27",0
+"United Kingdom","2020-02-28",0
+"United Kingdom","2020-02-29",0
+"United Kingdom","2020-03-01",0
+"United Kingdom","2020-03-02",0
+"United Kingdom","2020-03-03",0
+"United Kingdom","2020-03-04",0
+"United Kingdom","2020-03-05",0
+"United Kingdom","2020-03-06",0
+"United Kingdom","2020-03-07",0
+"United Kingdom","2020-03-08",0
+"United Kingdom","2020-03-09",0
+"United Kingdom","2020-03-10",0
+"United Kingdom","2020-03-11",0
+"United Kingdom","2020-03-12",0
+"United Kingdom","2020-03-13",0
+"United Kingdom","2020-03-14",0
+"United Kingdom","2020-03-15",0
+"United Kingdom","2020-03-16",0
+"United Kingdom","2020-03-17",0
+"United Kingdom","2020-03-18",1
+"United Kingdom","2020-03-19",0
+"United Kingdom","2020-03-20",0
+"United Kingdom","2020-03-21",0
+"United Kingdom","2020-03-22",0
+"United Kingdom","2020-03-23",0
+"United Kingdom","2020-03-24",0
+"United Kingdom","2020-03-25",0
+"United Kingdom","2020-03-26",4
+"United Kingdom","2020-03-27",0
+"United Kingdom","2020-03-28",0
+"United Kingdom","2020-03-29",0
+"United Kingdom","2020-03-30",0
+"United Kingdom","2020-03-31",0
+"United Kingdom","2020-04-01",0
+"United Kingdom","2020-04-02",0
+"United Kingdom","2020-04-03",1
+"United Kingdom","2020-04-04",0
+"United Kingdom","2020-04-05",0
+"United Kingdom","2020-04-06",0
+"United Kingdom","2020-04-07",3
+"United Kingdom","2020-04-08",0
+"United Kingdom","2020-04-09",0
+"United Kingdom","2020-04-10",0
+"United Kingdom","2020-04-11",0
+"United Kingdom","2020-04-12",0
+"United Kingdom","2020-04-13",2
+"United Kingdom","2020-04-14",0
+"United Kingdom","2020-04-15",0
+"United Kingdom","2020-04-16",0
+"United Kingdom","2020-04-17",0
+"United Kingdom","2020-04-18",0
+"United Kingdom","2020-04-19",0
+"United Kingdom","2020-04-20",0
+"United Kingdom","2020-04-21",0
+"United Kingdom","2020-04-22",0
+"Australia","2020-01-22",0
+"Australia","2020-01-23",0
+"Australia","2020-01-24",0
+"Australia","2020-01-25",0
+"Australia","2020-01-26",3
+"Australia","2020-01-27",1
+"Australia","2020-01-28",0
+"Australia","2020-01-29",0
+"Australia","2020-01-30",0
+"Australia","2020-01-31",0
+"Australia","2020-02-01",0
+"Australia","2020-02-02",0
+"Australia","2020-02-03",0
+"Australia","2020-02-04",0
+"Australia","2020-02-05",0
+"Australia","2020-02-06",0
+"Australia","2020-02-07",0
+"Australia","2020-02-08",0
+"Australia","2020-02-09",0
+"Australia","2020-02-10",0
+"Australia","2020-02-11",0
+"Australia","2020-02-12",0
+"Australia","2020-02-13",0
+"Australia","2020-02-14",0
+"Australia","2020-02-15",0
+"Australia","2020-02-16",0
+"Australia","2020-02-17",0
+"Australia","2020-02-18",0
+"Australia","2020-02-19",0
+"Australia","2020-02-20",0
+"Australia","2020-02-21",0
+"Australia","2020-02-22",0
+"Australia","2020-02-23",0
+"Australia","2020-02-24",0
+"Australia","2020-02-25",0
+"Australia","2020-02-26",0
+"Australia","2020-02-27",0
+"Australia","2020-02-28",0
+"Australia","2020-02-29",0
+"Australia","2020-03-01",2
+"Australia","2020-03-02",0
+"Australia","2020-03-03",7
+"Australia","2020-03-04",9
+"Australia","2020-03-05",0
+"Australia","2020-03-06",4
+"Australia","2020-03-07",2
+"Australia","2020-03-08",10
+"Australia","2020-03-09",10
+"Australia","2020-03-10",7
+"Australia","2020-03-11",10
+"Australia","2020-03-12",0
+"Australia","2020-03-13",27
+"Australia","2020-03-14",20
+"Australia","2020-03-15",22
+"Australia","2020-03-16",37
+"Australia","2020-03-17",39
+"Australia","2020-03-18",57
+"Australia","2020-03-19",40
+"Australia","2020-03-20",46
+"Australia","2020-03-21",83
+"Australia","2020-03-22",233
+"Australia","2020-03-23",0
+"Australia","2020-03-24",149
+"Australia","2020-03-25",211
+"Australia","2020-03-26",190
+"Australia","2020-03-27",186
+"Australia","2020-03-28",212
+"Australia","2020-03-29",174
+"Australia","2020-03-30",241
+"Australia","2020-03-31",0
+"Australia","2020-04-01",150
+"Australia","2020-04-02",116
+"Australia","2020-04-03",91
+"Australia","2020-04-04",104
+"Australia","2020-04-05",87
+"Australia","2020-04-06",57
+"Australia","2020-04-07",49
+"Australia","2020-04-08",48
+"Australia","2020-04-09",39
+"Australia","2020-04-10",49
+"Australia","2020-04-11",35
+"Australia","2020-04-12",0
+"Australia","2020-04-13",6
+"Australia","2020-04-14",7
+"Australia","2020-04-15",16
+"Australia","2020-04-16",11
+"Australia","2020-04-17",29
+"Australia","2020-04-18",0
+"Australia","2020-04-19",0
+"Australia","2020-04-20",0
+"Australia","2020-04-21",0
+"Australia","2020-04-22",0
+"Australia","2020-01-22",0
+"Australia","2020-01-23",0
+"Australia","2020-01-24",0
+"Australia","2020-01-25",0
+"Australia","2020-01-26",0
+"Australia","2020-01-27",0
+"Australia","2020-01-28",0
+"Australia","2020-01-29",0
+"Australia","2020-01-30",0
+"Australia","2020-01-31",0
+"Australia","2020-02-01",0
+"Australia","2020-02-02",0
+"Australia","2020-02-03",0
+"Australia","2020-02-04",0
+"Australia","2020-02-05",0
+"Australia","2020-02-06",0
+"Australia","2020-02-07",0
+"Australia","2020-02-08",0
+"Australia","2020-02-09",0
+"Australia","2020-02-10",0
+"Australia","2020-02-11",0
+"Australia","2020-02-12",0
+"Australia","2020-02-13",0
+"Australia","2020-02-14",0
+"Australia","2020-02-15",0
+"Australia","2020-02-16",0
+"Australia","2020-02-17",0
+"Australia","2020-02-18",0
+"Australia","2020-02-19",0
+"Australia","2020-02-20",0
+"Australia","2020-02-21",0
+"Australia","2020-02-22",0
+"Australia","2020-02-23",0
+"Australia","2020-02-24",0
+"Australia","2020-02-25",0
+"Australia","2020-02-26",0
+"Australia","2020-02-27",0
+"Australia","2020-02-28",0
+"Australia","2020-02-29",0
+"Australia","2020-03-01",0
+"Australia","2020-03-02",0
+"Australia","2020-03-03",0
+"Australia","2020-03-04",1
+"Australia","2020-03-05",0
+"Australia","2020-03-06",-1
+"Australia","2020-03-07",0
+"Australia","2020-03-08",0
+"Australia","2020-03-09",0
+"Australia","2020-03-10",1
+"Australia","2020-03-11",0
+"Australia","2020-03-12",0
+"Australia","2020-03-13",0
+"Australia","2020-03-14",0
+"Australia","2020-03-15",0
+"Australia","2020-03-16",0
+"Australia","2020-03-17",0
+"Australia","2020-03-18",0
+"Australia","2020-03-19",0
+"Australia","2020-03-20",2
+"Australia","2020-03-21",0
+"Australia","2020-03-22",2
+"Australia","2020-03-23",0
+"Australia","2020-03-24",1
+"Australia","2020-03-25",0
+"Australia","2020-03-26",6
+"Australia","2020-03-27",0
+"Australia","2020-03-28",3
+"Australia","2020-03-29",0
+"Australia","2020-03-30",0
+"Australia","2020-03-31",2
+"Australia","2020-04-01",2
+"Australia","2020-04-02",2
+"Australia","2020-04-03",1
+"Australia","2020-04-04",4
+"Australia","2020-04-05",1
+"Australia","2020-04-06",1
+"Australia","2020-04-07",0
+"Australia","2020-04-08",0
+"Australia","2020-04-09",0
+"Australia","2020-04-10",0
+"Australia","2020-04-11",0
+"Australia","2020-04-12",0
+"Australia","2020-04-13",0
+"Australia","2020-04-14",0
+"Australia","2020-04-15",0
+"Australia","2020-04-16",0
+"Australia","2020-04-17",0
+"Australia","2020-04-18",0
+"Australia","2020-04-19",0
+"Australia","2020-04-20",0
+"Australia","2020-04-21",0
+"Australia","2020-04-22",0
+"Australia","2020-01-22",0
+"Australia","2020-01-23",0
+"Australia","2020-01-24",0
+"Australia","2020-01-25",0
+"Australia","2020-01-26",0
+"Australia","2020-01-27",0
+"Australia","2020-01-28",0
+"Australia","2020-01-29",1
+"Australia","2020-01-30",2
+"Australia","2020-01-31",-1
+"Australia","2020-02-01",1
+"Australia","2020-02-02",-1
+"Australia","2020-02-03",0
+"Australia","2020-02-04",1
+"Australia","2020-02-05",0
+"Australia","2020-02-06",1
+"Australia","2020-02-07",1
+"Australia","2020-02-08",0
+"Australia","2020-02-09",0
+"Australia","2020-02-10",0
+"Australia","2020-02-11",0
+"Australia","2020-02-12",0
+"Australia","2020-02-13",0
+"Australia","2020-02-14",0
+"Australia","2020-02-15",0
+"Australia","2020-02-16",0
+"Australia","2020-02-17",0
+"Australia","2020-02-18",0
+"Australia","2020-02-19",0
+"Australia","2020-02-20",0
+"Australia","2020-02-21",0
+"Australia","2020-02-22",0
+"Australia","2020-02-23",0
+"Australia","2020-02-24",0
+"Australia","2020-02-25",0
+"Australia","2020-02-26",0
+"Australia","2020-02-27",0
+"Australia","2020-02-28",0
+"Australia","2020-02-29",4
+"Australia","2020-03-01",0
+"Australia","2020-03-02",0
+"Australia","2020-03-03",2
+"Australia","2020-03-04",0
+"Australia","2020-03-05",2
+"Australia","2020-03-06",0
+"Australia","2020-03-07",0
+"Australia","2020-03-08",2
+"Australia","2020-03-09",0
+"Australia","2020-03-10",3
+"Australia","2020-03-11",2
+"Australia","2020-03-12",0
+"Australia","2020-03-13",15
+"Australia","2020-03-14",11
+"Australia","2020-03-15",15
+"Australia","2020-03-16",7
+"Australia","2020-03-17",10
+"Australia","2020-03-18",16
+"Australia","2020-03-19",50
+"Australia","2020-03-20",40
+"Australia","2020-03-21",37
+"Australia","2020-03-22",38
+"Australia","2020-03-23",60
+"Australia","2020-03-24",78
+"Australia","2020-03-25",46
+"Australia","2020-03-26",50
+"Australia","2020-03-27",62
+"Australia","2020-03-28",70
+"Australia","2020-03-29",31
+"Australia","2020-03-30",33
+"Australia","2020-03-31",54
+"Australia","2020-04-01",38
+"Australia","2020-04-02",54
+"Australia","2020-04-03",38
+"Australia","2020-04-04",27
+"Australia","2020-04-05",7
+"Australia","2020-04-06",14
+"Australia","2020-04-07",13
+"Australia","2020-04-08",9
+"Australia","2020-04-09",10
+"Australia","2020-04-10",12
+"Australia","2020-04-11",9
+"Australia","2020-04-12",9
+"Australia","2020-04-13",4
+"Australia","2020-04-14",11
+"Australia","2020-04-15",1
+"Australia","2020-04-16",2
+"Australia","2020-04-17",6
+"Australia","2020-04-18",8
+"Australia","2020-04-19",0
+"Australia","2020-04-20",0
+"Australia","2020-04-21",0
+"Australia","2020-04-22",0
+"Australia","2020-01-22",0
+"Australia","2020-01-23",0
+"Australia","2020-01-24",0
+"Australia","2020-01-25",0
+"Australia","2020-01-26",0
+"Australia","2020-01-27",0
+"Australia","2020-01-28",0
+"Australia","2020-01-29",0
+"Australia","2020-01-30",0
+"Australia","2020-01-31",0
+"Australia","2020-02-01",1
+"Australia","2020-02-02",1
+"Australia","2020-02-03",0
+"Australia","2020-02-04",0
+"Australia","2020-02-05",0
+"Australia","2020-02-06",0
+"Australia","2020-02-07",0
+"Australia","2020-02-08",0
+"Australia","2020-02-09",0
+"Australia","2020-02-10",0
+"Australia","2020-02-11",0
+"Australia","2020-02-12",0
+"Australia","2020-02-13",0
+"Australia","2020-02-14",0
+"Australia","2020-02-15",0
+"Australia","2020-02-16",0
+"Australia","2020-02-17",0
+"Australia","2020-02-18",0
+"Australia","2020-02-19",0
+"Australia","2020-02-20",0
+"Australia","2020-02-21",0
+"Australia","2020-02-22",0
+"Australia","2020-02-23",0
+"Australia","2020-02-24",0
+"Australia","2020-02-25",0
+"Australia","2020-02-26",0
+"Australia","2020-02-27",0
+"Australia","2020-02-28",0
+"Australia","2020-02-29",1
+"Australia","2020-03-01",0
+"Australia","2020-03-02",0
+"Australia","2020-03-03",0
+"Australia","2020-03-04",2
+"Australia","2020-03-05",0
+"Australia","2020-03-06",2
+"Australia","2020-03-07",0
+"Australia","2020-03-08",0
+"Australia","2020-03-09",0
+"Australia","2020-03-10",0
+"Australia","2020-03-11",2
+"Australia","2020-03-12",0
+"Australia","2020-03-13",7
+"Australia","2020-03-14",3
+"Australia","2020-03-15",1
+"Australia","2020-03-16",9
+"Australia","2020-03-17",0
+"Australia","2020-03-18",8
+"Australia","2020-03-19",5
+"Australia","2020-03-20",8
+"Australia","2020-03-21",17
+"Australia","2020-03-22",33
+"Australia","2020-03-23",34
+"Australia","2020-03-24",36
+"Australia","2020-03-25",0
+"Australia","2020-03-26",65
+"Australia","2020-03-27",22
+"Australia","2020-03-28",30
+"Australia","2020-03-29",12
+"Australia","2020-03-30",6
+"Australia","2020-03-31",32
+"Australia","2020-04-01",30
+"Australia","2020-04-02",0
+"Australia","2020-04-03",29
+"Australia","2020-04-04",11
+"Australia","2020-04-05",0
+"Australia","2020-04-06",4
+"Australia","2020-04-07",0
+"Australia","2020-04-08",4
+"Australia","2020-04-09",5
+"Australia","2020-04-10",8
+"Australia","2020-04-11",1
+"Australia","2020-04-12",0
+"Australia","2020-04-13",0
+"Australia","2020-04-14",4
+"Australia","2020-04-15",0
+"Australia","2020-04-16",0
+"Australia","2020-04-17",2
+"Australia","2020-04-18",0
+"Australia","2020-04-19",0
+"Australia","2020-04-20",0
+"Australia","2020-04-21",0
+"Australia","2020-04-22",0
+"Australia","2020-01-22",0
+"Australia","2020-01-23",0
+"Australia","2020-01-24",0
+"Australia","2020-01-25",0
+"Australia","2020-01-26",0
+"Australia","2020-01-27",0
+"Australia","2020-01-28",0
+"Australia","2020-01-29",0
+"Australia","2020-01-30",0
+"Australia","2020-01-31",0
+"Australia","2020-02-01",0
+"Australia","2020-02-02",0
+"Australia","2020-02-03",0
+"Australia","2020-02-04",0
+"Australia","2020-02-05",0
+"Australia","2020-02-06",0
+"Australia","2020-02-07",0
+"Australia","2020-02-08",0
+"Australia","2020-02-09",0
+"Australia","2020-02-10",0
+"Australia","2020-02-11",0
+"Australia","2020-02-12",0
+"Australia","2020-02-13",0
+"Australia","2020-02-14",0
+"Australia","2020-02-15",0
+"Australia","2020-02-16",0
+"Australia","2020-02-17",0
+"Australia","2020-02-18",0
+"Australia","2020-02-19",0
+"Australia","2020-02-20",0
+"Australia","2020-02-21",0
+"Australia","2020-02-22",0
+"Australia","2020-02-23",0
+"Australia","2020-02-24",0
+"Australia","2020-02-25",0
+"Australia","2020-02-26",0
+"Australia","2020-02-27",0
+"Australia","2020-02-28",0
+"Australia","2020-02-29",0
+"Australia","2020-03-01",0
+"Australia","2020-03-02",1
+"Australia","2020-03-03",0
+"Australia","2020-03-04",0
+"Australia","2020-03-05",0
+"Australia","2020-03-06",0
+"Australia","2020-03-07",0
+"Australia","2020-03-08",1
+"Australia","2020-03-09",0
+"Australia","2020-03-10",0
+"Australia","2020-03-11",1
+"Australia","2020-03-12",0
+"Australia","2020-03-13",2
+"Australia","2020-03-14",0
+"Australia","2020-03-15",1
+"Australia","2020-03-16",1
+"Australia","2020-03-17",0
+"Australia","2020-03-18",3
+"Australia","2020-03-19",0
+"Australia","2020-03-20",0
+"Australia","2020-03-21",6
+"Australia","2020-03-22",6
+"Australia","2020-03-23",6
+"Australia","2020-03-24",0
+"Australia","2020-03-25",8
+"Australia","2020-03-26",11
+"Australia","2020-03-27",0
+"Australia","2020-03-28",15
+"Australia","2020-03-29",4
+"Australia","2020-03-30",0
+"Australia","2020-03-31",3
+"Australia","2020-04-01",0
+"Australia","2020-04-02",3
+"Australia","2020-04-03",2
+"Australia","2020-04-04",6
+"Australia","2020-04-05",2
+"Australia","2020-04-06",4
+"Australia","2020-04-07",3
+"Australia","2020-04-08",9
+"Australia","2020-04-09",13
+"Australia","2020-04-10",11
+"Australia","2020-04-11",11
+"Australia","2020-04-12",0
+"Australia","2020-04-13",11
+"Australia","2020-04-14",21
+"Australia","2020-04-15",0
+"Australia","2020-04-16",4
+"Australia","2020-04-17",11
+"Australia","2020-04-18",0
+"Australia","2020-04-19",0
+"Australia","2020-04-20",0
+"Australia","2020-04-21",0
+"Australia","2020-04-22",0
+"United Kingdom","2020-01-22",0
+"United Kingdom","2020-01-23",0
+"United Kingdom","2020-01-24",0
+"United Kingdom","2020-01-25",0
+"United Kingdom","2020-01-26",0
+"United Kingdom","2020-01-27",0
+"United Kingdom","2020-01-28",0
+"United Kingdom","2020-01-29",0
+"United Kingdom","2020-01-30",0
+"United Kingdom","2020-01-31",0
+"United Kingdom","2020-02-01",0
+"United Kingdom","2020-02-02",0
+"United Kingdom","2020-02-03",0
+"United Kingdom","2020-02-04",0
+"United Kingdom","2020-02-05",0
+"United Kingdom","2020-02-06",0
+"United Kingdom","2020-02-07",0
+"United Kingdom","2020-02-08",0
+"United Kingdom","2020-02-09",0
+"United Kingdom","2020-02-10",0
+"United Kingdom","2020-02-11",0
+"United Kingdom","2020-02-12",0
+"United Kingdom","2020-02-13",0
+"United Kingdom","2020-02-14",0
+"United Kingdom","2020-02-15",0
+"United Kingdom","2020-02-16",0
+"United Kingdom","2020-02-17",0
+"United Kingdom","2020-02-18",0
+"United Kingdom","2020-02-19",0
+"United Kingdom","2020-02-20",0
+"United Kingdom","2020-02-21",0
+"United Kingdom","2020-02-22",0
+"United Kingdom","2020-02-23",0
+"United Kingdom","2020-02-24",0
+"United Kingdom","2020-02-25",0
+"United Kingdom","2020-02-26",0
+"United Kingdom","2020-02-27",0
+"United Kingdom","2020-02-28",0
+"United Kingdom","2020-02-29",0
+"United Kingdom","2020-03-01",0
+"United Kingdom","2020-03-02",0
+"United Kingdom","2020-03-03",0
+"United Kingdom","2020-03-04",0
+"United Kingdom","2020-03-05",0
+"United Kingdom","2020-03-06",0
+"United Kingdom","2020-03-07",0
+"United Kingdom","2020-03-08",0
+"United Kingdom","2020-03-09",0
+"United Kingdom","2020-03-10",0
+"United Kingdom","2020-03-11",0
+"United Kingdom","2020-03-12",0
+"United Kingdom","2020-03-13",0
+"United Kingdom","2020-03-14",0
+"United Kingdom","2020-03-15",0
+"United Kingdom","2020-03-16",0
+"United Kingdom","2020-03-17",0
+"United Kingdom","2020-03-18",0
+"United Kingdom","2020-03-19",0
+"United Kingdom","2020-03-20",0
+"United Kingdom","2020-03-21",0
+"United Kingdom","2020-03-22",0
+"United Kingdom","2020-03-23",0
+"United Kingdom","2020-03-24",0
+"United Kingdom","2020-03-25",0
+"United Kingdom","2020-03-26",0
+"United Kingdom","2020-03-27",0
+"United Kingdom","2020-03-28",4
+"United Kingdom","2020-03-29",0
+"United Kingdom","2020-03-30",1
+"United Kingdom","2020-03-31",0
+"United Kingdom","2020-04-01",1
+"United Kingdom","2020-04-02",-1
+"United Kingdom","2020-04-03",0
+"United Kingdom","2020-04-04",0
+"United Kingdom","2020-04-05",0
+"United Kingdom","2020-04-06",3
+"United Kingdom","2020-04-07",0
+"United Kingdom","2020-04-08",0
+"United Kingdom","2020-04-09",0
+"United Kingdom","2020-04-10",0
+"United Kingdom","2020-04-11",0
+"United Kingdom","2020-04-12",1
+"United Kingdom","2020-04-13",1
+"United Kingdom","2020-04-14",0
+"United Kingdom","2020-04-15",0
+"United Kingdom","2020-04-16",1
+"United Kingdom","2020-04-17",0
+"United Kingdom","2020-04-18",0
+"United Kingdom","2020-04-19",0
+"United Kingdom","2020-04-20",0
+"United Kingdom","2020-04-21",0
+"United Kingdom","2020-04-22",0
+"Australia","2020-01-22",0
+"Australia","2020-01-23",0
+"Australia","2020-01-24",0
+"Australia","2020-01-25",0
+"Australia","2020-01-26",1
+"Australia","2020-01-27",0
+"Australia","2020-01-28",0
+"Australia","2020-01-29",0
+"Australia","2020-01-30",1
+"Australia","2020-01-31",1
+"Australia","2020-02-01",1
+"Australia","2020-02-02",0
+"Australia","2020-02-03",0
+"Australia","2020-02-04",0
+"Australia","2020-02-05",0
+"Australia","2020-02-06",0
+"Australia","2020-02-07",0
+"Australia","2020-02-08",0
+"Australia","2020-02-09",0
+"Australia","2020-02-10",0
+"Australia","2020-02-11",0
+"Australia","2020-02-12",0
+"Australia","2020-02-13",0
+"Australia","2020-02-14",0
+"Australia","2020-02-15",0
+"Australia","2020-02-16",0
+"Australia","2020-02-17",0
+"Australia","2020-02-18",0
+"Australia","2020-02-19",0
+"Australia","2020-02-20",0
+"Australia","2020-02-21",0
+"Australia","2020-02-22",0
+"Australia","2020-02-23",0
+"Australia","2020-02-24",0
+"Australia","2020-02-25",0
+"Australia","2020-02-26",0
+"Australia","2020-02-27",0
+"Australia","2020-02-28",0
+"Australia","2020-02-29",3
+"Australia","2020-03-01",0
+"Australia","2020-03-02",2
+"Australia","2020-03-03",0
+"Australia","2020-03-04",1
+"Australia","2020-03-05",0
+"Australia","2020-03-06",0
+"Australia","2020-03-07",1
+"Australia","2020-03-08",0
+"Australia","2020-03-09",4
+"Australia","2020-03-10",3
+"Australia","2020-03-11",3
+"Australia","2020-03-12",0
+"Australia","2020-03-13",15
+"Australia","2020-03-14",13
+"Australia","2020-03-15",8
+"Australia","2020-03-16",14
+"Australia","2020-03-17",23
+"Australia","2020-03-18",27
+"Australia","2020-03-19",0
+"Australia","2020-03-20",0
+"Australia","2020-03-21",108
+"Australia","2020-03-22",126
+"Australia","2020-03-23",0
+"Australia","2020-03-24",56
+"Australia","2020-03-25",55
+"Australia","2020-03-26",54
+"Australia","2020-03-27",54
+"Australia","2020-03-28",111
+"Australia","2020-03-29",84
+"Australia","2020-03-30",52
+"Australia","2020-03-31",96
+"Australia","2020-04-01",51
+"Australia","2020-04-02",68
+"Australia","2020-04-03",49
+"Australia","2020-04-04",30
+"Australia","2020-04-05",20
+"Australia","2020-04-06",23
+"Australia","2020-04-07",33
+"Australia","2020-04-08",21
+"Australia","2020-04-09",16
+"Australia","2020-04-10",13
+"Australia","2020-04-11",24
+"Australia","2020-04-12",3
+"Australia","2020-04-13",13
+"Australia","2020-04-14",10
+"Australia","2020-04-15",8
+"Australia","2020-04-16",0
+"Australia","2020-04-17",3
+"Australia","2020-04-18",17
+"Australia","2020-04-19",0
+"Australia","2020-04-20",0
+"Australia","2020-04-21",0
+"Australia","2020-04-22",0
+"Australia","2020-01-22",0
+"Australia","2020-01-23",0
+"Australia","2020-01-24",0
+"Australia","2020-01-25",0
+"Australia","2020-01-26",0
+"Australia","2020-01-27",0
+"Australia","2020-01-28",0
+"Australia","2020-01-29",0
+"Australia","2020-01-30",0
+"Australia","2020-01-31",0
+"Australia","2020-02-01",0
+"Australia","2020-02-02",0
+"Australia","2020-02-03",0
+"Australia","2020-02-04",0
+"Australia","2020-02-05",0
+"Australia","2020-02-06",0
+"Australia","2020-02-07",0
+"Australia","2020-02-08",0
+"Australia","2020-02-09",0
+"Australia","2020-02-10",0
+"Australia","2020-02-11",0
+"Australia","2020-02-12",0
+"Australia","2020-02-13",0
+"Australia","2020-02-14",0
+"Australia","2020-02-15",0
+"Australia","2020-02-16",0
+"Australia","2020-02-17",0
+"Australia","2020-02-18",0
+"Australia","2020-02-19",0
+"Australia","2020-02-20",0
+"Australia","2020-02-21",0
+"Australia","2020-02-22",0
+"Australia","2020-02-23",0
+"Australia","2020-02-24",0
+"Australia","2020-02-25",0
+"Australia","2020-02-26",0
+"Australia","2020-02-27",0
+"Australia","2020-02-28",0
+"Australia","2020-02-29",2
+"Australia","2020-03-01",0
+"Australia","2020-03-02",0
+"Australia","2020-03-03",0
+"Australia","2020-03-04",0
+"Australia","2020-03-05",1
+"Australia","2020-03-06",0
+"Australia","2020-03-07",0
+"Australia","2020-03-08",0
+"Australia","2020-03-09",1
+"Australia","2020-03-10",2
+"Australia","2020-03-11",3
+"Australia","2020-03-12",0
+"Australia","2020-03-13",5
+"Australia","2020-03-14",3
+"Australia","2020-03-15",0
+"Australia","2020-03-16",11
+"Australia","2020-03-17",3
+"Australia","2020-03-18",4
+"Australia","2020-03-19",17
+"Australia","2020-03-20",12
+"Australia","2020-03-21",26
+"Australia","2020-03-22",30
+"Australia","2020-03-23",20
+"Australia","2020-03-24",35
+"Australia","2020-03-25",0
+"Australia","2020-03-26",56
+"Australia","2020-03-27",0
+"Australia","2020-03-28",47
+"Australia","2020-03-29",33
+"Australia","2020-03-30",44
+"Australia","2020-03-31",9
+"Australia","2020-04-01",28
+"Australia","2020-04-02",8
+"Australia","2020-04-03",0
+"Australia","2020-04-04",36
+"Australia","2020-04-05",17
+"Australia","2020-04-06",7
+"Australia","2020-04-07",0
+"Australia","2020-04-08",21
+"Australia","2020-04-09",14
+"Australia","2020-04-10",11
+"Australia","2020-04-11",8
+"Australia","2020-04-12",0
+"Australia","2020-04-13",3
+"Australia","2020-04-14",10
+"Australia","2020-04-15",0
+"Australia","2020-04-16",5
+"Australia","2020-04-17",9
+"Australia","2020-04-18",0
+"Australia","2020-04-19",0
+"Australia","2020-04-20",0
+"Australia","2020-04-21",0
+"Australia","2020-04-22",0
