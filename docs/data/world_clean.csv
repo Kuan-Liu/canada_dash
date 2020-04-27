@@ -91,6 +91,9 @@
 "Germany","2020-04-20",1881
 "Germany","2020-04-21",1226
 "Germany","2020-04-22",2357
+"Germany","2020-04-23",2481
+"Germany","2020-04-24",1870
+"Germany","2020-04-25",1514
 "Italy","2020-01-22",0
 "Italy","2020-01-23",0
 "Italy","2020-01-24",0
@@ -183,6 +186,9 @@
 "Italy","2020-04-20",2256
 "Italy","2020-04-21",2729
 "Italy","2020-04-22",3370
+"Italy","2020-04-23",2646
+"Italy","2020-04-24",3021
+"Italy","2020-04-25",2357
 "Spain","2020-01-22",0
 "Spain","2020-01-23",0
 "Spain","2020-01-24",0
@@ -275,6 +281,9 @@
 "Spain","2020-04-20",1536
 "Spain","2020-04-21",3968
 "Spain","2020-04-22",4211
+"Spain","2020-04-23",4635
+"Spain","2020-04-24",6740
+"Spain","2020-04-25",3995
 "Switzerland","2020-01-22",0
 "Switzerland","2020-01-23",0
 "Switzerland","2020-01-24",0
@@ -367,6 +376,9 @@
 "Switzerland","2020-04-20",204
 "Switzerland","2020-04-21",119
 "Switzerland","2020-04-22",205
+"Switzerland","2020-04-23",228
+"Switzerland","2020-04-24",181
+"Switzerland","2020-04-25",217
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -459,6 +471,9 @@
 "United Kingdom","2020-04-20",4676
 "United Kingdom","2020-04-21",4301
 "United Kingdom","2020-04-22",4451
+"United Kingdom","2020-04-23",4583
+"United Kingdom","2020-04-24",5386
+"United Kingdom","2020-04-25",4913
 "US","2020-01-22",1
 "US","2020-01-23",0
 "US","2020-01-24",1
@@ -549,8 +564,11 @@
 "US","2020-04-18",32491
 "US","2020-04-19",26612
 "US","2020-04-20",25517
-"US","2020-04-21",27710
-"US","2020-04-22",27639
+"US","2020-04-21",27539
+"US","2020-04-22",28486
+"US","2020-04-23",28819
+"US","2020-04-24",36188
+"US","2020-04-25",32796
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -643,6 +661,9 @@
 "United Kingdom","2020-04-20",0
 "United Kingdom","2020-04-21",0
 "United Kingdom","2020-04-22",0
+"United Kingdom","2020-04-23",0
+"United Kingdom","2020-04-24",0
+"United Kingdom","2020-04-25",0
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -732,9 +753,12 @@
 "Australia","2020-04-17",0
 "Australia","2020-04-18",0
 "Australia","2020-04-19",0
-"Australia","2020-04-20",0
+"Australia","2020-04-20",1
 "Australia","2020-04-21",0
 "Australia","2020-04-22",0
+"Australia","2020-04-23",0
+"Australia","2020-04-24",1
+"Australia","2020-04-25",1
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -827,6 +851,9 @@
 "United Kingdom","2020-04-20",0
 "United Kingdom","2020-04-21",0
 "United Kingdom","2020-04-22",13
+"United Kingdom","2020-04-23",0
+"United Kingdom","2020-04-24",0
+"United Kingdom","2020-04-25",10
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -919,6 +946,9 @@
 "United Kingdom","2020-04-20",1
 "United Kingdom","2020-04-21",0
 "United Kingdom","2020-04-22",0
+"United Kingdom","2020-04-23",0
+"United Kingdom","2020-04-24",0
+"United Kingdom","2020-04-25",1
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -1011,6 +1041,9 @@
 "United Kingdom","2020-04-20",5
 "United Kingdom","2020-04-21",0
 "United Kingdom","2020-04-22",0
+"United Kingdom","2020-04-23",0
+"United Kingdom","2020-04-24",4
+"United Kingdom","2020-04-25",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -1103,6 +1136,9 @@
 "United Kingdom","2020-04-20",0
 "United Kingdom","2020-04-21",8
 "United Kingdom","2020-04-22",2
+"United Kingdom","2020-04-23",23
+"United Kingdom","2020-04-24",2
+"United Kingdom","2020-04-25",2
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -1195,6 +1231,9 @@
 "United Kingdom","2020-04-20",0
 "United Kingdom","2020-04-21",0
 "United Kingdom","2020-04-22",0
+"United Kingdom","2020-04-23",1
+"United Kingdom","2020-04-24",1
+"United Kingdom","2020-04-25",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -1287,6 +1326,9 @@
 "United Kingdom","2020-04-20",0
 "United Kingdom","2020-04-21",0
 "United Kingdom","2020-04-22",0
+"United Kingdom","2020-04-23",1
+"United Kingdom","2020-04-24",0
+"United Kingdom","2020-04-25",3
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -1379,6 +1421,9 @@
 "United Kingdom","2020-04-20",2
 "United Kingdom","2020-04-21",7
 "United Kingdom","2020-04-22",0
+"United Kingdom","2020-04-23",0
+"United Kingdom","2020-04-24",1
+"United Kingdom","2020-04-25",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -1471,6 +1516,9 @@
 "United Kingdom","2020-04-20",0
 "United Kingdom","2020-04-21",0
 "United Kingdom","2020-04-22",0
+"United Kingdom","2020-04-23",0
+"United Kingdom","2020-04-24",0
+"United Kingdom","2020-04-25",0
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -1558,11 +1606,14 @@
 "Australia","2020-04-15",16
 "Australia","2020-04-16",11
 "Australia","2020-04-17",29
-"Australia","2020-04-18",0
-"Australia","2020-04-19",0
-"Australia","2020-04-20",0
-"Australia","2020-04-21",0
-"Australia","2020-04-22",0
+"Australia","2020-04-18",10
+"Australia","2020-04-19",21
+"Australia","2020-04-20",6
+"Australia","2020-04-21",6
+"Australia","2020-04-22",2
+"Australia","2020-04-23",5
+"Australia","2020-04-24",6
+"Australia","2020-04-25",12
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -1655,6 +1706,9 @@
 "Australia","2020-04-20",0
 "Australia","2020-04-21",0
 "Australia","2020-04-22",0
+"Australia","2020-04-23",0
+"Australia","2020-04-24",0
+"Australia","2020-04-25",0
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -1743,10 +1797,13 @@
 "Australia","2020-04-16",2
 "Australia","2020-04-17",6
 "Australia","2020-04-18",8
-"Australia","2020-04-19",0
+"Australia","2020-04-19",4
 "Australia","2020-04-20",0
-"Australia","2020-04-21",0
+"Australia","2020-04-21",5
 "Australia","2020-04-22",0
+"Australia","2020-04-23",2
+"Australia","2020-04-24",0
+"Australia","2020-04-25",0
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -1837,8 +1894,11 @@
 "Australia","2020-04-18",0
 "Australia","2020-04-19",0
 "Australia","2020-04-20",0
-"Australia","2020-04-21",0
-"Australia","2020-04-22",0
+"Australia","2020-04-21",2
+"Australia","2020-04-22",1
+"Australia","2020-04-23",0
+"Australia","2020-04-24",0
+"Australia","2020-04-25",0
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -1926,11 +1986,14 @@
 "Australia","2020-04-15",0
 "Australia","2020-04-16",4
 "Australia","2020-04-17",11
-"Australia","2020-04-18",0
-"Australia","2020-04-19",0
-"Australia","2020-04-20",0
-"Australia","2020-04-21",0
-"Australia","2020-04-22",0
+"Australia","2020-04-18",8
+"Australia","2020-04-19",7
+"Australia","2020-04-20",5
+"Australia","2020-04-21",1
+"Australia","2020-04-22",4
+"Australia","2020-04-23",2
+"Australia","2020-04-24",0
+"Australia","2020-04-25",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -2023,6 +2086,9 @@
 "United Kingdom","2020-04-20",0
 "United Kingdom","2020-04-21",0
 "United Kingdom","2020-04-22",0
+"United Kingdom","2020-04-23",0
+"United Kingdom","2020-04-24",0
+"United Kingdom","2020-04-25",0
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -2111,10 +2177,13 @@
 "Australia","2020-04-16",0
 "Australia","2020-04-17",3
 "Australia","2020-04-18",17
-"Australia","2020-04-19",0
-"Australia","2020-04-20",0
-"Australia","2020-04-21",0
+"Australia","2020-04-19",9
+"Australia","2020-04-20",1
+"Australia","2020-04-21",7
 "Australia","2020-04-22",0
+"Australia","2020-04-23",1
+"Australia","2020-04-24",6
+"Australia","2020-04-25",3
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -2202,8 +2271,11 @@
 "Australia","2020-04-15",0
 "Australia","2020-04-16",5
 "Australia","2020-04-17",9
-"Australia","2020-04-18",0
-"Australia","2020-04-19",0
+"Australia","2020-04-18",3
+"Australia","2020-04-19",1
 "Australia","2020-04-20",0
-"Australia","2020-04-21",0
+"Australia","2020-04-21",1
 "Australia","2020-04-22",0
+"Australia","2020-04-23",0
+"Australia","2020-04-24",2
+"Australia","2020-04-25",1

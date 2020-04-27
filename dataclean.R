@@ -80,7 +80,6 @@ names(can_p)[3:8]<-c("c_daily","c_cum","d_daily","d_cum","r_cum","t_cum")
 
 write.csv(can_p, "docs/data/can_p.csv",row.names = F)
 
-setwd("C:/Users/kuan liu/Dropbox (Personal)/STAT_consulting/covidvisual/coronavirus-csv")
 
 world<-read.csv("https://raw.githubusercontent.com/RamiKrispin/coronavirus-csv/master/coronavirus_dataset.csv", header = T,
                 sep = ",", encoding = 'UTF-8')
