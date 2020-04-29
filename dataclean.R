@@ -259,6 +259,3 @@ df_trajectory_can <- df_can %>%
 write.csv(df_trajectory, "docs/data/df_trajectory.csv",row.names = F)
 write.csv(df_trajectory_can, "docs/data/df_trajectory_can.csv",row.names = F)
 
-# C:/Users/kuan liu/Dropbox (Personal)/STAT_consulting/covidvisual/canada_dash/
-
-
