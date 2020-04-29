@@ -880,10 +880,10 @@ Canada Data
 =======================================================================
 
 ```{r}
-can[,c(1,2,3,10,6,7,4)] %>% 
+DT::renderDT(can[,c(1,2,3,10,6,7,4)] %>% 
   DT::datatable(rownames = FALSE,
                 colnames = c("Date","Daily New Cases","Daily New Death","Daily New Recovered","Cumulative Cases", "Cumulative Death", "Cumulative Recovered"), options = list(searchHighlight = TRUE, 
-                           pageLength = nrow(can)), filter = 'top')
+                           pageLength = nrow(can)), filter = 'top'))
 ```
 
 
