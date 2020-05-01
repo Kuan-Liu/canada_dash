@@ -159,8 +159,8 @@ mytext <- paste(
   lapply(htmltools::HTML)
 
 #------------------ data update time;  ------------------
-# date_update_date<-read.table("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/update_time.txt")
-date_update_date<-read.table("docs/data/update_time.txt")
+date_update_date<-read.table("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/update_time.txt")
+# date_update_date<-read.table("docs/data/update_time.txt")
 data_date<-as_tibble(paste(date_update_date$V1, date_update_date$V2, date_update_date$V3))
 
 

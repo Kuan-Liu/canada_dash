@@ -206,7 +206,7 @@ df_trajectory <- df_it %>%
   dplyr::left_join(df_au, by = "index") 
 
 
-#------------provincial data this is for province the trajectory plot------------
+#------------provincial data this is for the province trajectory plot------------
 #now getting data for provinces, only those with more than 50 cases;
 
 ab_cum<- dplyr::filter(can_c, cumulative_cases > 50 & province=="Alberta")  %>% dplyr::select(cumulative_cases)
