@@ -155,7 +155,8 @@ mytext <- paste(
    canada_region$province, "<br/>",
    "Confirmed Cases: ", canada_region$c_cum, "<br/>", 
    "Deaths: ", canada_region$d_cum, "<br/>", 
-   "Recovered: ", canada_region$r_cum, sep="") %>%
+   "Recovered: ", canada_region$r_cum, "<br/>", 
+   "Total tested: ", canada_region$t_cum, sep="") %>%
   lapply(htmltools::HTML)
 
 #------------------ data update time;  ------------------
@@ -436,7 +437,7 @@ Column {data-width=550}
 ```{r}
 
 # Create a color palette with handmade bins.
-mybins <- c(0,100,500,1000,2000,5000,10000,20000, 30000)
+mybins <- c(0,100,500,1000,2000,5000,10000,25000, 40000)
 pal <- colorBin( palette="viridis", domain=canada_region$c_cum, na.color="transparent", bins=mybins)
 
 renderLeaflet({leaflet(canada_region) %>%
@@ -453,9 +454,37 @@ Column
 ### Canada COVID-19 Data by Province and Territory as of `r data_date$value`
 
 ```{r}
-DT::renderDT(canada_region[,c(2,4,9,6,7,8)] %>%
-  DT::datatable(rownames = FALSE,
-                colnames = c("Region","Cumulative Cases", "Cumulative Active Cases","Cumulative Deaths", "Cumulative Recovered", "Total tests completed"), options = list(order = list(1, 'desc'), searching = FALSE), filter = 'none'))
+canada_region_toplot<- canada_region[,c(2,4,6,7,9)]
+canada_region_toplot$province<- c("AB", "BC", "MB", "NB", "NL", "NS", "NU", "NT", "ON", "PE", "QC", "SK", "YT")
+canada_region_toplot$province<- as.factor(canada_region_toplot$province)
+canada_region_toplot$province <- reorder(canada_region_toplot$province, canada_region_toplot$c_cum) 
+canada_region_toplot$d_cum_p<- canada_region_toplot$d_cum/canada_region_toplot$c_cum*100
+canada_region_toplot$r_cum_p<- canada_region_toplot$r_cum/canada_region_toplot$c_cum*100
+canada_region_toplot$a_cum_p<- canada_region_toplot$a_cum/canada_region_toplot$c_cum*100
+
+
+plotly::plot_ly(data = canada_region_toplot,
+                y = ~ province,
+                x = ~ a_cum_p, 
+                name = 'Active', 
+                #color = '#1f77b4',
+                type = 'bar', text=~a_cum, textposition='auto', hoverinfo = 'text', orientation='h',  marker = list(color = '#1f77b4'),
+                hovertext = paste(paste(canada_region_toplot$province,": </br>", paste(paste(canada_region_toplot$a_cum, "Active Cases", sep=" "),
+                                                                       "<br>", paste(round(canada_region_toplot$a_cum_p,2)), "%", sep=""))))  %>%
+  plotly::add_trace( x = ~ d_cum_p, 
+                     name = "Death", text=~d_cum, textposition='auto', hoverinfo = 'text', orientation='h', marker = list(color = '#E41317'),
+                     hovertext = paste(paste(canada_region_toplot$province,": </br>", paste(paste(canada_region_toplot$d_cum, "Deaths", sep=" "),
+                                                                            "<br>", paste(round(canada_region_toplot$d_cum_p,2)), "%", sep="")))) %>%
+  plotly::add_trace( x = ~ r_cum_p, 
+                     name = "Recovered", text=~r_cum, textposition='auto', hoverinfo = 'text', orientation='h', marker = list(color = 'forestgreen'),
+                     hovertext = paste(paste(canada_region_toplot$province,": </br>", paste(paste(canada_region_toplot$r_cum, "Recovered", sep=" "),
+                                                                            "<br>", paste(round(canada_region_toplot$r_cum_p,2)), "%", sep="")))) %>%
+  plotly::layout(xaxis = list(title = 'Percentage of Cumulative Cases'), yaxis = list(title = ""),
+                 barmode = 'stack',hovermode = "compared")
+
+# DT::renderDT(canada_region[,c(2,4,9,6,7,8)] %>%
+#   DT::datatable(rownames = FALSE,
+#                 colnames = c("Region","Cumulative Cases", "Cumulative Active Cases","Cumulative Deaths", "Cumulative Recovered", "Total tests completed"), options = list(order = list(1, 'desc'), searching = FALSE), filter = 'none'))
 ```
 
 
@@ -893,7 +922,6 @@ About
 
 **Time of last data update:** `r data_date$value`
 
-***News!*** I am excited to share with everyone, [Rose Garrett](https://twitter.com/rose_carrot), will be joining me to improve this dashboard. Rose is a second year PhD student in Biostatistics at DLSPH, University of Toronto, also under the supervision of [Dr. Eleanor Pullenayegum](https://twitter.com/EMPullenayegum) at Sickkids. Rose will create new visualization figures for us. Stay tuned!
 
 **Thank you for your interest in our COVID-19 data visualization project.** There are many great COVID-19 Canada dashboards available online. We have compiled the following list to show some of the dashboards that inspired us to build this one. 
 
