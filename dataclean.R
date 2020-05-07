@@ -14,6 +14,8 @@ can_d <- read.csv(text=x2, header = TRUE, sep = ",", encoding = 'UTF-8')
 can_r <- read.csv(text=x3, header = TRUE, sep = ",", encoding = 'UTF-8')
 can_t <- read.csv(text=x4, header = TRUE, sep = ",", encoding = 'UTF-8')
 
+newdataline<- data.frame(date_recovered="06-05-2020",province="Yukon",cumulative_recovered=11)
+can_r<-rbind(can_r, newdataline)
 
 `%>%` <- magrittr::`%>%`
 #------------------ canada data formating ------------------
@@ -22,6 +24,8 @@ can_c$date_report<-as.Date(can_c$date_report,format="%d-%m-%y")
 can_d$date_death_report<-as.Date(can_d$date_death_report,format="%d-%m-%y")
 can_r$date_recovered<-as.Date(can_r$date_recovered,format="%d-%m-%y")
 can_t$date_testing<-as.Date(can_t$date_testing,format="%d-%m-%y")
+
+
 
 #format province labels;
 province_labelc<-c("Alberta","British Columbia","Manitoba","New Brunswick", "Newfoundland and Labrador", "Nova Scotia","Nunavut","NorthWest", "Ontario","Prince Edward Island","Quebec", "Repatriated","Saskatchewan","Yukon")
@@ -77,6 +81,8 @@ can_p<-merge(can_p, can_t[,c("date_testing","province","cumulative_testing")],
 
 can_p[is.na(can_p)]<-0
 names(can_p)[3:8]<-c("c_daily","c_cum","d_daily","d_cum","r_cum","t_cum")
+
+# can_p[1442,7]<-11
 
 write.csv(can_p, "docs/data/can_p.csv",row.names = F)
 
