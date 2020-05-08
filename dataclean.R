@@ -14,8 +14,8 @@ can_d <- read.csv(text=x2, header = TRUE, sep = ",", encoding = 'UTF-8')
 can_r <- read.csv(text=x3, header = TRUE, sep = ",", encoding = 'UTF-8')
 can_t <- read.csv(text=x4, header = TRUE, sep = ",", encoding = 'UTF-8')
 
-newdataline<- data.frame(date_recovered="06-05-2020",province="Yukon",cumulative_recovered=11)
-can_r<-rbind(can_r, newdataline)
+# newdataline<- data.frame(date_recovered="06-05-2020",province="Yukon",cumulative_recovered=11)
+# can_r<-rbind(can_r, newdataline)
 
 `%>%` <- magrittr::`%>%`
 #------------------ canada data formating ------------------
@@ -33,7 +33,7 @@ province_labeld<-c("Alberta","British Columbia","Manitoba","New Brunswick", "New
 
 levels(can_c$province)<-province_labelc
 levels(can_d$province)<-province_labeld
-levels(can_r$province)<-province_labeld
+levels(can_r$province)<-province_labelc
 levels(can_t$province)<-province_labeld
 
 #aggregate counts by date combining all province;
