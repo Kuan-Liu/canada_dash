@@ -437,7 +437,7 @@ Column {data-width=550}
 ```{r}
 
 # Create a color palette with handmade bins.
-mybins <- c(0,100,500,1000,2000,5000,10000,25000, 40000)
+mybins <- c(0,100,500,1000,2000,5000,10000,25000, 50000)
 pal <- colorBin( palette="viridis", domain=canada_region$c_cum, na.color="transparent", bins=mybins)
 
 renderLeaflet({leaflet(canada_region) %>%
