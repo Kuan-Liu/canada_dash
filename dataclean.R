@@ -8,10 +8,10 @@ x1 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/t
 x2 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_prov/mortality_timeseries_prov.csv") #new time series data, apr13;
 x3 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/recovered_cumulative.csv")
 x4 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/testing_cumulative.csv")
-
+x5 <- getURL("https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/data/recovered_cumulative.csv")
 can_c <- read.csv(text=x1, header = TRUE, sep = ",", encoding = 'UTF-8')
 can_d <- read.csv(text=x2, header = TRUE, sep = ",", encoding = 'UTF-8')
-can_r <- read.csv(text=x3, header = TRUE, sep = ",", encoding = 'UTF-8')
+can_r <- read.csv(text=x5, header = TRUE, sep = ",", encoding = 'UTF-8')
 can_t <- read.csv(text=x4, header = TRUE, sep = ",", encoding = 'UTF-8')
 
 # newdataline<- data.frame(date_recovered="06-05-2020",province="Yukon",cumulative_recovered=11)
