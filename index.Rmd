@@ -437,7 +437,7 @@ Column {data-width=550}
 ```{r}
 
 # Create a color palette with handmade bins.
-mybins <- c(0,100,500,1000,2000,5000,10000,25000, 50000)
+mybins <- c(0,100,500,1000,2000,5000,10000,25000, 50000, Inf)
 pal <- colorBin( palette="viridis", domain=canada_region$c_cum, na.color="transparent", bins=mybins)
 
 renderLeaflet({leaflet(canada_region) %>%
@@ -752,7 +752,7 @@ Column
 
 plot_ly(on_case[on_case$date_report>as.Date("2020-02-29"),] , 
                x=~date_report, y=~health_region, z = ~ cumulative_cases, type = "heatmap",
-               colors = "YlGnBu",zmin=0, zmax=350,
+               colors = "YlGnBu",zmin=0, zmax=1000,
                xgap=1, ygap=1) %>% plotly::layout(showlegend=FALSE,title = "",
          xaxis = list(title = "", side="top"),
          yaxis = list(title = ""))
@@ -766,7 +766,7 @@ plot_ly(on_case[on_case$date_report>as.Date("2020-02-29"),] ,
 
 plot_ly(on_death[on_death$date_death_report>as.Date("2020-02-29"),] , 
                x=~date_death_report, y=~health_region, z = ~ cumulative_deaths, type = "heatmap",
-               colors = colorRamp(c("white","red")),zmin=0,zmax=50, xgap=1, ygap=1) %>% plotly::layout(showlegend=FALSE,title = "",
+               colors = colorRamp(c("white","red")),zmin=0,zmax=100, xgap=1, ygap=1) %>% plotly::layout(showlegend=FALSE,title = "",
          xaxis = list(title = "", side="top"),
          yaxis = list(title = ""))
 
@@ -885,7 +885,7 @@ Column
 ### Heatmaps on Cumulative Cases by Regions
 
 ```{r }
-plot_ly(qc_case[qc_case$date_report>as.Date("2020-02-29"),], x=~date_report, y=~health_region, z = ~ cumulative_cases, type = "heatmap", colors = "YlGnBu",zmin=0, zmax=350,
+plot_ly(qc_case[qc_case$date_report>as.Date("2020-02-29"),], x=~date_report, y=~health_region, z = ~ cumulative_cases, type = "heatmap", colors = "YlGnBu",zmin=0, zmax=1000,
                xgap=1, ygap=1) %>% layout(showlegend=FALSE,title = "",
          xaxis = list(title = "", side="top"),
          yaxis = list(title = ""))
@@ -898,7 +898,7 @@ plot_ly(qc_case[qc_case$date_report>as.Date("2020-02-29"),], x=~date_report, y=~
 ```{r }
 plot_ly(qc_death[qc_death$date_death_report>as.Date("2020-02-29"),] , 
                x=~date_death_report, y=~health_region, z = ~ cumulative_deaths, type = "heatmap",
-               colors = colorRamp(c("white","red")),zmin=0,zmax=50, xgap=1, ygap=1) %>% layout(showlegend=FALSE,title = "",
+               colors = colorRamp(c("white","red")),zmin=0,zmax=100, xgap=1, ygap=1) %>% layout(showlegend=FALSE,title = "",
          xaxis = list(title = "", side="top"),
          yaxis = list(title = ""))
 
