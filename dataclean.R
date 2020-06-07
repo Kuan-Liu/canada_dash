@@ -87,14 +87,14 @@ names(can_p)[3:8]<-c("c_daily","c_cum","d_daily","d_cum","r_cum","t_cum")
 write.csv(can_p, "docs/data/can_p.csv",row.names = F)
 
 
-world<-read.csv("https://raw.githubusercontent.com/RamiKrispin/coronavirus-csv/master/coronavirus_dataset.csv", header = T,
+world<-read.csv("https://raw.githubusercontent.com/RamiKrispin/coronavirus/master/csv/coronavirus.csv", header = T,
                 sep = ",", encoding = 'UTF-8')
 
 
-world_clean<- world %>% filter(Country.Region %in% c("US","United Kingdom","Australia","Germany","Spain","Italy","Switzerland"), 
+world_clean<- world %>% filter(country %in% c("US","United Kingdom","Australia","Germany","Spain","Italy","Switzerland"), 
                                type == "confirmed") 
 
-world_clean <- world_clean %>% select(Country.Region, date, cases)
+world_clean <- world_clean %>% select(country, date, cases)
 
 write.csv(world_clean, "docs/data/world_clean.csv", row.names = F)
 # C:/Users/kuan liu/Dropbox (Personal)/STAT_consulting/covidvisual/canada_dash/
@@ -117,7 +117,7 @@ write.csv(hr_d_clean, "docs/data/hr_d_clean.csv", row.names = F, fileEncoding = 
 
 world <- read.csv("docs/data/world_clean.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
 
-df_us <- world %>% dplyr::filter( Country.Region == "US") %>%
+df_us <- world %>% dplyr::filter( country == "US") %>%
   dplyr::group_by(date) %>%
   dplyr::summarise(cases = sum(cases)) %>%
   dplyr::ungroup() %>%
@@ -129,7 +129,7 @@ df_us <- world %>% dplyr::filter( Country.Region == "US") %>%
 df_us$index <- 1:nrow(df_us)
 
 
-df_uk <- world %>% dplyr::filter( Country.Region == "United Kingdom") %>%
+df_uk <- world %>% dplyr::filter( country == "United Kingdom") %>%
   dplyr::group_by(date) %>%
   dplyr::summarise(cases = sum(cases)) %>%
   dplyr::ungroup() %>%
@@ -140,7 +140,7 @@ df_uk <- world %>% dplyr::filter( Country.Region == "United Kingdom") %>%
 
 df_uk$index <- 1:nrow(df_uk)
 
-df_au <- world %>% dplyr::filter( Country.Region == "Australia") %>%
+df_au <- world %>% dplyr::filter( country == "Australia") %>%
   dplyr::group_by(date) %>%
   dplyr::summarise(cases = sum(cases)) %>%
   dplyr::ungroup() %>%
@@ -151,7 +151,7 @@ df_au <- world %>% dplyr::filter( Country.Region == "Australia") %>%
 
 df_au$index <- 1:nrow(df_au)
 
-df_ge <- world %>% dplyr::filter( Country.Region == "Germany") %>%
+df_ge <- world %>% dplyr::filter( country == "Germany") %>%
   dplyr::group_by(date) %>%
   dplyr::summarise(cases = sum(cases)) %>%
   dplyr::ungroup() %>%
@@ -162,7 +162,7 @@ df_ge <- world %>% dplyr::filter( Country.Region == "Germany") %>%
 
 df_ge$index <- 1:nrow(df_ge)
 
-df_sp <- world %>% dplyr::filter( Country.Region == "Spain") %>%
+df_sp <- world %>% dplyr::filter( country == "Spain") %>%
   dplyr::group_by(date) %>%
   dplyr::summarise(cases = sum(cases)) %>%
   dplyr::ungroup() %>%
@@ -174,7 +174,7 @@ df_sp <- world %>% dplyr::filter( Country.Region == "Spain") %>%
 df_sp$index <- 1:nrow(df_sp)
 
 
-df_it <- world %>% dplyr::filter( Country.Region == "Italy") %>%
+df_it <- world %>% dplyr::filter( country == "Italy") %>%
   dplyr::group_by(date) %>%
   dplyr::summarise(cases = sum(cases)) %>%
   dplyr::ungroup() %>%
@@ -185,7 +185,7 @@ df_it <- world %>% dplyr::filter( Country.Region == "Italy") %>%
 
 df_it$index <- 1:nrow(df_it)
 
-df_sw <- world %>% dplyr::filter( Country.Region == "Switzerland") %>%
+df_sw <- world %>% dplyr::filter( country == "Switzerland") %>%
   dplyr::group_by(date) %>%
   dplyr::summarise(cases = sum(cases)) %>%
   dplyr::ungroup() %>%
