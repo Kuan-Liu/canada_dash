@@ -136,6 +136,10 @@
 "Germany","2020-06-04",351
 "Germany","2020-06-05",452
 "Germany","2020-06-06",526
+"Germany","2020-06-07",300
+"Germany","2020-06-08",359
+"Germany","2020-06-09",397
+"Germany","2020-06-10",16
 "Italy","2020-01-22",0
 "Italy","2020-01-23",0
 "Italy","2020-01-24",0
@@ -273,6 +277,10 @@
 "Italy","2020-06-04",177
 "Italy","2020-06-05",518
 "Italy","2020-06-06",270
+"Italy","2020-06-07",197
+"Italy","2020-06-08",280
+"Italy","2020-06-09",283
+"Italy","2020-06-10",202
 "Spain","2020-01-22",0
 "Spain","2020-01-23",0
 "Spain","2020-01-24",0
@@ -410,6 +418,10 @@
 "Spain","2020-06-04",334
 "Spain","2020-06-05",318
 "Spain","2020-06-06",332
+"Spain","2020-06-07",240
+"Spain","2020-06-08",167
+"Spain","2020-06-09",249
+"Spain","2020-06-10",314
 "Switzerland","2020-01-22",0
 "Switzerland","2020-01-23",0
 "Switzerland","2020-01-24",0
@@ -547,6 +559,10 @@
 "Switzerland","2020-06-04",20
 "Switzerland","2020-06-05",23
 "Switzerland","2020-06-06",20
+"Switzerland","2020-06-07",9
+"Switzerland","2020-06-08",7
+"Switzerland","2020-06-09",16
+"Switzerland","2020-06-10",23
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -684,6 +700,10 @@
 "United Kingdom","2020-06-04",1805
 "United Kingdom","2020-06-05",1650
 "United Kingdom","2020-06-06",1557
+"United Kingdom","2020-06-07",1326
+"United Kingdom","2020-06-08",1205
+"United Kingdom","2020-06-09",1741
+"United Kingdom","2020-06-10",1003
 "US","2020-01-22",1
 "US","2020-01-23",0
 "US","2020-01-24",1
@@ -819,8 +839,12 @@
 "US","2020-06-02",20801
 "US","2020-06-03",19699
 "US","2020-06-04",21140
-"US","2020-06-05",24720
-"US","2020-06-06",22681
+"US","2020-06-05",29972
+"US","2020-06-06",23133
+"US","2020-06-07",18117
+"US","2020-06-08",17546
+"US","2020-06-09",11802
+"US","2020-06-10",27234
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -958,6 +982,10 @@
 "United Kingdom","2020-06-04",0
 "United Kingdom","2020-06-05",0
 "United Kingdom","2020-06-06",0
+"United Kingdom","2020-06-07",0
+"United Kingdom","2020-06-08",0
+"United Kingdom","2020-06-09",0
+"United Kingdom","2020-06-10",0
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -1095,6 +1123,10 @@
 "Australia","2020-06-04",0
 "Australia","2020-06-05",0
 "Australia","2020-06-06",1
+"Australia","2020-06-07",0
+"Australia","2020-06-08",0
+"Australia","2020-06-09",0
+"Australia","2020-06-10",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -1232,6 +1264,10 @@
 "United Kingdom","2020-06-04",0
 "United Kingdom","2020-06-05",0
 "United Kingdom","2020-06-06",0
+"United Kingdom","2020-06-07",0
+"United Kingdom","2020-06-08",0
+"United Kingdom","2020-06-09",0
+"United Kingdom","2020-06-10",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -1369,6 +1405,10 @@
 "United Kingdom","2020-06-04",0
 "United Kingdom","2020-06-05",0
 "United Kingdom","2020-06-06",0
+"United Kingdom","2020-06-07",0
+"United Kingdom","2020-06-08",0
+"United Kingdom","2020-06-09",0
+"United Kingdom","2020-06-10",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -1506,6 +1546,10 @@
 "United Kingdom","2020-06-04",4
 "United Kingdom","2020-06-05",4
 "United Kingdom","2020-06-06",0
+"United Kingdom","2020-06-07",0
+"United Kingdom","2020-06-08",7
+"United Kingdom","2020-06-09",5
+"United Kingdom","2020-06-10",4
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -1643,6 +1687,10 @@
 "United Kingdom","2020-06-04",0
 "United Kingdom","2020-06-05",0
 "United Kingdom","2020-06-06",2
+"United Kingdom","2020-06-07",0
+"United Kingdom","2020-06-08",1
+"United Kingdom","2020-06-09",1
+"United Kingdom","2020-06-10",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -1780,6 +1828,10 @@
 "United Kingdom","2020-06-04",0
 "United Kingdom","2020-06-05",0
 "United Kingdom","2020-06-06",0
+"United Kingdom","2020-06-07",0
+"United Kingdom","2020-06-08",0
+"United Kingdom","2020-06-09",0
+"United Kingdom","2020-06-10",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -1917,6 +1969,10 @@
 "United Kingdom","2020-06-04",0
 "United Kingdom","2020-06-05",1
 "United Kingdom","2020-06-06",1
+"United Kingdom","2020-06-07",1
+"United Kingdom","2020-06-08",0
+"United Kingdom","2020-06-09",0
+"United Kingdom","2020-06-10",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -2054,6 +2110,10 @@
 "United Kingdom","2020-06-04",0
 "United Kingdom","2020-06-05",0
 "United Kingdom","2020-06-06",0
+"United Kingdom","2020-06-07",0
+"United Kingdom","2020-06-08",0
+"United Kingdom","2020-06-09",0
+"United Kingdom","2020-06-10",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -2191,6 +2251,10 @@
 "United Kingdom","2020-06-04",0
 "United Kingdom","2020-06-05",0
 "United Kingdom","2020-06-06",0
+"United Kingdom","2020-06-07",0
+"United Kingdom","2020-06-08",0
+"United Kingdom","2020-06-09",0
+"United Kingdom","2020-06-10",0
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -2328,6 +2392,10 @@
 "Australia","2020-06-04",4
 "Australia","2020-06-05",0
 "Australia","2020-06-06",-1
+"Australia","2020-06-07",3
+"Australia","2020-06-08",2
+"Australia","2020-06-09",3
+"Australia","2020-06-10",0
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -2465,6 +2533,10 @@
 "Australia","2020-06-04",0
 "Australia","2020-06-05",0
 "Australia","2020-06-06",0
+"Australia","2020-06-07",0
+"Australia","2020-06-08",0
+"Australia","2020-06-09",0
+"Australia","2020-06-10",0
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -2602,6 +2674,10 @@
 "Australia","2020-06-04",0
 "Australia","2020-06-05",1
 "Australia","2020-06-06",0
+"Australia","2020-06-07",1
+"Australia","2020-06-08",0
+"Australia","2020-06-09",0
+"Australia","2020-06-10",1
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -2739,6 +2815,10 @@
 "Australia","2020-06-04",0
 "Australia","2020-06-05",0
 "Australia","2020-06-06",0
+"Australia","2020-06-07",0
+"Australia","2020-06-08",0
+"Australia","2020-06-09",0
+"Australia","2020-06-10",0
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -2876,6 +2956,10 @@
 "Australia","2020-06-04",0
 "Australia","2020-06-05",0
 "Australia","2020-06-06",0
+"Australia","2020-06-07",0
+"Australia","2020-06-08",0
+"Australia","2020-06-09",0
+"Australia","2020-06-10",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -3013,6 +3097,10 @@
 "United Kingdom","2020-06-04",0
 "United Kingdom","2020-06-05",0
 "United Kingdom","2020-06-06",0
+"United Kingdom","2020-06-07",0
+"United Kingdom","2020-06-08",0
+"United Kingdom","2020-06-09",0
+"United Kingdom","2020-06-10",0
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -3150,6 +3238,10 @@
 "Australia","2020-06-04",3
 "Australia","2020-06-05",0
 "Australia","2020-06-06",4
+"Australia","2020-06-07",2
+"Australia","2020-06-08",0
+"Australia","2020-06-09",4
+"Australia","2020-06-10",8
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -3287,3 +3379,7 @@
 "Australia","2020-06-04",0
 "Australia","2020-06-05",4
 "Australia","2020-06-06",3
+"Australia","2020-06-07",0
+"Australia","2020-06-08",0
+"Australia","2020-06-09",0
+"Australia","2020-06-10",2

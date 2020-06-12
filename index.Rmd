@@ -219,7 +219,8 @@ valueBox(value = paste(format(max(can$c_cum, na.rm = T), big.mark = ","), "", se
 
 ### Active {.value-box}
 ```{r}
-valueBox(value = paste(format(max(can$a_cum, na.rm = T), big.mark = ","), sep = ""),
+activecase<-max(can$c_cum, na.rm = T) - max(can$r_cum, na.rm = T) - max(can$d_cum, na.rm = T)
+valueBox(value = paste(format(activecase, big.mark = ","), sep = ""),
          caption = "Active Cases", 
          icon = "fas fa-ambulance",
          color = active_color)
@@ -505,7 +506,8 @@ valueBox(value = paste(format(max(trt$c_cum, na.rm = T), big.mark = ","), "", se
 
 ### Active and Recovered Cases {.value-box}
 ```{r}
-valueBox(value = paste(format(max(trt$a_cum, na.rm = T), big.mark = ","), sep = ""),
+activercase_trt<- max(trt$c_cum, na.rm = T) - max(trt$d_cum, na.rm = T)
+valueBox(value = paste(format(activercase_trt, big.mark = ","), sep = ""),
          caption = "Active and Recovered Cases", 
          icon = "fas fa-ambulance",
          color = active_color)
@@ -661,7 +663,8 @@ valueBox(value = paste(format(max(on$c_cum, na.rm = T), big.mark = ","), "", sep
 
 ### Active {.value-box}
 ```{r}
-valueBox(value = paste(format(max(on$a_cum, na.rm = T), big.mark = ","), sep = ""),
+activecase_on<-max(on$c_cum, na.rm = T) - max(on$r_cum, na.rm = T) - max(on$d_cum, na.rm = T)
+valueBox(value = paste(format(activecase_on, big.mark = ","), sep = ""),
          caption = "Active Cases", 
          icon = "fas fa-ambulance",
          color = active_color)
@@ -800,7 +803,8 @@ valueBox(value = paste(format(max(qc$c_cum, na.rm = T), big.mark = ","), "", sep
 
 ### Active {.value-box}
 ```{r}
-valueBox(value = paste(format(max(qc$a_cum, na.rm = T), big.mark = ","), sep = ""),
+activecase_qc<-max(qc$c_cum, na.rm = T) - max(qc$r_cum, na.rm = T) - max(qc$d_cum, na.rm = T)
+valueBox(value = paste(format(activecase_qc, big.mark = ","), sep = ""),
          caption = "Active Cases", 
          icon = "fas fa-ambulance",
          color = active_color)
