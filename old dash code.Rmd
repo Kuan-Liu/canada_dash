@@ -19,12 +19,10 @@ runtime: shiny
 library(shiny) #shiny app;
 library(flexdashboard) #dashboard;
 library(dplyr) #data tool;
-
-library(magrittr)
+# library(RCurl) #read data url;
 library(plotly) #visual tool;
 library(tibble) #scrap variable characters;
 library(DT) #Datatable;
-
 
 #------------------ Read Canada data ------------------
 
@@ -250,7 +248,7 @@ Row
 ### Overall Distribution of Cases
 
 ```{r}
-plotly::plot_ly(data = can[can$date_report > as.Date("2020-03-14"),],
+plotly::plot_ly(data = can[can$date_report > as.Date("2020-02-29"),],
         x = ~ date_report,
         y = ~ a_cum, 
         name = 'Active', 
@@ -376,7 +374,7 @@ Row
 ### Marc's Distribution of Confirmed Cases by Province and Territory
 
 ```{r}
-can_c_mo<- can_p[can_p$date_report>as.Date("2020-03-14"),c("date_report","province","c_cum")]
+can_c_mo<- can_p[can_p$date_report>as.Date("2020-02-29"),c("date_report","province","c_cum")]
 can_c_mo<- reshape(can_c_mo, idvar = "date_report",timevar="province",direction = "wide")
 
 names(can_c_mo)[2:ncol(can_c_mo)]<-sub("c.cum.", "", names(can_c_mo)[2:ncol(can_c_mo)])
@@ -429,10 +427,10 @@ plot_ly(can_d_mo, x = ~date_report, y = ~Quebec, name = 'Quebec', type = 'scatte
 
 ```
 
-Map {data-orientation=rows}
+Map
 =======================================================================
 
-Row 
+Column {data-width=550}
 -----------------------------------------------------------------------
 
 ### Geographic Mapping on Cumulative Cases in Canada
@@ -451,6 +449,8 @@ renderLeaflet({leaflet(canada_region) %>%
 
 ```
 
+Column 
+-----------------------------------------------------------------------
 
 ### Canada COVID-19 Data by Province and Territory as of `r data_date$value`
 
@@ -483,31 +483,158 @@ plotly::plot_ly(data = canada_region_toplot,
   plotly::layout(xaxis = list(title = 'Percentage of Cumulative Cases'), yaxis = list(title = ""),
                  barmode = 'stack',hovermode = "compared")
 
-
+# DT::renderDT(canada_region[,c(2,4,9,6,7,8)] %>%
+#   DT::datatable(rownames = FALSE,
+#                 colnames = c("Region","Cumulative Cases", "Cumulative Active Cases","Cumulative Deaths", "Cumulative Recovered", "Total tests completed"), options = list(order = list(1, 'desc'), searching = FALSE), filter = 'none'))
 ```
 
-Row 
+
+Toronto {data-orientation=rows}
+=======================================================================
+
+Row
 -----------------------------------------------------------------------
 
-### Canada COVID-19 Data by Province and Territory as of `r data_date$value`
+### Positive Cases {.value-box}
 
 ```{r}
+valueBox(value = paste(format(max(trt$c_cum, na.rm = T), big.mark = ","), "", sep = " "), 
+         caption = "Total Positive", 
+         icon = "far fa-plus-square", 
+         color = positive_color)
+```
 
-prov<-read.csv("docs/data/prov.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
-prov$date_report<-as.Date(prov$date_report,format="%Y-%m-%d")
+### Active and Recovered Cases {.value-box}
+```{r}
+activercase_trt<- max(trt$c_cum, na.rm = T) - max(trt$d_cum, na.rm = T)
+valueBox(value = paste(format(activercase_trt, big.mark = ","), sep = ""),
+         caption = "Active and Recovered Cases", 
+         icon = "fas fa-ambulance",
+         color = active_color)
+```
 
-prov2<- prov[prov$date_report==max(prov$date_report)&prov$province != "Repatriated",]
 
-DT::renderDT(prov2[,c(1,2,13,3,4,7,9,6,5,10,14)] %>%
-  DT::datatable(rownames = FALSE,
-                colnames = c("Region","Date Reported","Population","Daily New Cases","Cumulative Cases","Active Cases",
-                             "Daily New Deaths", "Cumulative Deaths", "Cumulative Recovered", 
-                             "Daily New Testing",
-                             "Cumulative Testing per 1000 Population"), options = list(order = list(5, 'desc'), searching = FALSE, pageLength = 13), filter = 'none'))
+### death {.value-box}
+```{r}
+valueBox(value = paste(format(max(trt$d_cum, na.rm = T), big.mark = ","), sep = ""),
+         caption = "Deaths", 
+         icon = "", 
+         color = death_color)
+```
 
+Row
+-----------------------------------------------------------------------
+
+### Overall Distribution of Cases
+
+```{r}
+plotly::plot_ly(data = trt[trt$date_report>as.Date("2020-02-29"),],
+        x = ~ date_report,
+        y = ~ a_cum, 
+        name = 'Active and Recovered Cases', 
+        fillcolor = '#1f77b4',
+        type = 'scatter',
+        mode = 'none', 
+        stackgroup = 'one') %>%
+  plotly::add_trace( y = ~ d_cum, 
+             name = "Death",
+             fillcolor = '#E41317') %>%
+  plotly::layout(title = "",
+         legend = list(x = 0.05, y = 0.95),
+         xaxis = list(title = ""),
+         yaxis = list(title = "Number of Cumulative Cases"),
+         hovermode = "compared")
+```
+
+### Trajectory of Confirmed Cases in Toronto 
+
+```{r}
+plotly::plot_ly(data = df_trajectory_can) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ trt,
+                    name = "Toronto",  line = list(width = 4,color = "red")) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ qc,
+                    name = "Quebec",  line = list(width = 2, color=qc_color)) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ on,
+                    name = "Ontario", line = list(width = 2, color=on_color)) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ ab,
+                    name = "Alberta",  line = list(width = 2, color=ab_color)) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ bc,
+                    name = "British Columbia",  line = list(width = 2, color=bc_color))%>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ ns,
+                    name = "Nova Scotia",  line = list(width = 2,color = ns_color)) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ sk,
+                    name = "Saskatchewan",  line = list(width = 2,color = sk_color)) %>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ nl,
+                    name = "Newfoundland and Labrador",  line = list(color = nl_color, width = 2))%>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ mb,
+                    name = "Manitoba",  line = list(color = mb_color, width = 2))%>%
+  plotly::add_lines(x = ~ index,
+                    y = ~ nb,
+                    name = "New Brunswick",  line = list(color = nb_color, width = 2))%>%
+  plotly::layout(yaxis = list(title = "Cumulative Positive Cases (log-scale)",type = "log"),
+                 xaxis = list(title = "Days since the total positive cases surpass 50"))
 
 ```
 
+
+Row
+-----------------------------------------------------------------------
+
+
+### Distribution of Daily New Confirmed, Fatal and Recovered Cases
+
+```{r}
+trt <- trt %>% 
+  dplyr::mutate(c_daily_smooth = (c_daily +
+                                    dplyr::lag(c_daily, n = 1) +
+                                    dplyr::lag(c_daily, n = 2) +
+                                    dplyr::lag(c_daily, n = 3) +
+                                    dplyr::lag(c_daily, n = 4)) / 5) %>%
+  dplyr::mutate(d_daily_smooth = (d_daily +
+                                    dplyr::lag(d_daily, n = 1) +
+                                    dplyr::lag(d_daily, n = 2) +
+                                    dplyr::lag(d_daily, n = 3) +
+                                    dplyr::lag(d_daily, n = 4)) / 5) 
+
+plot_ly(trt[trt$date_report>as.Date("2020-02-29"),], x = ~ date_report, y = ~c_daily, type="scatter", mode = 'markers',  name = 'Daily New Case', marker = list(color = '#1f77b4'))  %>% 
+  add_trace(x = ~ date_report, y = ~ c_daily_smooth, type = 'scatter', mode = 'lines+markers', name = 'Daily Case Trend', line = list(color = '#1f77b4',width=2), marker = list(color = '#1f77b4', opacity=0)) %>% 
+  add_trace(y = ~d_daily, name = 'Daily New Death', marker = list(color = 'red'), mode = 'markers') %>% 
+  add_trace(x = ~ date_report, y = ~ d_daily_smooth, type = 'scatter', mode = 'lines+markers', name = 'Daily Fatal Trend', line = list(color = 'red',width=2), marker = list(color = 'red', opacity=0)) %>% 
+  plotly::layout(title = "", legend = list(x = 0.05, y = 0.95),
+         xaxis = list(title = "Using 5 days trailing moving average to calculate the trend lines"),
+         yaxis = list(title = "Number of New Daily Cases"))
+
+```
+
+### Daily Percentage Increase on Confirmed and Fatal Cases
+
+```{r}
+trt$c_lag<-lag(trt$c_cum)
+trt$d_lag<-lag(trt$d_cum)
+trt$c_lag[is.na(trt$c_lag)]<-0
+trt$d_lag[is.na(trt$d_lag)]<-0
+
+trt$c_percentchange<-round(trt$c_daily/trt$c_lag*100,1)
+trt$d_percentchange<-round(trt$d_daily/trt$d_lag*100,1)
+
+
+plot_ly(trt[trt$date_report>as.Date("2020-02-29"),], x = ~ date_report, y = ~c_percentchange, type="scatter", mode = 'lines+markers',  name = '% Change Case', marker = list(color = '#1f77b4'))  %>% 
+  add_trace(y = ~d_percentchange, name = '% Change Death', marker = list(color = 'red'), line=list(color="red"),mode = 'lines+markers') %>% 
+  plotly::layout(title = "", xaxis = list(title = ""),
+         legend = list(x = 0.7, y = 0.95),
+         yaxis = list(title = "Percentage change in Cases"))
+
+
+```
 
 Ontario 
 =======================================================================
@@ -566,7 +693,7 @@ Column {data-width=380}
 ### Overall Distribution of Cases
     
 ```{r}
-plotly::plot_ly(data = on[on$date_report> as.Date("2020-03-14"),],
+plotly::plot_ly(data = on[on$date_report> as.Date("2020-02-29"),],
         x = ~ date_report,
         y = ~ a_cum, 
         name = 'Active', 
@@ -618,16 +745,17 @@ plot_ly(on[on$date_report>as.Date("2020-03-01"),], x = ~ date_report, y = ~c_per
 ```
 
 
+
 Column 
 -------------------------------------
 
-### Heatmaps on Daily New Cases by Regions
+### Heatmaps on Cumulative Cases by Regions
 
 ```{r }
 
-plotly::plot_ly(on_case[on_case$date_report>as.Date("2020-03-14"),] ,
-               x=~date_report, y=~health_region, z = ~ cases, type = "heatmap",
-               colors = "YlGnBu",zmin=0, zmax=100,
+plot_ly(on_case[on_case$date_report>as.Date("2020-02-29"),] , 
+               x=~date_report, y=~health_region, z = ~ cumulative_cases, type = "heatmap",
+               colors = "YlGnBu",zmin=0, zmax=1000,
                xgap=1, ygap=1) %>% plotly::layout(showlegend=FALSE,title = "",
          xaxis = list(title = "", side="top"),
          yaxis = list(title = ""))
@@ -635,18 +763,150 @@ plotly::plot_ly(on_case[on_case$date_report>as.Date("2020-03-14"),] ,
 ```   
 
 
-### Heatmaps on Daily New Deaths by Regions
+### Heatmaps on Cumulative Deaths by Regions
 
 ```{r }
 
-plotly::plot_ly(on_death[on_death$date_death_report>as.Date("2020-03-14"),] ,
-               x=~date_death_report, y=~health_region, z = ~ deaths, type = "heatmap",
-               colors = colorRamp(c("white","red")),zmin=0,zmax=10, xgap=1, ygap=1) %>% plotly::layout(showlegend=FALSE,title = "",
+plot_ly(on_death[on_death$date_death_report>as.Date("2020-02-29"),] , 
+               x=~date_death_report, y=~health_region, z = ~ cumulative_deaths, type = "heatmap",
+               colors = colorRamp(c("white","red")),zmin=0,zmax=100, xgap=1, ygap=1) %>% plotly::layout(showlegend=FALSE,title = "",
          xaxis = list(title = "", side="top"),
          yaxis = list(title = ""))
 
 ```   
 
+
+Quebec 
+=======================================================================
+
+Column {data-width=100} 
+-------------------------------------
+
+### tested {.value-box}
+```{r}
+valueBox(value = paste(format(max(qc$t_cum, na.rm = T), big.mark = ","), "", sep = " "), 
+         caption = "Total Tested Cases", 
+         icon = "fas fa-user-md", 
+         color = tested_color)
+```
+
+
+### Positive Cases {.value-box}
+
+```{r}
+valueBox(value = paste(format(max(qc$c_cum, na.rm = T), big.mark = ","), "", sep = " "), 
+         caption = "Total Positive", 
+         icon = "far fa-plus-square", 
+         color = positive_color)
+```
+
+
+### Active {.value-box}
+```{r}
+activecase_qc<-max(qc$c_cum, na.rm = T) - max(qc$r_cum, na.rm = T) - max(qc$d_cum, na.rm = T)
+valueBox(value = paste(format(activecase_qc, big.mark = ","), sep = ""),
+         caption = "Active Cases", 
+         icon = "fas fa-ambulance",
+         color = active_color)
+```
+
+### recovered {.value-box}
+```{r}
+valueBox(value = paste(format(max(qc$r_cum, na.rm = T), big.mark = ","), sep = ""),
+         caption = "Recovered Cases", 
+         icon = "fas fa-heartbeat", 
+         color = recovered_color)
+```
+
+### death {.value-box}
+```{r}
+valueBox(value = paste(format(max(qc$d_cum, na.rm = T), big.mark = ","), sep = ""),
+         caption = "Deaths", 
+         icon = "", 
+         color = death_color)
+```
+
+Column {data-width=380}
+-------------------------------------
+
+### Overall Distribution of Cases
+    
+```{r}
+qc2<-filter(qc, date_report > as.Date("2020-02-29"))
+plotly::plot_ly(data = qc2,
+        x = ~ date_report,
+        y = ~ a_cum, 
+        name = 'Active', 
+        fillcolor = '#1f77b4',
+        type = 'scatter',
+        mode = 'none', 
+        stackgroup = 'one') %>%
+  plotly::add_trace( y = ~ d_cum, 
+             name = "Death",
+             fillcolor = '#E41317') %>%
+  plotly::add_trace(y = ~ r_cum, 
+            name = 'Recovered', 
+            fillcolor = 'forestgreen') %>%
+  plotly::layout(title = "",
+         legend = list(x = 0.05, y = 0.95),
+         xaxis = list(title = ""),
+         yaxis = list(title = "Number of Cumulative Cases"),
+         hovermode = "compared")
+```
+   
+
+### Distribution of Daily New Confirmed, Fatal and Recovered Cases
+
+    
+```{r}
+
+plot_ly(qc[qc$date_report>as.Date("2020-03-01"),], x = ~ date_report, y = ~c_daily, type="scatter", mode = 'markers',  name = 'Daily New Case', marker = list(color = '#1f77b4'))  %>% 
+  add_trace(x = ~ date_report, y = ~ c_daily_smooth, type = 'scatter', mode = 'lines+markers', name = 'Daily Case Trend', line = list(color = '#1f77b4',width=2), marker = list(color = '#1f77b4', opacity=0)) %>% 
+  add_trace(y = ~d_daily, name = 'Daily New Death', marker = list(color = 'red'), mode = 'markers') %>% 
+  add_trace(x = ~ date_report, y = ~ d_daily_smooth, type = 'scatter', mode = 'lines+markers', name = 'Daily Fatal Trend', line = list(color = 'red',width=2), marker = list(color = 'red', opacity=0)) %>% 
+  add_trace(y = ~r_daily, name = 'Daily New Recovered', marker = list(color = 'forestgreen'), mode = 'markers') %>% 
+  add_trace(y = ~r_daily_smooth, type = 'scatter', mode = 'lines+markers', name = 'Daily Recovery Trend',line = list(color = 'forestgreen',width=2), marker = list(color = 'forestgreen', opacity=0)) %>% 
+  plotly::layout(title = "", legend = list(x = 0.05, y = 0.95),
+         xaxis = list(title = "Using 5 days trailing moving average to calculate the trend lines"),
+         yaxis = list(title = "Number of New Daily Cases"))
+
+```
+
+### Daily Percentage Increase on Confirmed and Fatal Cases
+    
+```{r}
+plot_ly(qc[qc$date_report>as.Date("2020-03-01"),], x = ~ date_report, y = ~c_percentchange, type="scatter", mode = 'lines+markers',  name = '% Change Case', marker = list(color = '#1f77b4'))  %>% 
+  add_trace(y = ~d_percentchange, name = '% Change Death', marker = list(color = 'red'), line=list(color="red"),mode = 'lines+markers') %>% 
+  plotly::layout(title = "", legend = list(x = 0.7, y = 0.95),
+         xaxis = list(title = ""), yaxis = list(title = "Percentage change in Cases"))
+
+```
+
+
+Column
+-------------------------------------
+    
+### Heatmaps on Cumulative Cases by Regions
+
+```{r }
+plot_ly(qc_case[qc_case$date_report>as.Date("2020-02-29"),], x=~date_report, y=~health_region, z = ~ cumulative_cases, type = "heatmap", colors = "YlGnBu",zmin=0, zmax=1000,
+               xgap=1, ygap=1) %>% layout(showlegend=FALSE,title = "",
+         xaxis = list(title = "", side="top"),
+         yaxis = list(title = ""))
+
+```   
+
+
+### Heatmaps on Cumulative Deaths by Regions
+
+```{r }
+plot_ly(qc_death[qc_death$date_death_report>as.Date("2020-02-29"),] , 
+               x=~date_death_report, y=~health_region, z = ~ cumulative_deaths, type = "heatmap",
+               colors = colorRamp(c("white","red")),zmin=0,zmax=100, xgap=1, ygap=1) %>% layout(showlegend=FALSE,title = "",
+         xaxis = list(title = "", side="top"),
+         yaxis = list(title = ""))
+
+```   
 
 
 Canada Data

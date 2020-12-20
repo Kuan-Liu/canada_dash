@@ -1,6 +1,6 @@
 library(dplyr) #data tool;
 library(RCurl) #read data url;
-setwd("C:/Users/kuan liu/Dropbox (Personal)/STAT_consulting/covidvisual/canada_dash")
+# setwd("C:/Users/kuan liu/Dropbox (Personal)/STAT_consulting/covidvisual/canada_dash")
 
 #------------------ Read Canada data ------------------
 # #read raw github data from the working group github;
@@ -8,16 +8,19 @@ x1 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/t
 x2 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_prov/mortality_timeseries_prov.csv") #new time series data, apr13;
 x3 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/recovered_cumulative.csv")
 x4 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/testing_cumulative.csv")
-# x5 <- getURL("https://raw.githubusercontent.com/Kuan-Liu/canada_dash/master/docs/data/recovered_cumulative.csv")
+x5 <- getURL("https://raw.githubusercontent.com/Kuan-Liu/Testing_Dash/master/docs/prov.csv")
+
 can_c <- read.csv(text=x1, header = TRUE, sep = ",", encoding = 'UTF-8')
 can_d <- read.csv(text=x2, header = TRUE, sep = ",", encoding = 'UTF-8')
 can_r <- read.csv(text=x3, header = TRUE, sep = ",", encoding = 'UTF-8')
 can_t <- read.csv(text=x4, header = TRUE, sep = ",", encoding = 'UTF-8')
+prov <- read.csv(text=x5, header = TRUE, sep = ",", encoding = 'UTF-8')
+write.csv(prov, "docs/data/prov.csv",row.names = F)
 
 # newdataline<- data.frame(date_recovered="06-05-2020",province="Yukon",cumulative_recovered=11)
 # can_r<-rbind(can_r, newdataline)
 
-`%>%` <- magrittr::`%>%`
+
 #------------------ canada data formating ------------------
 #format dates;
 can_c$date_report<-as.Date(can_c$date_report,format="%d-%m-%y")
@@ -25,16 +28,28 @@ can_d$date_death_report<-as.Date(can_d$date_death_report,format="%d-%m-%y")
 can_r$date_recovered<-as.Date(can_r$date_recovered,format="%d-%m-%y")
 can_t$date_testing<-as.Date(can_t$date_testing,format="%d-%m-%y")
 
-
-
 #format province labels;
-province_labelc<-c("Alberta","British Columbia","Manitoba","New Brunswick", "Newfoundland and Labrador", "Nova Scotia","Nunavut","NorthWest", "Ontario","Prince Edward Island","Quebec", "Repatriated","Saskatchewan","Yukon")
-province_labeld<-c("Alberta","British Columbia","Manitoba","New Brunswick", "Newfoundland and Labrador", "Nova Scotia","Nunavut","NorthWest", "Ontario","Prince Edward Island","Quebec","Saskatchewan","Yukon")
+can_c$province[can_c$province=="BC"]<-"British Columbia"
+can_d$province[can_d$province=="BC"]<-"British Columbia"
+can_r$province[can_r$province=="BC"]<-"British Columbia"
+can_t$province[can_t$province=="BC"]<-"British Columbia"
 
-levels(can_c$province)<-province_labelc
-levels(can_d$province)<-province_labeld
-levels(can_r$province)<-province_labelc
-levels(can_t$province)<-province_labeld
+can_c$province[can_c$province=="NL"]<-"Newfoundland and Labrador"
+can_d$province[can_d$province=="NL"]<-"Newfoundland and Labrador"
+can_r$province[can_r$province=="NL"]<-"Newfoundland and Labrador"
+can_t$province[can_t$province=="NL"]<-"Newfoundland and Labrador"
+
+can_c$province[can_c$province=="NWT"]<-"NorthWest"
+can_d$province[can_d$province=="NWT"]<-"NorthWest"
+can_r$province[can_r$province=="NWT"]<-"NorthWest"
+can_t$province[can_t$province=="NWT"]<-"NorthWest"
+
+can_c$province[can_c$province=="PEI"]<-"Prince Edward Island"
+can_d$province[can_d$province=="PEI"]<-"Prince Edward Island"
+can_r$province[can_r$province=="PEI"]<-"Prince Edward Island"
+can_t$province[can_t$province=="PEI"]<-"Prince Edward Island"
+
+
 
 #aggregate counts by date combining all province;
 can_c_daily <- can_c  %>% group_by(date_report) %>% summarise(c_daily=sum(cases, na.rm = T)) 
