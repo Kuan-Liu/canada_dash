@@ -331,6 +331,8 @@
 "Germany","2020-12-16",32744
 "Germany","2020-12-17",30179
 "Germany","2020-12-18",32830
+"Germany","2020-12-19",21679
+"Germany","2020-12-20",6444
 "Italy","2020-01-22",0
 "Italy","2020-01-23",0
 "Italy","2020-01-24",0
@@ -663,6 +665,8 @@
 "Italy","2020-12-16",17568
 "Italy","2020-12-17",18233
 "Italy","2020-12-18",15401
+"Italy","2020-12-19",16305
+"Italy","2020-12-20",15102
 "Spain","2020-01-22",0
 "Spain","2020-01-23",0
 "Spain","2020-01-24",0
@@ -995,6 +999,8 @@
 "Spain","2020-12-16",11078
 "Spain","2020-12-17",12131
 "Spain","2020-12-18",11815
+"Spain","2020-12-19",0
+"Spain","2020-12-20",0
 "Switzerland","2020-01-22",0
 "Switzerland","2020-01-23",0
 "Switzerland","2020-01-24",0
@@ -1327,6 +1333,8 @@
 "Switzerland","2020-12-16",5625
 "Switzerland","2020-12-17",5058
 "Switzerland","2020-12-18",4478
+"Switzerland","2020-12-19",0
+"Switzerland","2020-12-20",0
 "US","2020-01-22",1
 "US","2020-01-23",0
 "US","2020-01-24",1
@@ -1659,6 +1667,8 @@
 "US","2020-12-16",247403
 "US","2020-12-17",236211
 "US","2020-12-18",249709
+"US","2020-12-19",196295
+"US","2020-12-20",189099
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -1991,6 +2001,8 @@
 "United Kingdom","2020-12-16",25161
 "United Kingdom","2020-12-17",35383
 "United Kingdom","2020-12-18",28507
+"United Kingdom","2020-12-19",27052
+"United Kingdom","2020-12-20",35928
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -2323,6 +2335,8 @@
 "United Kingdom","2020-12-16",0
 "United Kingdom","2020-12-17",0
 "United Kingdom","2020-12-18",0
+"United Kingdom","2020-12-19",0
+"United Kingdom","2020-12-20",0
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -2655,6 +2669,8 @@
 "Australia","2020-12-16",0
 "Australia","2020-12-17",0
 "Australia","2020-12-18",0
+"Australia","2020-12-19",0
+"Australia","2020-12-20",1
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -2987,6 +3003,8 @@
 "United Kingdom","2020-12-16",11
 "United Kingdom","2020-12-17",18
 "United Kingdom","2020-12-18",12
+"United Kingdom","2020-12-19",19
+"United Kingdom","2020-12-20",11
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -3319,6 +3337,8 @@
 "United Kingdom","2020-12-16",0
 "United Kingdom","2020-12-17",4
 "United Kingdom","2020-12-18",0
+"United Kingdom","2020-12-19",6
+"United Kingdom","2020-12-20",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -3651,6 +3671,8 @@
 "United Kingdom","2020-12-16",6
 "United Kingdom","2020-12-17",2
 "United Kingdom","2020-12-18",1
+"United Kingdom","2020-12-19",0
+"United Kingdom","2020-12-20",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -3983,6 +4005,8 @@
 "United Kingdom","2020-12-16",100
 "United Kingdom","2020-12-17",97
 "United Kingdom","2020-12-18",0
+"United Kingdom","2020-12-19",137
+"United Kingdom","2020-12-20",103
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -4315,6 +4339,8 @@
 "United Kingdom","2020-12-16",0
 "United Kingdom","2020-12-17",0
 "United Kingdom","2020-12-18",0
+"United Kingdom","2020-12-19",0
+"United Kingdom","2020-12-20",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -4647,6 +4673,8 @@
 "United Kingdom","2020-12-16",21
 "United Kingdom","2020-12-17",28
 "United Kingdom","2020-12-18",31
+"United Kingdom","2020-12-19",27
+"United Kingdom","2020-12-20",33
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -4979,6 +5007,8 @@
 "United Kingdom","2020-12-16",0
 "United Kingdom","2020-12-17",0
 "United Kingdom","2020-12-18",0
+"United Kingdom","2020-12-19",0
+"United Kingdom","2020-12-20",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -5311,6 +5341,8 @@
 "United Kingdom","2020-12-16",0
 "United Kingdom","2020-12-17",0
 "United Kingdom","2020-12-18",0
+"United Kingdom","2020-12-19",0
+"United Kingdom","2020-12-20",0
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -5643,6 +5675,8 @@
 "Australia","2020-12-16",9
 "Australia","2020-12-17",16
 "Australia","2020-12-18",30
+"Australia","2020-12-19",36
+"Australia","2020-12-20",23
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -5975,6 +6009,8 @@
 "Australia","2020-12-16",2
 "Australia","2020-12-17",0
 "Australia","2020-12-18",1
+"Australia","2020-12-19",2
+"Australia","2020-12-20",0
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -6307,6 +6343,8 @@
 "Australia","2020-12-16",1
 "Australia","2020-12-17",3
 "Australia","2020-12-18",-1
+"Australia","2020-12-19",2
+"Australia","2020-12-20",1
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -6639,6 +6677,8 @@
 "Australia","2020-12-16",0
 "Australia","2020-12-17",0
 "Australia","2020-12-18",0
+"Australia","2020-12-19",0
+"Australia","2020-12-20",3
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -6971,6 +7011,8 @@
 "Australia","2020-12-16",0
 "Australia","2020-12-17",0
 "Australia","2020-12-18",0
+"Australia","2020-12-19",0
+"Australia","2020-12-20",0
 "United Kingdom","2020-01-22",0
 "United Kingdom","2020-01-23",0
 "United Kingdom","2020-01-24",0
@@ -7303,6 +7345,8 @@
 "United Kingdom","2020-12-16",1
 "United Kingdom","2020-12-17",0
 "United Kingdom","2020-12-18",9
+"United Kingdom","2020-12-19",8
+"United Kingdom","2020-12-20",9
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -7635,6 +7679,8 @@
 "Australia","2020-12-16",-1
 "Australia","2020-12-17",1
 "Australia","2020-12-18",2
+"Australia","2020-12-19",2
+"Australia","2020-12-20",1
 "Australia","2020-01-22",0
 "Australia","2020-01-23",0
 "Australia","2020-01-24",0
@@ -7967,3 +8013,5 @@
 "Australia","2020-12-16",1
 "Australia","2020-12-17",1
 "Australia","2020-12-18",1
+"Australia","2020-12-19",0
+"Australia","2020-12-20",1
