@@ -19,7 +19,6 @@ runtime: shiny
 library(shiny) #shiny app;
 library(flexdashboard) #dashboard;
 library(dplyr) #data tool;
-
 library(magrittr)
 library(plotly) #visual tool;
 library(tibble) #scrap variable characters;
@@ -250,7 +249,7 @@ Row
 ### Overall Distribution of Cases
 
 ```{r}
-plotly::plot_ly(data = can[can$date_report > as.Date("2020-03-14"),],
+plotly::plot_ly(data = can[can$date_report > as.Date("2020-03-30"),],
         x = ~ date_report,
         y = ~ a_cum, 
         name = 'Active', 
@@ -376,7 +375,7 @@ Row
 ### Marc's Distribution of Confirmed Cases by Province and Territory
 
 ```{r}
-can_c_mo<- can_p[can_p$date_report>as.Date("2020-03-14"),c("date_report","province","c_cum")]
+can_c_mo<- can_p[can_p$date_report>as.Date("2020-03-30"),c("date_report","province","c_cum")]
 can_c_mo<- reshape(can_c_mo, idvar = "date_report",timevar="province",direction = "wide")
 
 names(can_c_mo)[2:ncol(can_c_mo)]<-sub("c.cum.", "", names(can_c_mo)[2:ncol(can_c_mo)])
@@ -566,7 +565,7 @@ Column {data-width=380}
 ### Overall Distribution of Cases
     
 ```{r}
-plotly::plot_ly(data = on[on$date_report> as.Date("2020-03-14"),],
+plotly::plot_ly(data = on[on$date_report> as.Date("2020-03-30"),],
         x = ~ date_report,
         y = ~ a_cum, 
         name = 'Active', 
@@ -625,7 +624,7 @@ Column
 
 ```{r }
 
-plotly::plot_ly(on_case[on_case$date_report>as.Date("2020-03-14"),] ,
+plotly::plot_ly(on_case[on_case$date_report>as.Date("2020-03-30"),] ,
                x=~date_report, y=~health_region, z = ~ cases, type = "heatmap",
                colors = "YlGnBu",zmin=0, zmax=100,
                xgap=1, ygap=1) %>% plotly::layout(showlegend=FALSE,title = "",
@@ -639,7 +638,7 @@ plotly::plot_ly(on_case[on_case$date_report>as.Date("2020-03-14"),] ,
 
 ```{r }
 
-plotly::plot_ly(on_death[on_death$date_death_report>as.Date("2020-03-14"),] ,
+plotly::plot_ly(on_death[on_death$date_death_report>as.Date("2020-03-30"),] ,
                x=~date_death_report, y=~health_region, z = ~ deaths, type = "heatmap",
                colors = colorRamp(c("white","red")),zmin=0,zmax=10, xgap=1, ygap=1) %>% plotly::layout(showlegend=FALSE,title = "",
          xaxis = list(title = "", side="top"),
