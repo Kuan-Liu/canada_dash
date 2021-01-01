@@ -5,8 +5,8 @@ account: kuan-liu
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2101862
-bundleId: 4039741
+bundleId: 4046976
 url: https://kuan-liu.shinyapps.io/canada_dash/
-when: 1609269095.08021
+when: 1609466872.24619
 asMultiple: FALSE
 asStatic: FALSE
