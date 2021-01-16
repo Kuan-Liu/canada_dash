@@ -1,20 +1,13 @@
 library(dplyr) #data tool;
-library(RCurl) #read data url;
 # setwd("C:/Users/kuan liu/Dropbox (Personal)/STAT_consulting/covidvisual/canada_dash")
 
 #------------------ Read Canada data ------------------
 # #read raw github data from the working group github;
-x1 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_prov/cases_timeseries_prov.csv") #new time series data, apr13;
-x2 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_prov/mortality_timeseries_prov.csv") #new time series data, apr13;
-x3 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/recovered_cumulative.csv")
-x4 <- getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/testing_cumulative.csv")
-x5 <- getURL("https://raw.githubusercontent.com/Kuan-Liu/Testing_Dash/master/docs/prov.csv")
-
-can_c <- read.csv(text=x1, header = TRUE, sep = ",", encoding = 'UTF-8')
-can_d <- read.csv(text=x2, header = TRUE, sep = ",", encoding = 'UTF-8')
-can_r <- read.csv(text=x3, header = TRUE, sep = ",", encoding = 'UTF-8')
-can_t <- read.csv(text=x4, header = TRUE, sep = ",", encoding = 'UTF-8')
-prov <- read.csv(text=x5, header = TRUE, sep = ",", encoding = 'UTF-8')
+can_c <- read.csv("https://raw.githubusercontent.com/ccodwg/Covid19Canada/master/timeseries_prov/cases_timeseries_prov.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
+can_d <- read.csv("https://raw.githubusercontent.com/ccodwg/Covid19Canada/master/timeseries_prov/mortality_timeseries_prov.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
+can_r <- read.csv("https://raw.githubusercontent.com/ccodwg/Covid19Canada/master/recovered_cumulative.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
+can_t <- read.csv("https://raw.githubusercontent.com/ccodwg/Covid19Canada/master/testing_cumulative.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
+prov <- read.csv("https://raw.githubusercontent.com/Kuan-Liu/Testing_Dash/master/docs/prov.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
 write.csv(prov, "docs/data/prov.csv",row.names = F)
 
 # newdataline<- data.frame(date_recovered="06-05-2020",province="Yukon",cumulative_recovered=11)
@@ -23,10 +16,10 @@ write.csv(prov, "docs/data/prov.csv",row.names = F)
 
 #------------------ canada data formating ------------------
 #format dates;
-can_c$date_report<-as.Date(can_c$date_report,format="%d-%m-%y")
-can_d$date_death_report<-as.Date(can_d$date_death_report,format="%d-%m-%y")
-can_r$date_recovered<-as.Date(can_r$date_recovered,format="%d-%m-%y")
-can_t$date_testing<-as.Date(can_t$date_testing,format="%d-%m-%y")
+can_c$date_report<-as.Date(can_c$date_report,format="%d-%m-%Y")
+can_d$date_death_report<-as.Date(can_d$date_death_report,format="%d-%m-%Y")
+can_r$date_recovered<-as.Date(can_r$date_recovered,format="%d-%m-%Y")
+can_t$date_testing<-as.Date(can_t$date_testing,format="%d-%m-%Y")
 
 #format province labels;
 can_c$province[can_c$province=="BC"]<-"British Columbia"
@@ -114,11 +107,9 @@ world_clean <- world_clean %>% select(country, date, cases)
 write.csv(world_clean, "docs/data/world_clean.csv", row.names = F)
 # C:/Users/kuan liu/Dropbox (Personal)/STAT_consulting/covidvisual/canada_dash/
 
-x6<-getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_hr/cases_timeseries_hr.csv")
-x7<-getURL("https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/timeseries_hr/mortality_timeseries_hr.csv")
 
-hr_c <- read.csv(text=x6, header = TRUE, sep = ",", encoding = 'UTF-8')
-hr_d <- read.csv(text=x7, header = TRUE, sep = ",", encoding = 'UTF-8')
+hr_c <- read.csv("https://raw.githubusercontent.com/ccodwg/Covid19Canada/master/timeseries_hr/cases_timeseries_hr.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
+hr_d <- read.csv("https://raw.githubusercontent.com/ccodwg/Covid19Canada/master/timeseries_hr/mortality_timeseries_hr.csv", header = TRUE, sep = ",", encoding = 'UTF-8')
 
 hr_c_clean <- hr_c %>% filter(province %in% c("Ontario","Quebec")) 
 
